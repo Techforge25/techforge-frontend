@@ -8,6 +8,7 @@ const testimonialRows: readonly TestimonialItem[][] = [0, 1, 2].map((rowIndex) =
     .map((column) => column[rowIndex])
     .filter((item): item is TestimonialItem => Boolean(item)),
 );
+const testimonialsMobileLoop = [...testimonialColumns.flat(), ...testimonialColumns.flat()];
 
 function TestimonialCard({
   avatar,
@@ -81,18 +82,24 @@ function TestimonialsDesktop() {
 }
 
 function TestimonialsMobile() {
-  const cards = testimonialColumns.flat();
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:hidden">
-      {cards.map((item, idx) => (
-        <TestimonialCard
-          key={`m-${item.handle}-${idx}`}
-          avatar={item.avatar}
-          handle={item.handle}
-          quote={item.quote}
-          className="w-full"
-        />
-      ))}
+    <div className="lg:hidden">
+      <div className="overflow-hidden">
+        <div
+          className="flex w-max gap-4 will-change-transform"
+          style={{ animation: "testimonials-left 42s linear infinite" }}
+        >
+          {testimonialsMobileLoop.map((item, idx) => (
+            <TestimonialCard
+              key={`m-${item.handle}-${idx}`}
+              avatar={item.avatar}
+              handle={item.handle}
+              quote={item.quote}
+              className="w-[85vw] max-w-[360px] sm:w-[60vw] sm:max-w-[400px]"
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -123,7 +130,7 @@ export default function TestimonialsSection() {
 
           <div className="w-full">
             <TestimonialsDesktop />
-            <div className="px-4 sm:px-8">
+            <div className="px-4 sm:px-6 md:px-8">
               <TestimonialsMobile />
             </div>
           </div>

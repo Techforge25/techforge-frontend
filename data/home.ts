@@ -7,19 +7,19 @@ import client5 from "@/assets/images/clients/Client5.png";
 import client6 from "@/assets/images/clients/Client6.png";
 import client7 from "@/assets/images/clients/Client7.png";
 import client8 from "@/assets/images/clients/Client8.png";
-import client9 from "@/assets/images/clients/Client9.png";    
-import client10 from "@/assets/images/clients/Client10.png";    
-import client11 from "@/assets/images/clients/Client11.png";    
-import client12 from "@/assets/images/clients/Client12.png";    
-import client13 from "@/assets/images/clients/Client13.png";    
-import client14 from "@/assets/images/clients/Client14.png";    
-import client15 from "@/assets/images/clients/Client15.png";    
-import client16 from "@/assets/images/clients/Client16.png";    
-import client17 from "@/assets/images/clients/Client17.png";    
-import client18 from "@/assets/images/clients/Client18.png";    
-import client19 from "@/assets/images/clients/Client19.png";    
-import client20 from "@/assets/images/clients/Client20.png";        
-import client21 from "@/assets/images/clients/Client21.png";        
+import client9 from "@/assets/images/clients/Client9.png";
+import client10 from "@/assets/images/clients/Client10.png";
+import client11 from "@/assets/images/clients/Client11.png";
+import client12 from "@/assets/images/clients/Client12.png";
+import client13 from "@/assets/images/clients/Client13.png";
+import client14 from "@/assets/images/clients/Client14.png";
+import client15 from "@/assets/images/clients/Client15.png";
+import client16 from "@/assets/images/clients/Client16.png";
+import client17 from "@/assets/images/clients/Client17.png";
+import client18 from "@/assets/images/clients/Client18.png";
+import client19 from "@/assets/images/clients/Client19.png";
+import client20 from "@/assets/images/clients/Client20.png";
+import client21 from "@/assets/images/clients/Client21.png";
 import staircase1 from "@/assets/images/Staircase  1.svg";
 import staircase2 from "@/assets/images/Staircase  2.svg";
 import staircase3 from "@/assets/images/Staircase  3.svg";
@@ -58,22 +58,22 @@ export const heroClients = [
   client3.src,
   client4.src,
   client5.src,
-  // client6.src,
-  // client7.src,
-  // client8.src,
-  // client9.src,
-  // client10.src,
-  // client11.src,
-  // client12.src,
-  // client13.src,
-  // client14.src,
-  // client15.src,
-  // client16.src,
-  // client17.src,
-  // client18.src,
-  // client19.src,
-  // client20.src,
-  // client21.src,
+  client6.src,
+  client7.src,
+  client8.src,
+  client9.src,
+  client10.src,
+  client11.src,
+  client12.src,
+  client13.src,
+  client14.src,
+  client15.src,
+  client16.src,
+  client17.src,
+  client18.src,
+  client19.src,
+  client20.src,
+  client21.src,
 ] as const;
 
 export const heroChipStyles = {
@@ -358,34 +358,64 @@ export type FaqItem = {
 
 export const faqItems: readonly FaqItem[] = [
   {
-    id: "industries-1",
-    question: "What industries do you serve?",
-    answer:
-      "We offer a wide range of digital services, including mobile app development, website development, SEO, digital marketing, graphic design, and more.",
-  },
-  {
     id: "services",
-    question: "What services do you offer?",
+    question: "What services does TechForge Innovations provide?",
     answer:
-      "We offer a wide range of digital services, including mobile app development, website development, SEO, digital marketing, graphic design, and more.",
+      "TechForge Innovations offers complete digital solutions including custom website development, mobile app development, UI/UX design, SEO, branding, and digital marketing. We handle everything from idea validation to final product launch and scaling.",
   },
   {
-    id: "success",
-    question: "How do you ensure project success?",
+    id: "process",
+    question: "What is your project development process?",
     answer:
-      "We offer a wide range of digital services, including mobile app development, website development, SEO, digital marketing, graphic design, and more.",
+      "Our process starts with understanding your business goals, followed by strategy planning, design, development, testing, and deployment. We use agile methodologies and keep you involved at every stage to ensure transparency and high-quality results.",
   },
   {
-    id: "industries-2",
-    question: "What industries do you serve?",
+    id: "timeline",
+    question: "How long does it take to complete a project?",
     answer:
-      "We offer a wide range of digital services, including mobile app development, website development, SEO, digital marketing, graphic design, and more.",
+      "Project timelines vary depending on complexity. A standard website may take 1–3 weeks, while custom platforms or mobile apps can take several weeks. We always provide a clear timeline before starting the project.",
   },
   {
-    id: "export",
-    question: "Can I export my schema to SQL or other formats?",
+    id: "pricing",
+    question: "How much does a project cost?",
     answer:
-      "We offer a wide range of digital services, including mobile app development, website development, SEO, digital marketing, graphic design, and more.",
+      "Pricing depends on your requirements, features, and project scope. We provide flexible and customized pricing to ensure you get the best value for your investment without compromising quality.",
+  },
+  {
+    id: "startup",
+    question: "Can you help if I only have an idea?",
+    answer:
+      "Absolutely. We specialize in turning ideas into real products. From planning and design to development and launch, we guide you through every step to bring your vision to life.",
+  },
+  {
+    id: "support",
+    question: "Do you offer support after project completion?",
+    answer:
+      "Yes, we provide ongoing support and maintenance services to ensure your product stays secure, updated, and performs smoothly as your business grows.",
+  },
+  {
+    id: "technology",
+    question: "What technologies do you use?",
+    answer:
+      "We use modern and scalable technologies like React, Next.js, Node.js, Flutter, and WordPress, ensuring fast, secure, and future-ready solutions for your business.",
+  },
+  {
+    id: "difference",
+    question: "What makes TechForge Innovations different?",
+    answer:
+      "We focus on delivering not just designs or code, but real business results. Our approach combines strategy, creativity, and technology to build solutions that drive growth, improve user experience, and maximize ROI.",
+  },
+  {
+    id: "communication",
+    question: "How do you communicate during the project?",
+    answer:
+      "We maintain clear and regular communication through meetings, progress updates, and collaboration tools. You’ll always know the status of your project at every stage.",
+  },
+  {
+    id: "start",
+    question: "How can I get started with TechForge Innovations?",
+    answer:
+      "Getting started is simple. Just reach out to us with your idea or requirements, and our team will analyze your needs and provide a tailored plan to move forward.",
   },
 ] as const;
 

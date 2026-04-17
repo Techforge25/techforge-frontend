@@ -2,10 +2,10 @@ import PrimaryButton from "@/components/ui/primary-button";
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
 import GlowLineAboutUsPointer from "@/components/ui/glowline-aboutus-pointer";
-import {SectionPaddingY72} from "@/components/ui/section-padding";
-import { aboutUsCopy } from "@/data/home";
 import aboutUsBg from "@/assets/images/aboutus-bg.png";
 import aboutUsMainImage from "@/assets/images/aboutus-main-images.png";
+import { SectionPaddingY72 } from "@/components/ui/section-padding";
+import { aboutUsCopy } from "@/data/home";
 
 export default function AboutUsSection() {
   return (
@@ -19,19 +19,14 @@ export default function AboutUsSection() {
       <GlowLineAboutUsPointer className="bottom-0 right-0 hidden h-[333px] w-[235px] rotate-[180deg] md:block" />
       <SectionPaddingY72 className="px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 mx-auto flex w-full max-w-[990px] flex-col items-center gap-6 text-center sm:gap-8">
-          <SectionBadge
-            label={aboutUsCopy.badgeLabel}
-            className="h-[28px] px-[11px] py-0 text-sm leading-none"
+          <SectionBadge label={aboutUsCopy.badgeLabel} className="h-[28px] px-[11px] py-0 text-sm leading-none" />
+          <SectionHeading
+            line1={aboutUsCopy.headingLine1}
+            line2Highlight={aboutUsCopy.headingLine2Highlight}
+            line2After={aboutUsCopy.headingLine2After}
+            className="max-w-[790px] text-[30px] font-normal leading-[1.04] sm:text-[38px] md:text-[48px] md:leading-[52px]"
+            line2ClassName="mt-1"
           />
-          <div className="relative flex flex-col items-center gap-3 sm:gap-4">
-              <SectionHeading
-                line1={aboutUsCopy.headingLine1}
-                line2Highlight={aboutUsCopy.headingLine2Highlight}
-                line2After={aboutUsCopy.headingLine2After}
-                className="relative max-w-[790px] text-[30px] font-normal leading-[1.04] sm:text-[38px] md:text-[48px] md:leading-[52px]"
-                line2ClassName="mt-1"
-              />
-          </div>
 
           <div className="relative w-full overflow-hidden rounded-xl sm:rounded-2xl">
             <img
@@ -48,7 +43,10 @@ export default function AboutUsSection() {
             </p>
           </div>
 
-          <PrimaryButton label={aboutUsCopy.ctaLabel} className="h-[44px] px-5 text-[15px] sm:h-[47px] sm:px-6 sm:text-base" />
+          <PrimaryButton
+            label={aboutUsCopy.ctaLabel}
+            className="h-[44px] px-5 text-[15px] sm:h-[47px] sm:px-6 sm:text-base"
+          />
         </div>
       </SectionPaddingY72>
     </section>

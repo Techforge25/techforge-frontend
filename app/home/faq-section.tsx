@@ -4,7 +4,7 @@ import { useState } from "react";
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
-import { faqCopy, faqItems } from "@/data/home";
+import { faqCopy, faqItems, type FaqItem } from "@/data/home";
 
 const faqOpenBorderStyle = {
   backgroundImage:
@@ -12,6 +12,12 @@ const faqOpenBorderStyle = {
   backgroundOrigin: "border-box",
   backgroundClip: "padding-box, border-box",
 } as const;
+
+const faqItemClosedClass = "overflow-hidden rounded-[14px] border border-[#121324]";
+const faqItemOpenClass = "rounded-[12px] border border-transparent bg-[rgba(5,5,18,0.96)] pb-[10px]";
+const faqButtonClosedClass = "flex w-full items-center justify-between gap-3 px-4 py-4 text-left sm:p-6";
+const faqButtonOpenClass =
+  "flex w-full items-center justify-between gap-3 rounded-[12px] border border-[rgba(243,243,243,0.08)] bg-[#2424a6] px-4 py-3 text-left sm:h-[52px] sm:py-0";
 
 function FaqChevron({ isOpen }: { isOpen: boolean }) {
   return (
@@ -31,6 +37,33 @@ function FaqChevron({ isOpen }: { isOpen: boolean }) {
         strokeLinejoin="round"
       />
     </svg>
+  );
+}
+
+function FaqAccordionItem({
+  item,
+  isOpen,
+  onToggle,
+}: {
+  item: FaqItem;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <article className={isOpen ? faqItemOpenClass : faqItemClosedClass} style={isOpen ? faqOpenBorderStyle : undefined}>
+      <button type="button" onClick={onToggle} className={isOpen ? faqButtonOpenClass : faqButtonClosedClass}>
+        <span className="flex-1 pr-2 text-[15px] font-medium leading-[1.35] tracking-[0.01em] text-white sm:text-[18px] sm:leading-7 sm:tracking-normal">
+          {item.question}
+        </span>
+        <FaqChevron isOpen={isOpen} />
+      </button>
+
+      {isOpen && item.answer ? (
+        <div className="px-4 py-[10px]">
+          <p className="text-base leading-[18px] text-[#cac6dd]">{item.answer}</p>
+        </div>
+      ) : null}
+    </article>
   );
 }
 
@@ -67,36 +100,12 @@ export default function FaqSection() {
               {faqItems.map((item) => {
                 const isOpen = item.id === openId;
                 return (
-                  <article
+                  <FaqAccordionItem
                     key={item.id}
-                    className={
-                      isOpen
-                        ? "rounded-[12px] border border-transparent bg-[rgba(5,5,18,0.96)] pb-[10px]"
-                        : "overflow-hidden rounded-[14px] border border-[#121324]"
-                    }
-                    style={isOpen ? faqOpenBorderStyle : undefined}
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setOpenId(isOpen ? "" : item.id)}
-                      className={
-                        isOpen
-                          ? "flex h-[52px] w-full items-center gap-2 rounded-[12px] border border-[rgba(243,243,243,0.08)] bg-[#2424a6] px-4 text-left"
-                          : "flex w-full items-center justify-between p-6 text-left"
-                      }
-                    >
-                      <span className="flex-1 text-[18px] font-medium leading-7 text-white">
-                        {item.question}
-                      </span>
-                      <FaqChevron isOpen={isOpen} />
-                    </button>
-
-                    {isOpen && item.answer ? (
-                      <div className="px-4 py-[10px]">
-                        <p className="text-base leading-[18px] text-[#cac6dd]">{item.answer}</p>
-                      </div>
-                    ) : null}
-                  </article>
+                    item={item}
+                    isOpen={isOpen}
+                    onToggle={() => setOpenId(isOpen ? "" : item.id)}
+                  />
                 );
               })}
             </div>

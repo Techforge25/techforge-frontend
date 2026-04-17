@@ -1,7 +1,8 @@
+import type { CSSProperties } from "react";
 import gridBg from "@/assets/images/home/hero/grid-bg.svg";
+import GradientChip from "@/components/ui/gradient-chip";
 import HeaderQuoteButton from "@/components/ui/header-quote-button";
 import PrimaryButton from "@/components/ui/primary-button";
-import GradientChip from "@/components/ui/gradient-chip";
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
 import {
@@ -15,12 +16,11 @@ import {
   type HeroStairLayer,
 } from "@/data/home";
 
+const primaryCtaLabel = "view all services";
+const quoteCtaLabel = "get a Quotes";
+
 function HeroDescription({ className = "" }: { className?: string }) {
-  return (
-    <p className={`text-[#cac6dd] ${className}`}>
-      {heroCopy.description}
-    </p>
-  );
+  return <p className={`text-[#cac6dd] ${className}`}>{heroCopy.description}</p>;
 }
 
 function StaircaseSet({
@@ -38,7 +38,35 @@ function StaircaseSet({
       aria-hidden="true"
     >
       {layers.map((layer) => (
-        <img key={`${layer.src}-${layer.className}`} src={layer.src} alt="" className={`absolute ${layer.className}`} />
+        <img
+          key={`${layer.src}-${layer.className}`}
+          src={layer.src}
+          alt=""
+          className={`absolute ${layer.className}`}
+        />
+      ))}
+    </div>
+  );
+}
+
+function ClientLogoRow({
+  list,
+  itemClassName,
+  keyPrefix,
+}: {
+  list: readonly string[];
+  itemClassName: string;
+  keyPrefix: string;
+}) {
+  return (
+    <div className="flex flex-shrink-0 items-center gap-[16px]">
+      {list.map((src, index) => (
+        <img
+          key={`${keyPrefix}-${index}`}
+          src={src}
+          alt={`Client ${index + 1}`}
+          className={`${itemClassName} flex-shrink-0`}
+        />
       ))}
     </div>
   );
@@ -62,10 +90,14 @@ function ClientStrip({
   return (
     <div className={wrapperClassName}>
       <p className={textClassName}>Our client all over the world</p>
-      <div className={listClassName}>
-        {list.map((src, index) => (
-          <img key={`${keyPrefix}${src}`} src={src} alt={`Client ${index + 1}`} className={itemClassName} />
-        ))}
+      <div className={`${listClassName} overflow-hidden`}>
+        <div
+          className="testimonials-track testimonials-track--left"
+          style={{ "--marquee-duration": "30s" } as CSSProperties}
+        >
+          <ClientLogoRow list={list} itemClassName={itemClassName} keyPrefix={`a-${keyPrefix}`} />
+          <ClientLogoRow list={list} itemClassName={itemClassName} keyPrefix={`b-${keyPrefix}`} />
+        </div>
       </div>
     </div>
   );
@@ -74,14 +106,21 @@ function ClientStrip({
 function HeroDesktop() {
   return (
     <div className="relative hidden h-[883px] w-full overflow-hidden xl:block">
-      <img src={gridBg.src} alt="" className="pointer-events-none absolute left-0 top-[483px] h-[400px] w-full" />
+      <img
+        src={gridBg.src}
+        alt=""
+        className="pointer-events-none absolute left-0 top-[483px] h-[400px] w-full"
+      />
 
       <StaircaseSet className="left-0 top-[383px] h-[495px] w-[349px]" layers={heroDesktopStairs} />
-      <StaircaseSet className="right-0 top-[383px] h-[495px] w-[349px]" layers={heroDesktopStairs} mirrored />
+      <StaircaseSet
+        className="right-0 top-[383px] h-[495px] w-[349px]"
+        layers={heroDesktopStairs}
+        mirrored
+      />
 
       <div className="absolute left-1/2 top-[197px] -translate-x-1/2">
-        <SectionBadge label={heroCopy.badgeLabel} 
-        className="h-[28px] px-[11px] py-0 text-sm leading-none" />
+        <SectionBadge label={heroCopy.badgeLabel} className="h-[28px] px-[11px] py-0 text-sm leading-none" />
       </div>
 
       <div className="absolute left-1/2 top-[245px] flex w-[920px] -translate-x-1/2 flex-col items-center gap-[22px] text-center">
@@ -96,7 +135,7 @@ function HeroDesktop() {
           />
           <HeroDescription className="w-[514px] text-base leading-[18px]" />
         </div>
-        <PrimaryButton label="get a Quotes" />
+        <PrimaryButton label={quoteCtaLabel} />
       </div>
 
       {heroDesktopChips.map((chip) => (
@@ -109,7 +148,7 @@ function HeroDesktop() {
         list={heroClients}
         wrapperClassName="absolute left-1/2 top-[689px] flex w-[614px] -translate-x-1/2 flex-col items-center gap-[18px]"
         textClassName="text-center text-[18px] uppercase leading-[18px] text-[#cecdcd]"
-        listClassName="flex h-[75px] items-center justify-center gap-[10px] rounded-[140px] bg-[rgba(255,255,255,0.08)] px-[11px] py-[10px]"
+        listClassName="flex h-[75px] w-full items-center rounded-[140px] bg-[rgba(255,255,255,0.08)] px-[11px] py-[10px]"
         itemClassName="h-[43px] w-[106px] object-contain"
       />
     </div>
@@ -121,7 +160,11 @@ function HeroMobileFallback() {
 
   return (
     <div className="relative block overflow-hidden px-4 pb-8 pt-10 text-center sm:px-6 sm:pt-12 md:hidden">
-      <img src={gridBg.src} alt="" className="pointer-events-none absolute bottom-12 left-1/2 h-[220px] w-[1100px] max-w-none -translate-x-1/2 opacity-90 sm:h-[260px]" />
+      <img
+        src={gridBg.src}
+        alt=""
+        className="pointer-events-none absolute bottom-12 left-1/2 h-[220px] w-[1100px] max-w-none -translate-x-1/2 opacity-90 sm:h-[260px]"
+      />
 
       <div className="relative z-10 mx-auto">
         <SectionBadge label={heroCopy.badgeLabel} />
@@ -139,13 +182,17 @@ function HeroMobileFallback() {
       <HeroDescription className="relative z-10 mx-auto mt-4 max-w-[700px] text-[15px] leading-[1.4] sm:text-base" />
 
       <div className="relative z-10 mt-7 flex items-center justify-center gap-3">
-        <PrimaryButton className="h-[46px] min-w-[150px] px-5" label="view all services" />
-        <HeaderQuoteButton className="h-[46px] min-w-[150px] px-5" label="get a Quotes" />
+        <PrimaryButton className="h-[46px] min-w-[150px] px-5" label={primaryCtaLabel} />
+        <HeaderQuoteButton className="h-[46px] min-w-[150px] px-5" label={quoteCtaLabel} />
       </div>
 
       <div className="pointer-events-none absolute bottom-[128px] left-0 right-0 h-[210px]">
         <StaircaseSet className="bottom-0 left-0 h-[210px] w-[132px]" layers={heroMobileStairs} />
-        <StaircaseSet className="bottom-0 right-0 h-[210px] w-[132px]" layers={heroMobileStairs} mirrored />
+        <StaircaseSet
+          className="bottom-0 right-0 h-[210px] w-[132px]"
+          layers={heroMobileStairs}
+          mirrored
+        />
 
         <div className="absolute left-[45px] top-[-4px] w-[150px] origin-left scale-[0.55] rotate-[24deg]">
           <GradientChip label="UX/UI design" style={heroChipStyles.green} />
@@ -166,7 +213,7 @@ function HeroMobileFallback() {
         keyPrefix="m-"
         wrapperClassName="relative z-10 mx-auto mt-[250px] max-w-[760px] sm:mt-20"
         textClassName="text-center text-[25px] uppercase leading-[1] text-[#cecdcd] sm:text-base"
-        listClassName="mt-4 grid grid-cols-3 gap-2 rounded-[28px] bg-[rgba(255,255,255,0.08)] px-4 py-3"
+        listClassName="mt-4 flex w-full items-center rounded-[28px] bg-[rgba(255,255,255,0.08)] px-4 py-3"
         itemClassName="mx-auto h-[30px] w-[90px] object-contain sm:h-[36px] sm:w-[100px]"
       />
     </div>
@@ -176,7 +223,11 @@ function HeroMobileFallback() {
 function HeroTabletFallback() {
   return (
     <div className="relative hidden h-[900px] overflow-hidden px-8 pb-10 pt-14 text-center md:block xl:hidden lg:px-12">
-      <img src={gridBg.src} alt="" className="pointer-events-none absolute bottom-[150px] left-1/2 h-[320px] w-[1400px] max-w-none -translate-x-1/2 opacity-90" />
+      <img
+        src={gridBg.src}
+        alt=""
+        className="pointer-events-none absolute bottom-[150px] left-1/2 h-[320px] w-[1400px] max-w-none -translate-x-1/2 opacity-90"
+      />
 
       <div className="relative z-10 mx-auto">
         <SectionBadge label={heroCopy.badgeLabel} />
@@ -193,12 +244,16 @@ function HeroTabletFallback() {
       <HeroDescription className="relative z-10 mx-auto mt-5 max-w-[700px] text-base leading-[1.4]" />
 
       <div className="relative z-10 mt-8 flex items-center justify-center gap-4">
-        <PrimaryButton className="h-[46px] min-w-[170px] px-6" label="view all services" />
-        <HeaderQuoteButton className="h-[46px] min-w-[170px] px-6" label="get a Quotes" />
+        <PrimaryButton className="h-[46px] min-w-[170px] px-6" label={primaryCtaLabel} />
+        <HeaderQuoteButton className="h-[46px] min-w-[170px] px-6" label={quoteCtaLabel} />
       </div>
 
       <StaircaseSet className="bottom-[190px] left-0 h-[260px] w-[170px]" layers={heroTabletStairs} />
-      <StaircaseSet className="bottom-[190px] right-0 h-[260px] w-[170px]" layers={heroTabletStairs} mirrored />
+      <StaircaseSet
+        className="bottom-[190px] right-0 h-[260px] w-[170px]"
+        layers={heroTabletStairs}
+        mirrored
+      />
 
       <div className="pointer-events-none absolute left-[24px] top-[500px] origin-left scale-[0.7] rotate-[24deg] lg:left-[42px]">
         <GradientChip label="UX/UI design" style={heroChipStyles.green} />
@@ -218,7 +273,7 @@ function HeroTabletFallback() {
         keyPrefix="t-"
         wrapperClassName="absolute bottom-10 left-1/2 z-10 flex w-[min(92vw,760px)] -translate-x-1/2 flex-col items-center gap-4"
         textClassName="text-center text-[18px] uppercase leading-[1] text-[#cecdcd]"
-        listClassName="grid w-full grid-cols-5 gap-2 rounded-[28px] bg-[rgba(255,255,255,0.08)] px-3 py-4"
+        listClassName="flex w-full items-center rounded-[28px] bg-[rgba(255,255,255,0.08)] px-3 py-4"
         itemClassName="mx-auto h-[34px] w-[96px] object-contain"
       />
     </div>
@@ -239,4 +294,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
