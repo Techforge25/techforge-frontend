@@ -1,0 +1,83 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Neiko";
+  src: url("/fonts/Neiko-Regular.woff2") format("woff2"),
+    url("/fonts/Neiko-Regular.woff") format("woff"),
+    url("/fonts/Neiko-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --header-bg: #131324;
+  --header-blue: #2424a6;
+  --header-link: #999999;
+  --header-glow: #3776ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Satoshi", Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Satoshi", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Neiko", "Satoshi", Arial, Helvetica, sans-serif;
+}
+
+@keyframes testimonials-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-50% - 8px), 0, 0);
+  }
+}
+
+@keyframes testimonials-right {
+  from {
+    transform: translate3d(calc(-50% - 8px), 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.testimonials-track {
+  display: flex;
+  width: max-content;
+  gap: 16px;
+  will-change: transform;
+}
+
+.testimonials-track--left {
+  animation: testimonials-left var(--marquee-duration, 38s) linear infinite;
+}
+
+.testimonials-track--right {
+  animation: testimonials-right var(--marquee-duration, 38s) linear infinite;
+}

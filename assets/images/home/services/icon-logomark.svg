@@ -1,0 +1,22 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 32.25 36.8855" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logomark" filter="url(#filter0_d_0_20)">
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M8.625 5.29175C5.31129 5.29175 2.625 7.97804 2.625 11.2917V26.2917C2.625 29.6055 5.31129 32.2917 8.625 32.2917H23.625C26.9387 32.2917 29.625 29.6055 29.625 26.2917V11.2917C29.625 7.97804 26.9387 5.29175 23.625 5.29175H8.625ZM8.625 9.04175C7.38236 9.04175 6.375 10.0491 6.375 11.2917V26.2917C6.375 27.5344 7.38236 28.5417 8.625 28.5417H13.875C15.1176 28.5417 16.125 27.5344 16.125 26.2917V11.2917C16.125 10.0491 15.1176 9.04175 13.875 9.04175H8.625Z" fill="url(#paint0_linear_0_20)"/>
+</g>
+<defs>
+<filter id="filter0_d_0_20" x="0" y="-0.65625" width="32.25" height="38.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="1.3125" operator="erode" in="SourceAlpha" result="effect1_dropShadow_0_20"/>
+<feOffset dy="1.96875"/>
+<feGaussianBlur stdDeviation="1.96875"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.141176 0 0 0 0 0.141176 0 0 0 0 0.141176 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_20"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_20" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_0_20" x1="16.125" y1="5.29175" x2="16.125" y2="32.2917" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.8"/>
+<stop offset="1" stop-color="white" stop-opacity="0.5"/>
+</linearGradient>
+</defs>
+</svg>
