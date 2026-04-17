@@ -1,9 +1,9 @@
-import footerCtaOverlay from "@/assets/images/home/footer/footer-cta-overlay.png";
-import footerLinksBackground from "@/assets/images/home/footer/footer-links-bg.png";
-import footerLogo from "@/assets/images/home/footer/footer-logo.png";
+import footerCtaOverlay from "@/assets/images/home/footer/footer-cta-overlay.webp";
+import footerLinksBackground from "@/assets/images/home/footer/footer-links-bg.webp";
+import footerLogo from "@/assets/images/home/footer/footer-logo.webp";
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
-import { footerCopy, footerQuickLinks, footerServices } from "@/data/footer";
+import { footerCopy, footerQuickLinks, footerServices, type FooterQuickLink } from "@/data/footer";
 
 function FooterLinksColumn({
   title,
@@ -11,7 +11,7 @@ function FooterLinksColumn({
   titleClassName = "capitalize",
 }: {
   title: string;
-  items: readonly string[];
+  items: readonly string[] | readonly FooterQuickLink[];
   titleClassName?: string;
 }) {
   return (
@@ -19,9 +19,12 @@ function FooterLinksColumn({
       <h3 className={`text-[22px] font-bold leading-5 text-white ${titleClassName}`}>{title}</h3>
       <ul className="flex flex-col gap-8 text-base leading-[18px] text-[#cac6dd]">
         {items.map((item) => (
-          <li key={item}>
-            <a href="#" className="transition-colors hover:text-white">
-              {item}
+          <li key={typeof item === "string" ? item : item.label}>
+            <a
+              href={typeof item === "string" ? "#" : item.href}
+              className="transition-colors hover:text-white"
+            >
+              {typeof item === "string" ? item : item.label}
             </a>
           </li>
         ))}

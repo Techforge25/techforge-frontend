@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import headerGlowLineA from "@/assets/images/header-glow-line-a.svg";
-import logo from "@/assets/images/logo-clean.png";
+import logo from "@/assets/images/logo-clean.webp";
 import HeaderQuoteButton from "@/components/ui/header-quote-button";
 import { navigationItems } from "@/data/header";
 
@@ -19,6 +20,13 @@ function getNavLinkClass(isActive: boolean) {
 
 export default function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActiveLink = (href: string) => {
+    if (href === "/") return pathname === "/" || pathname === "/home";
+    if (href === "/about-us") return pathname === "/about-us";
+    return false;
+  };
 
   const mobileMenuPanelClass = `absolute right-4 top-[calc(100%+10px)] z-30 w-[min(92vw,340px)] rounded-2xl border border-[#248aff] bg-[#111327] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.45)] transition-all duration-200 xl:hidden ${
     mobileMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
@@ -40,7 +48,7 @@ export default function SiteHeader() {
           aria-label="Main navigation"
         >
           {navigationItems.map((item) => (
-            <a key={item.label} href={item.href} className={getNavLinkClass(item.active)}>
+            <a key={item.label} href={item.href} className={getNavLinkClass(isActiveLink(item.href))}>
               {item.label}
             </a>
           ))}
@@ -76,7 +84,7 @@ export default function SiteHeader() {
               key={`mobile-${item.label}`}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`${navLinkBaseClass} ${item.active ? navLinkActiveClass : "hover:text-white"} w-full rounded-md px-2 py-1`}
+              className={`${navLinkBaseClass} ${isActiveLink(item.href) ? navLinkActiveClass : "hover:text-white"} w-full rounded-md px-2 py-1`}
             >
               {item.label}
             </a>

@@ -1,5 +1,5 @@
 import HeroSection from "./hero-section";
-import AboutUsSection from "./about-us-section";
+import AboutUsHeroSection from "@/components/about-us/about-us-hero-section";
 import OurServicesSection from "./our-services-section";
 import OurWorkProcessSection from "./our-work-process-section";
 import WhyChooseUsSection from "./why-chooseUs-section";
@@ -13,7 +13,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-[#060716]">
       <SiteHeader />
       <HeroSection />
-      <AboutUsSection />
+      <AboutUsHeroSection ctaHref="/about-us" />
       <OurServicesSection />
       <WhyChooseUsSection />
       <OurWorkProcessSection />

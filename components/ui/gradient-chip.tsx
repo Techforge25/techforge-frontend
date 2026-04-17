@@ -1,4 +1,4 @@
-import chipNoise from "@/assets/images/home/hero/chip-noise.png";
+import chipNoise from "@/assets/images/home/hero/chip-noise.webp";
 import type { CSSProperties } from "react";
 
 type GradientChipProps = {

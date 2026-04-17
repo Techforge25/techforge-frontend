@@ -1,7 +1,7 @@
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
 import headingGlow from "@/assets/images/home/work-process/heading-glow.svg";
-import ourWorkBg from "@/assets/images/our-work-bg.png";
+import ourWorkBg from "@/assets/images/our-work-bg.webp";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
 import { processSteps } from "@/data/home";
 

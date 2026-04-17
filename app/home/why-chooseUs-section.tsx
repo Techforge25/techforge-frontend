@@ -1,6 +1,6 @@
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
-import whyChooseSideImage from "@/assets/images/left-side-whyChooseUs.png";
+import whyChooseSideImage from "@/assets/images/left-side-whyChooseUs.webp";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
 import { whyChooseUsCopy } from "@/data/home";
 
