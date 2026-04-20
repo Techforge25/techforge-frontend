@@ -81,3 +81,27 @@ h6 {
 .testimonials-track--right {
   animation: testimonials-right var(--marquee-duration, 38s) linear infinite;
 }
+
+.contact-dropdown-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #7c8aaf #17192f;
+}
+
+.contact-dropdown-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.contact-dropdown-scroll::-webkit-scrollbar-track {
+  background: #17192f;
+  border-radius: 999px;
+}
+
+.contact-dropdown-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #5764ff 0%, #8a93ff 100%);
+  border-radius: 999px;
+  border: 2px solid #17192f;
+}
+
+.contact-dropdown-scroll::-webkit-scrollbar-corner {
+  background: #17192f;
+}
