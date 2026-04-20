@@ -5,7 +5,7 @@ import PrimaryButton from "@/components/ui/primary-button";
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
 import { SectionPaddingY72 } from "@/components/ui/section-padding";
-import { aboutUsCopy } from "@/data/home";
+import { aboutUsCopy } from "@/data/home-page";
 
 type AboutUsHeroSectionProps = {
   ctaHref?: string;

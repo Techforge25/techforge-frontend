@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import SectionBadge from "@/components/ui/section-badge";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
-import { aboutFunFactsSection } from "@/data/about";
+import { aboutFunFactsSection } from "@/data/aboutUs-Page";
 
 type ParsedValue = {
   target: number;

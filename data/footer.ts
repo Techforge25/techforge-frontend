@@ -21,7 +21,7 @@ export const footerQuickLinks = [
   { label: "Home", href: "/" },
   { label: "About us", href: "/about-us" },
   { label: "services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "#contact" },
 ] as const satisfies readonly FooterQuickLink[];
 

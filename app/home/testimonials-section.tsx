@@ -1,7 +1,7 @@
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
 import { SectionPaddingY72 } from "@/components/ui/section-padding";
-import { testimonialColumns, testimonialsCopy, type TestimonialItem } from "@/data/home";
+import { testimonialColumns, testimonialsCopy, type TestimonialItem } from "@/data/testimonials";
 
 const testimonialRows: readonly TestimonialItem[][] = [0, 1, 2].map((rowIndex) =>
   testimonialColumns

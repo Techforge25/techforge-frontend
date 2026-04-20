@@ -1,7 +1,7 @@
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
-import { aboutWhyChooseSection } from "@/data/about";
+import { aboutWhyChooseSection } from "@/data/aboutUs-Page";
 
 function SuccessRate() {
   return (

@@ -14,7 +14,7 @@ import {
   heroMobileStairs,
   heroTabletStairs,
   type HeroStairLayer,
-} from "@/data/home";
+} from "@/data/home-page";
 
 const primaryCtaLabel = "view all services";
 const quoteCtaLabel = "get a Quotes";

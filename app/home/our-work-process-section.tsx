@@ -3,7 +3,7 @@ import SectionHeading from "@/components/ui/section-heading";
 import headingGlow from "@/assets/images/home/work-process/heading-glow.svg";
 import ourWorkBg from "@/assets/images/our-work-bg.webp";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
-import { processSteps } from "@/data/home";
+import { processSteps } from "@/data/home-page";
 
 const timelineLineClass =
   "pointer-events-none absolute left-1/2 top-[152px] h-[2px] w-[1112px] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(80,95,251,0)_0%,#505FFB_3.6%,#7F8AFF_21.7%,#505FFB_38.4%,#505FFB_65.4%,#7F8AFF_83.1%,#505FFB_96%,rgba(80,95,251,0)_100%)]";

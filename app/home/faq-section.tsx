@@ -4,7 +4,7 @@ import { useState } from "react";
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
-import { faqCopy, faqItems, type FaqItem } from "@/data/home";
+import { faqCopy, faqItems, type FaqItem } from "@/data/faqs";
 
 const faqOpenBorderStyle = {
   backgroundImage:

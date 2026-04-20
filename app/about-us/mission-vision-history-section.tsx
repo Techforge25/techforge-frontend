@@ -1,5 +1,5 @@
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
-import { aboutMissionVisionHistorySection } from "@/data/about";
+import { aboutMissionVisionHistorySection } from "@/data/aboutUs-Page";
 
 type AboutFeatureCardProps = {
   title: string;
