@@ -1,9 +1,10 @@
  "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import SectionBadge from "@/components/ui/section-badge";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
-import { blogFilterOptions, blogPageCopy, blogPosts, blogSectionBg } from "@/data/blog";
+import { blogFilterOptions, blogPageCopy, blogPosts, blogSectionBg, type BlogCardItem } from "@/data/blogs";
 
 const allCategoriesLabel = "All Categories";
 
@@ -83,7 +84,7 @@ function BlogFiltersPanel({
 function BlogCard({
   post,
 }: {
-  post: (typeof blogPosts)[number];
+  post: BlogCardItem;
 }) {
   return (
     <article className="overflow-hidden rounded-[16px] border border-[#272835] bg-[#121324]">
@@ -103,7 +104,11 @@ function BlogCard({
         <div className="rounded-[100px] border border-[#2424a6] bg-[rgba(36,36,166,0.2)] px-3 py-[5px] text-[10px] font-medium leading-[1.2] text-[#5160ff] inline-block">
           {post.category}
         </div>
-        <h3 className="mt-[10px] text-[20px] font-medium leading-[30px] text-white">{post.title}</h3>
+        <h3 className="mt-[10px] text-[20px] font-medium leading-[30px] text-white">
+          <Link href={`/blog-details/${post.slug}`} className="transition-colors hover:text-[#5160ff]">
+            {post.title}
+          </Link>
+        </h3>
         <p className="mt-6 text-sm leading-5 text-[#ededed]">
           {post.author}
           <span className="mx-[6px] text-[#555d6d]">-</span>

@@ -72,6 +72,7 @@ export default function ServicesGrid({ copy, cards, loadMoreConfig }: ServicesGr
                   title={service.title}
                   description={service.description}
                   accent={service.accent}
+                  href={service.href}
                 />
               ))}
             </div>

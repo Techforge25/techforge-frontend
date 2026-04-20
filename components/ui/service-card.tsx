@@ -1,3 +1,4 @@
+import Link from "next/link";
 import iconArrowRight from "@/assets/images/home/services/icon-arrow-right.svg";
 
 type ServiceCardProps = {
@@ -6,6 +7,7 @@ type ServiceCardProps = {
   title: string;
   description: string;
   accent?: "pink" | "blue";
+  href?: string;
 };
 
 export default function ServiceCard({
@@ -14,6 +16,7 @@ export default function ServiceCard({
   title,
   description,
   accent = "blue",
+  href,
 }: ServiceCardProps) {
   const iconBg =
     accent === "pink"
@@ -62,10 +65,17 @@ export default function ServiceCard({
           <p className="mt-3 max-w-[286px] text-[15px] leading-[1.45] text-[#cac6dd] sm:text-base sm:leading-[1.4]">{description}</p>
         </div>
 
-        <button type="button" className="mt-auto inline-flex items-center gap-2 text-white">
-          <span className="text-[18px] capitalize leading-none sm:text-[20px]">Read more</span>
-          <img src={iconArrowRight.src} alt="" aria-hidden="true" className="h-6 w-6 object-contain sm:h-7 sm:w-7" />
-        </button>
+        {href ? (
+          <Link href={href} className="mt-auto inline-flex items-center gap-2 text-white">
+            <span className="text-[18px] capitalize leading-none sm:text-[20px]">Read more</span>
+            <img src={iconArrowRight.src} alt="" aria-hidden="true" className="h-6 w-6 object-contain sm:h-7 sm:w-7" />
+          </Link>
+        ) : (
+          <button type="button" className="mt-auto inline-flex items-center gap-2 text-white">
+            <span className="text-[18px] capitalize leading-none sm:text-[20px]">Read more</span>
+            <img src={iconArrowRight.src} alt="" aria-hidden="true" className="h-6 w-6 object-contain sm:h-7 sm:w-7" />
+          </button>
+        )}
       </div>
     </article>
   );
