@@ -20,17 +20,18 @@ export type FooterQuickLink = {
 export const footerQuickLinks = [
   { label: "Home", href: "/" },
   { label: "About us", href: "/about-us" },
-  { label: "services", href: "#services" },
+  { label: "services", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Contact", href: "#contact" },
+  { label: "Blogs", href: "/blog" },
+  { label: "Contact", href: "/contactUs" },
 ] as const satisfies readonly FooterQuickLink[];
 
 export const footerServices = [
-  "Mobile App Development",
-  "Website Development",
-  "Digital Marketing | SEO",
-  "Social Media Marketing",
-  "Google Ads | PPC",
-  "Graphic Design",
-  "UIUX Design",
-] as const;
+  { label: "Mobile App Development", href: "/services" },
+  { label: "Website Development", href: "/services" },
+  { label: "Digital Marketing | SEO", href: "/services" },
+  { label: "Social Media Marketing", href: "/services" },
+  { label: "Google Ads | PPC", href: "/services" },
+  { label: "Graphic Design", href: "/services" },
+  { label: "UIUX Design", href: "/services" },
+] as const satisfies readonly FooterQuickLink[];

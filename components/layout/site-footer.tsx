@@ -11,7 +11,7 @@ function FooterLinksColumn({
   titleClassName = "capitalize",
 }: {
   title: string;
-  items: readonly string[] | readonly FooterQuickLink[];
+  items: readonly FooterQuickLink[];
   titleClassName?: string;
 }) {
   return (
@@ -19,12 +19,9 @@ function FooterLinksColumn({
       <h3 className={`text-[22px] font-bold leading-5 text-white ${titleClassName}`}>{title}</h3>
       <ul className="flex flex-col gap-8 text-base leading-[18px] text-[#cac6dd]">
         {items.map((item) => (
-          <li key={typeof item === "string" ? item : item.label}>
-            <a
-              href={typeof item === "string" ? "#" : item.href}
-              className="transition-colors hover:text-white"
-            >
-              {typeof item === "string" ? item : item.label}
+          <li key={item.label}>
+            <a href={item.href} className="transition-colors hover:text-white">
+              {item.label}
             </a>
           </li>
         ))}

@@ -1,4 +1,4 @@
-import sectionBg from "@/assets/images/contact-us/section-bg.png";
+import sectionBg from "@/assets/images/contact-us/section-bg.webp";
 import detailsPattern from "@/assets/images/contact-us/details.svg";
 import iconLightbulb from "@/assets/images/contact-us/icons/lightbulb.svg";
 import iconPhone from "@/assets/images/contact-us/icons/phone.svg";
@@ -7,10 +7,10 @@ import iconPaperPlane from "@/assets/images/contact-us/icons/paper-plane.svg";
 import iconFlagUS from "@/assets/images/contact-us/icons/flag-us.svg";
 import iconChevronDown from "@/assets/images/contact-us/icons/chevron-down.svg";
 import iconEye from "@/assets/images/contact-us/icons/eye.svg";
-import emailImage from "@/assets/images/email.png";
-import phoneImage from "@/assets/images/phone.png";
-import messageImage from "@/assets/images/message.png";
-import locationImage from "@/assets/images/location.png";
+import emailImage from "@/assets/images/email.webp";
+import phoneImage from "@/assets/images/phone.webp";
+import messageImage from "@/assets/images/message.webp";
+import locationImage from "@/assets/images/location.webp";
 
 export const contactUsHeroCopy = {
   heading: "How can we help?",

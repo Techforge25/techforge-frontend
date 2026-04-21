@@ -1,4 +1,4 @@
-import card2 from "@/assets/images/blog/cards/card-2.png";
+import card2 from "@/assets/images/blog/cards/card-2.webp";
 import type { BlogDetail } from "../types";
 
 export const blogDetail: BlogDetail = {

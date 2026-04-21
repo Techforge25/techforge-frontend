@@ -1,6 +1,11 @@
+"use client";
+
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+
 type HeaderQuoteButtonProps = {
   className?: string;
   label?: string;
+  opensQuoteModal?: boolean;
 };
 
 const headerQuoteButtonBase =
@@ -11,10 +16,14 @@ const headerQuoteButtonInteraction =
 export default function HeaderQuoteButton({
   className = "",
   label = "get a Quotes",
+  opensQuoteModal = true,
 }: HeaderQuoteButtonProps) {
+  const { openQuoteModal } = useQuoteModal();
+
   return (
     <button
       type="button"
+      onClick={opensQuoteModal ? openQuoteModal : undefined}
       className={[headerQuoteButtonBase, headerQuoteButtonInteraction, className].join(" ")}
     >
       {label}

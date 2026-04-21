@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 type PortfolioCardProps = {
+  href: string;
   image: string;
   title: string;
   subtitle: string;
@@ -7,6 +10,7 @@ type PortfolioCardProps = {
 };
 
 export default function PortfolioCard({
+  href,
   image,
   title,
   subtitle,
@@ -14,7 +18,8 @@ export default function PortfolioCard({
   className = "",
 }: PortfolioCardProps) {
   return (
-    <article
+    <Link
+      href={href}
       className={`group relative h-[270px] overflow-hidden border border-[#121324] bg-[#050512] sm:h-[300px] md:h-[330px] lg:h-[346px] ${className}`}
     >
       <img
@@ -38,6 +43,6 @@ export default function PortfolioCard({
           className="h-9 w-9 shrink-0 transition-transform duration-200 group-hover:translate-x-[2px] group-hover:-translate-y-[2px] sm:h-10 sm:w-10"
         />
       </div>
-    </article>
+    </Link>
   );
 }

@@ -4,9 +4,28 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import SectionBadge from "@/components/ui/section-badge";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
-import { blogFilterOptions, blogPageCopy, blogPosts, blogSectionBg, type BlogCardItem } from "@/data/blogs";
+import { blogDetails, type BlogCardItem } from "@/data/blogs";
 
 const allCategoriesLabel = "All Categories";
+const blogPageCopy = {
+  badgeLabel: "blogs",
+  heading: "Our blog",
+  description:
+    "Articles on Starts up, tech, technology, digital marketing and google ads PPC practices.",
+  listHeading: "All categories",
+} as const;
+
+const blogPosts: readonly BlogCardItem[] = blogDetails.map((blog) => ({
+  slug: blog.slug,
+  title: blog.title,
+  category: blog.category,
+  author: blog.author,
+  date: blog.date,
+  image: blog.image,
+  overlay: blog.overlay,
+}));
+
+const blogFilterOptions = [allCategoriesLabel, ...Array.from(new Set(blogDetails.map((blog) => blog.category).filter(Boolean)))] as const;
 
 function BlogFiltersPanel({
   searchQuery,

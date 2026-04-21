@@ -135,7 +135,7 @@ function HeroDesktop() {
           />
           <HeroDescription className="w-[514px] text-base leading-[18px]" />
         </div>
-        <PrimaryButton label={quoteCtaLabel} />
+        <PrimaryButton label={quoteCtaLabel} opensQuoteModal />
       </div>
 
       {heroDesktopChips.map((chip) => (

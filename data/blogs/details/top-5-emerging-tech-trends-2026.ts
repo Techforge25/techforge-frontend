@@ -1,5 +1,5 @@
-import card3 from "@/assets/images/blog/cards/card-3.png";
-import overlay2 from "@/assets/images/blog/cards/overlay-2.png";
+import card3 from "@/assets/images/blog/cards/card-3.webp";
+import overlay2 from "@/assets/images/blog/cards/overlay-2.webp";
 import type { BlogDetail } from "../types";
 
 export const blogDetail: BlogDetail = {

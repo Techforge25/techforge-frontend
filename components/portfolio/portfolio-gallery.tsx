@@ -13,6 +13,8 @@ type PortfolioFilterItem = {
 };
 
 type PortfolioCardItem = {
+  slug: string;
+  href: string;
   image: string;
   title: string;
   subtitle: string;
@@ -125,7 +127,8 @@ export default function PortfolioGallery({
             <div className="grid w-full grid-cols-1 gap-0 border border-[#121324] sm:grid-cols-2 xl:grid-cols-3">
               {visibleCards.map((card, index) => (
                 <PortfolioCard
-                  key={`${card.title}-${card.subtitle}`}
+                  key={card.slug}
+                  href={card.href}
                   image={card.image}
                   title={card.title}
                   subtitle={card.subtitle}

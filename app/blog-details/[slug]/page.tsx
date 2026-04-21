@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import SiteHeader from "@/components/layout/site-header";
-import { blogDetails, blogSectionBg, getBlogBySlug } from "@/data/blogs";
+import { blogDetails, getBlogBySlug } from "@/data/blogs";
 import type { BlogDetailSection } from "@/data/blogs";
 
 type BlogDetailPageProps = {

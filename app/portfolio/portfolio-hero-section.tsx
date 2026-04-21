@@ -1,6 +1,6 @@
 import SectionBadge from "@/components/ui/section-badge";
 import { SectionPaddingX120R72 } from "@/components/ui/section-padding";
-import portfolioHeroImage from "@/assets/images/portfolio-hero.png";
+import portfolioHeroImage from "@/assets/images/portfolio-hero.webp";
 import { portfolioHeroSection } from "@/data/portfolio";
 
 const visualGlowStyle = {

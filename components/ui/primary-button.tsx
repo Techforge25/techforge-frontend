@@ -1,6 +1,11 @@
+"use client";
+
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+
 type PrimaryButtonProps = {
   className?: string;
   label?: string;
+  opensQuoteModal?: boolean;
 };
 
 const primaryButtonBase =
@@ -11,10 +16,14 @@ const primaryButtonInteraction =
 export default function PrimaryButton({
   className = "",
   label = "get a Quotes",
+  opensQuoteModal = false,
 }: PrimaryButtonProps) {
+  const { openQuoteModal } = useQuoteModal();
+
   return (
     <button
       type="button"
+      onClick={opensQuoteModal ? openQuoteModal : undefined}
       className={[primaryButtonBase, primaryButtonInteraction, className].join(" ")}
     >
       {label}

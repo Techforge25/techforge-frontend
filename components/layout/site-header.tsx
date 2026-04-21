@@ -24,8 +24,7 @@ export default function SiteHeader() {
 
   const isActiveLink = (href: string) => {
     if (href === "/") return pathname === "/" || pathname === "/home";
-    if (href === "/about-us") return pathname === "/about-us";
-    return false;
+    return pathname === href;
   };
 
   const mobileMenuPanelClass = `absolute right-4 top-[calc(100%+10px)] z-30 w-[min(92vw,340px)] rounded-2xl border border-[#248aff] bg-[#111327] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.45)] transition-all duration-200 xl:hidden ${
@@ -35,7 +34,7 @@ export default function SiteHeader() {
   return (
     <header className="relative h-[72px] w-full overflow-visible bg-[#131324] sm:h-[80px] xl:h-[89px]">
       <div className="relative mx-auto flex h-full w-full max-w-[1200px] items-center px-4 sm:px-6 xl:px-0">
-        <a href="#" aria-label="Techforge Innovations" className="shrink-0">
+        <a href="/" aria-label="Techforge Innovations" className="shrink-0">
           <img
             src={logo.src}
             alt="Techforge Innovations"

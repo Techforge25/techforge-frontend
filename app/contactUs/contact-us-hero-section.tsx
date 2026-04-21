@@ -3,7 +3,7 @@
 import { type ReactNode, useEffect, useRef, useState } from "react";
 import { CountryPhoneInput } from "@/components/ui/country-phone-input";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
-import starImg from "@/assets/images/star.png";
+import starImg from "@/assets/images/star.webp";
 import dropdownIcon from "@/assets/images/dropdown.svg";
 import {
   contactFormCopy,

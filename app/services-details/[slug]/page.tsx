@@ -5,7 +5,6 @@ import FaqSection from "@/app/home/faq-section";
 import SectionBadge from "@/components/ui/section-badge";
 import {
   getServiceBySlug,
-  serviceDetailPageDefaults,
   serviceDetails,
 } from "@/data/services";
 
@@ -17,26 +16,6 @@ export function generateStaticParams() {
   return serviceDetails.map((service) => ({ slug: service.slug }));
 }
 
-function resolvePageCopy(service: NonNullable<ReturnType<typeof getServiceBySlug>>) {
-  const overviewSection = service.sections?.find((section) => section.heading.toLowerCase() === "overview");
-
-  return {
-    badgeLabel: service.badgeLabel ?? serviceDetailPageDefaults.badgeLabel,
-    mainVisual: service.mainVisual ?? serviceDetailPageDefaults.mainVisual,
-    overviewHeading: service.overviewHeading ?? serviceDetailPageDefaults.overviewHeading,
-    overviewContent:
-      service.overviewContent ??
-      overviewSection?.content ??
-      service.description ??
-      serviceDetailPageDefaults.overviewContent,
-    benefitsHeading: service.benefitsHeading ?? serviceDetailPageDefaults.benefitsHeading,
-    benefitsContent: service.benefitsContent,
-    benefits: service.benefits?.length ? service.benefits : serviceDetailPageDefaults.benefits,
-    goalHeading: service.goalHeading ?? serviceDetailPageDefaults.goalHeading,
-    goalContent: service.goalContent ?? serviceDetailPageDefaults.goalContent,
-  };
-}
-
 export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
@@ -45,7 +24,9 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
     notFound();
   }
 
-  const copy = resolvePageCopy(service);
+  const overviewSection = service.sections?.find((section) => section.heading.toLowerCase() === "overview");
+  const overviewContent = service.overviewContent ?? overviewSection?.content ?? service.description;
+  const benefits = service.benefits ?? [];
 
   return (
     <>
@@ -62,7 +43,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         <div className="relative z-10 mx-auto w-full max-w-[1200px]">
           <div className="flex flex-col gap-8 lg:gap-8">
             <header className="mx-auto flex w-full max-w-[790px] flex-col items-center gap-[22px] text-center">
-              <SectionBadge label={copy.badgeLabel} className="h-[28px] border border-[rgba(36,138,255,0.6)] px-[11px] py-0 text-sm leading-none" />
+              <SectionBadge label={service.badgeLabel ?? "Our Latest Services"} className="h-[28px] border border-[rgba(36,138,255,0.6)] px-[11px] py-0 text-sm leading-none" />
               <h1 className="bg-gradient-to-b from-white to-[rgba(255,255,255,0.2)] bg-clip-text font-['Neiko','Satoshi',sans-serif] text-[34px] uppercase leading-[1.08] text-transparent sm:text-[42px] lg:text-[48px] lg:leading-[52px]">
                 {service.title}
               </h1>
@@ -74,7 +55,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             <div className="overflow-hidden rounded-[22px] border border-[#121324] bg-[rgba(19,19,36,0.5)] p-px">
               <div className="relative h-[260px] w-full overflow-hidden rounded-[21px] sm:h-[340px] lg:h-[479px]">
                 <Image
-                  src={copy.mainVisual}
+                  src={service.mainVisual ?? service.icon}
                   alt={service.title}
                   fill
                   className="object-cover"
@@ -86,17 +67,17 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             <article className="space-y-10">
               <section className="space-y-3">
                 <h2 className="bg-gradient-to-r from-white to-[rgba(255,255,255,0.2)] bg-clip-text text-[30px] font-medium leading-[1.2] text-transparent">
-                  {copy.overviewHeading}
+                  {service.overviewHeading}
                 </h2>
-                <p className="text-base leading-[1.4] text-[#cac6dd]">{copy.overviewContent}</p>
+                <p className="text-base leading-[1.4] text-[#cac6dd]">{overviewContent}</p>
               </section>
 
               <section className="space-y-3">
                 <h2 className="bg-gradient-to-r from-white to-[rgba(255,255,255,0.2)] bg-clip-text text-[30px] font-medium leading-[1.2] text-transparent">
-                  {copy.benefitsHeading}
+                  {service.benefitsHeading}
                 </h2>
                 <ul className="space-y-3">
-                  {copy.benefits.map((point) => (
+                  {benefits.map((point) => (
                     <li key={point} className="flex items-start gap-3 text-base leading-[1.4] text-[#cac6dd]">
                       <span className="mt-[2px] inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-[6px] border border-white bg-[linear-gradient(180deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_100%),linear-gradient(90deg,#5160FF_0%,#5160FF_100%)] shadow-[0_0.78px_1.56px_0_rgba(26,19,161,0.5),0_0_0_0.78px_#4f47eb]">
                         <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true">
@@ -118,9 +99,9 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
 
               <section className="space-y-3">
                 <h2 className="bg-gradient-to-r from-white to-[rgba(255,255,255,0.2)] bg-clip-text text-[30px] font-medium leading-[1.2] text-transparent">
-                  {copy.goalHeading}
+                  {service.goalHeading}
                 </h2>
-                <p className="text-base leading-[1.4] text-[#cac6dd]">{copy.goalContent}</p>
+                <p className="text-base leading-[1.4] text-[#cac6dd]">{service.goalContent}</p>
               </section>
             </article>
           </div>
