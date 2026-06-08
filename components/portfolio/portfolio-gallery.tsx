@@ -88,14 +88,20 @@ export default function PortfolioGallery({
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#00000c]">
+    <section data-home-portfolio className="relative overflow-hidden bg-[#00000c]">
       <div className="pointer-events-none absolute left-1/2 top-[-40px] h-[360px] w-[360px] -translate-x-1/2 bg-[radial-gradient(circle,rgba(36,36,166,0.35)_0%,rgba(0,0,12,0)_72%)] sm:top-[0px] sm:h-[420px] sm:w-[420px] lg:top-[20px] lg:h-[500px] lg:w-[500px]" />
       <div className="pointer-events-none absolute left-[-140px] top-[58%] h-[320px] w-[320px] bg-[radial-gradient(circle,rgba(36,36,166,0.3)_0%,rgba(0,0,12,0)_70%)] sm:left-[-110px] sm:h-[420px] sm:w-[420px] lg:left-[0%] lg:top-[55%] lg:h-[550px] lg:w-[550px]" />
 
       <SectionPaddingX120R72>
         <SectionPaddingY72 className="pb-[72px] pt-[34px]">
-          <div className="relative z-10 mx-auto flex w-full max-w-[1200px] flex-col items-center gap-7 sm:gap-10 lg:gap-[42px]">
-            <div className="flex w-full flex-col items-center gap-4 text-center sm:gap-[22px]">
+          <div
+            data-portfolio-shell
+            className="relative z-10 mx-auto flex w-full max-w-[1200px] flex-col items-center gap-7 sm:gap-10 lg:gap-[42px]"
+          >
+            <div
+              data-portfolio-head
+              className="flex w-full flex-col items-center gap-4 text-center sm:gap-[22px]"
+            >
               <SectionBadge label={copy.badgeLabel} className="h-[28px] px-[11px] py-0 text-sm leading-none" />
               <SectionHeading
                 line1={copy.headingLine1}
@@ -108,7 +114,10 @@ export default function PortfolioGallery({
 
             <div className="w-full px-1 sm:px-0">
               <div className="flex w-full justify-center pb-1">
-                <div className="inline-flex h-[48px] items-center rounded-[160px] border border-[rgba(255,255,255,0.18)] bg-[#131324] px-1.5 py-2 sm:px-3 sm:pr-4">
+                <div
+                  data-portfolio-filters
+                  className="inline-flex h-[48px] items-center rounded-[160px] border border-[rgba(255,255,255,0.18)] bg-[#131324] px-1.5 py-2 sm:px-3 sm:pr-4"
+                >
                   {filters.map((filter) => (
                     <button
                       key={filter.key}
@@ -124,10 +133,10 @@ export default function PortfolioGallery({
               </div>
             </div>
 
-            <div className="grid w-full grid-cols-1 gap-0 border border-[#121324] sm:grid-cols-2 xl:grid-cols-3">
+            <div data-portfolio-cards className="grid w-full grid-cols-1 gap-0 border border-[#121324] sm:grid-cols-2 xl:grid-cols-3">
               {visibleCards.map((card, index) => (
                 <PortfolioCard
-                  key={card.slug}
+                  key={`${card.slug}-${index}`}
                   href={card.href}
                   image={card.image}
                   title={card.title}

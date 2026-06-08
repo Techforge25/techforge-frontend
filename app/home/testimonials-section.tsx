@@ -22,7 +22,7 @@ function TestimonialCard({
   className?: string;
 }) {
   return (
-    <article className={`${className} shrink-0 rounded-[16px] border border-[#121324] bg-[rgba(19,19,36,0.5)] px-6 pb-[34px] pt-6`}>
+    <article data-testimonial-card className={`${className} shrink-0 rounded-[16px] border border-[#121324] bg-[rgba(19,19,36,0.5)] px-6 pb-[34px] pt-6`}>
       <div className="flex items-center gap-3">
         <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#575757]">
           <img src={avatar} alt="" className="h-full w-full object-cover" />
@@ -106,7 +106,7 @@ function TestimonialsMobile() {
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#00000c]">
+    <section data-home-testimonials className="relative overflow-hidden bg-[#00000c]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_70%_at_50%_40%,rgba(76,76,255,0.2)_0%,rgba(0,0,12,0)_52%,rgba(0,0,12,0.88)_100%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,12,0.1)_0%,rgba(0,0,12,0.55)_58%,rgba(0,0,12,0.9)_100%)]" />
 

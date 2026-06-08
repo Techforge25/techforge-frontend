@@ -26,10 +26,10 @@ const homeRecentServicesCards: readonly ServiceCardItem[] = serviceDetails
       href: `/services-details/${service.slug}`,
     };
   })
-  .slice(0, 2);
+  .slice(0, 9);
 
 export default function OurServicesSection() {
   return (
-    <ServicesGrid copy={homeServicesCopy} cards={homeRecentServicesCards} />
+    <ServicesGrid copy={homeServicesCopy} cards={homeRecentServicesCards} desktopScrollGroupSize={3} />
   );
 }

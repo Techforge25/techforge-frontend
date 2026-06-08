@@ -139,24 +139,24 @@ export const heroCopy = {
 // About Us section data
 export const aboutUsCopy = {
   badgeLabel: "about us",
-  headingLine1: "Expert Digital Solutions &",
-  headingLine2Highlight: "Creative Tech",
-  headingLine2After: "Team",
-  leadPrefix: "Discover TechForge Innovations",
+  headingLine1: "Building the Future with",
+  headingLine2Highlight: "Growth",
+  headingLine2After: "",
+  leadPrefix: "",
   leadText:
-    "a team of creative developers, marketers, and designers with 15+ years of experience delivering websites, mobile apps, SEO, and digital solutions that drive success.",
+    "At TechForge Innovations, we turn ideas into powerful digital products. From MVPs to AI solutions, we build smart, scalable systems that help businesses grow and succeed.",
   ctaLabel: "learn more",
 } as const;
 
 // Why Choose Us section data
 export const whyChooseUsCopy = {
   badgeLabel: "why choose us",
-  headingLine1: "Trusted Digital Experts",
-  headingLine2Before: "15+ Years in",
-  headingLine2Highlight: "Web, App",
-  headingLine2After: "& Marketing",
+  headingLine1: "Why Businesses Trust TechForge to Build",
+  // headingLine2Before: "Build Scalable",
+  headingLine2Highlight: "Scalable Solutions",
+  // headingLine2After: "& Marketing",
   description:
-    "Partner with TechForge Innovations for proven digital solutions. We bring 15+ years of expertise in web development, mobile apps, SEO, and digital marketing.",
+    "We focus on delivering high-quality, scalable products with speed and precision. Our team blends modern technology with a business-first approach to create solutions that drive real results.",
   successRate: "94%",
   successTitle: "Success Rate",
   successDescription: "We help you achieve your goals",

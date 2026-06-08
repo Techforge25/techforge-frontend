@@ -27,7 +27,9 @@ export default function ServiceCard({
 
   return (
     <article
-      className="group relative min-h-[320px] w-full overflow-hidden rounded-[24px] sm:min-h-[348px]"
+      data-service-card
+      data-magnetic="true"
+      className="group relative min-h-[320px] w-full overflow-hidden rounded-[24px] will-change-transform sm:min-h-[348px]"
       style={{
         clipPath: cardClipPath,
         borderRadius: "24px",

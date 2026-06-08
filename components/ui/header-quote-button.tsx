@@ -24,6 +24,7 @@ export default function HeaderQuoteButton({
     <button
       type="button"
       onClick={opensQuoteModal ? openQuoteModal : undefined}
+      data-magnetic="true"
       className={[headerQuoteButtonBase, headerQuoteButtonInteraction, className].join(" ")}
     >
       {label}

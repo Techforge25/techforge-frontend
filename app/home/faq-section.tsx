@@ -50,7 +50,7 @@ function FaqAccordionItem({
   onToggle: () => void;
 }) {
   return (
-    <article className={isOpen ? faqItemOpenClass : faqItemClosedClass} style={isOpen ? faqOpenBorderStyle : undefined}>
+    <article data-faq-item className={isOpen ? faqItemOpenClass : faqItemClosedClass} style={isOpen ? faqOpenBorderStyle : undefined}>
       <button type="button" onClick={onToggle} className={isOpen ? faqButtonOpenClass : faqButtonClosedClass}>
         <span className="flex-1 pr-2 text-[15px] font-medium leading-[1.35] tracking-[0.01em] text-white sm:text-[18px] sm:leading-7 sm:tracking-normal">
           {item.question}
@@ -71,7 +71,7 @@ export default function FaqSection() {
   const [openId, setOpenId] = useState("services");
 
   return (
-    <section className="relative overflow-hidden bg-[#00000c]">
+    <section data-home-faq className="relative overflow-hidden bg-[#00000c]">
       <div className="pointer-events-none absolute left-[60%] top-[120px] h-[300px] w-[300px] -translate-x-1/2 bg-[radial-gradient(circle,rgba(36,36,166,0.35)_0%,rgba(0,0,12,0)_72%)]" />
 
       <SectionPaddingX120R72>

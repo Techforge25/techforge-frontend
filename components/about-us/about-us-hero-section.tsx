@@ -13,8 +13,9 @@ type AboutUsHeroSectionProps = {
 
 export default function AboutUsHeroSection({ ctaHref }: AboutUsHeroSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-[#00000c]">
+    <section data-home-about className="relative min-h-[100svh] overflow-hidden bg-[#00000c] lg:min-h-screen">
       <div
+        data-parallax-bg="about"
         className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-80"
         style={{ backgroundImage: `url(${aboutUsBg.src})` }}
         aria-hidden="true"
@@ -22,41 +23,57 @@ export default function AboutUsHeroSection({ ctaHref }: AboutUsHeroSectionProps)
       <GlowLineAboutUsPointer className="left-0 top-0 hidden h-[307px] w-[226px] md:block" />
       <GlowLineAboutUsPointer className="bottom-0 right-0 hidden h-[333px] w-[235px] rotate-[180deg] md:block" />
 
-      <SectionPaddingY72 className="px-4 sm:px-6 lg:px-8">
-        <div className="relative z-10 mx-auto flex w-full max-w-[990px] flex-col items-center gap-6 text-center sm:gap-8">
-          <SectionBadge label={aboutUsCopy.badgeLabel} className="h-[28px] px-[11px] py-0 text-sm leading-none" />
-          <SectionHeading
-            line1={aboutUsCopy.headingLine1}
-            line2Highlight={aboutUsCopy.headingLine2Highlight}
-            line2After={aboutUsCopy.headingLine2After}
-            className="max-w-[790px] text-[30px] font-normal leading-[1.04] sm:text-[38px] md:text-[48px] md:leading-[52px]"
-            line2ClassName="mt-1"
-          />
+      <SectionPaddingY72 className="flex min-h-[100svh] items-center px-4 sm:px-6 lg:min-h-screen lg:px-8">
+        <div
+          data-about-shell
+          className="relative z-10 mx-auto flex w-full max-w-[990px] flex-col items-center gap-8 text-center sm:gap-10 lg:gap-12"
+        >
+          <div data-about-badge>
+            <SectionBadge label={aboutUsCopy.badgeLabel} className="h-[28px] px-[11px] py-0 text-sm leading-none" />
+          </div>
+          <div data-about-heading>
+            <SectionHeading
+              line1={aboutUsCopy.headingLine1}
+              line2Highlight={aboutUsCopy.headingLine2Highlight}
+              line2After={aboutUsCopy.headingLine2After}
+              className="max-w-[790px] text-[30px] font-normal leading-[1.04] sm:text-[38px] md:text-[48px] md:leading-[52px]"
+              line2ClassName="mt-1"
+            />
+          </div>
 
-          <div className="relative w-full overflow-hidden rounded-xl sm:rounded-2xl">
+          <div
+            data-parallax-item="about-visual"
+            className="relative mt-3 w-full overflow-hidden rounded-xl sm:mt-5 sm:rounded-2xl lg:mt-6"
+          >
             <img
+              data-about-image
               src={aboutUsMainImage.src}
               alt="Techforge team collaboration"
-              className="h-[300px] w-full object-cover object-center sm:h-[390px] md:h-[460px]"
+              className="h-[320px] w-full object-cover object-center will-change-transform sm:h-[430px] md:h-[520px] lg:h-[62vh]"
             />
             <div className="absolute inset-0 bg-[linear-gradient(0deg,#00000c_18%,rgba(0,0,114,0)_98%)]" />
-            <p className="absolute bottom-5 left-1/2 w-[92%] max-w-[780px] -translate-x-1/2 text-center text-[15px] leading-[1.35] text-white sm:bottom-8 sm:w-[90%] sm:text-[20px] sm:leading-[1.28] md:text-[28px] md:leading-[33px]">
+            <p
+              data-about-lead
+              className="absolute bottom-5 left-1/2 w-[92%] max-w-[780px] -translate-x-1/2 text-center text-[15px] leading-[1.35] text-white sm:bottom-8 sm:w-[90%] sm:text-[20px] sm:leading-[1.28] md:text-[28px] md:leading-[33px]"
+            >
               {aboutUsCopy.leadPrefix} <span className="text-[#cac6dd]">{aboutUsCopy.leadText}</span>
             </p>
           </div>
 
           {ctaHref ? (
-            <a href={ctaHref}>
+            <a href={ctaHref} data-about-cta>
               <PrimaryButton
                 label={aboutUsCopy.ctaLabel}
                 className="h-[44px] px-5 text-[15px] sm:h-[47px] sm:px-6 sm:text-base"
               />
             </a>
           ) : (
-            <PrimaryButton
-              label={aboutUsCopy.ctaLabel}
-              className="h-[44px] px-5 text-[15px] sm:h-[47px] sm:px-6 sm:text-base"
-            />
+            <div data-about-cta>
+              <PrimaryButton
+                label={aboutUsCopy.ctaLabel}
+                className="h-[44px] px-5 text-[15px] sm:h-[47px] sm:px-6 sm:text-base"
+              />
+            </div>
           )}
         </div>
       </SectionPaddingY72>

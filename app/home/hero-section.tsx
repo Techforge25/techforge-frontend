@@ -139,7 +139,7 @@ function HeroDesktop() {
       </div>
 
       {heroDesktopChips.map((chip) => (
-        <div key={chip.label} className={chip.className}>
+        <div key={chip.label} data-hero-chip className={chip.className}>
           <GradientChip label={chip.label} style={chip.style} />
         </div>
       ))}
@@ -194,16 +194,16 @@ function HeroMobileFallback() {
           mirrored
         />
 
-        <div className="absolute left-[45px] top-[-4px] w-[150px] origin-left scale-[0.55] rotate-[24deg]">
+        <div data-hero-chip className="absolute left-[45px] top-[-4px] w-[150px] origin-left scale-[0.55] rotate-[24deg]">
           <GradientChip label="UX/UI design" style={heroChipStyles.green} />
         </div>
-        <div className="absolute left-[93px] top-[56px] origin-left scale-[0.55] rotate-[19deg]">
+        <div data-hero-chip className="absolute left-[93px] top-[56px] origin-left scale-[0.55] rotate-[19deg]">
           <GradientChip label="web development" style={heroChipStyles.pink} />
         </div>
-        <div className="absolute right-[46px] top-[-6px] origin-right scale-[0.55] -rotate-[28deg]">
+        <div data-hero-chip className="absolute right-[46px] top-[-6px] origin-right scale-[0.55] -rotate-[28deg]">
           <GradientChip label="Mobile app" style={heroChipStyles.cyan} />
         </div>
-        <div className="absolute right-[92px] top-[53px] origin-right scale-[0.55] -rotate-[26deg]">
+        <div data-hero-chip className="absolute right-[92px] top-[53px] origin-right scale-[0.55] -rotate-[26deg]">
           <GradientChip label="software development" style={heroChipStyles.yellow} />
         </div>
       </div>
@@ -255,16 +255,16 @@ function HeroTabletFallback() {
         mirrored
       />
 
-      <div className="pointer-events-none absolute left-[24px] top-[500px] origin-left scale-[0.7] rotate-[24deg] lg:left-[42px]">
+      <div data-hero-chip className="pointer-events-none absolute left-[24px] top-[500px] origin-left scale-[0.7] rotate-[24deg] lg:left-[42px]">
         <GradientChip label="UX/UI design" style={heroChipStyles.green} />
       </div>
-      <div className="pointer-events-none absolute left-[92px] top-[594px] origin-left scale-[0.7] rotate-[19deg] lg:left-[118px]">
+      <div data-hero-chip className="pointer-events-none absolute left-[92px] top-[594px] origin-left scale-[0.7] rotate-[19deg] lg:left-[118px]">
         <GradientChip label="web development" style={heroChipStyles.pink} />
       </div>
-      <div className="pointer-events-none absolute right-[24px] top-[500px] origin-right scale-[0.7] -rotate-[24deg] lg:right-[42px]">
+      <div data-hero-chip className="pointer-events-none absolute right-[24px] top-[500px] origin-right scale-[0.7] -rotate-[24deg] lg:right-[42px]">
         <GradientChip label="Mobile app" style={heroChipStyles.cyan} />
       </div>
-      <div className="pointer-events-none absolute right-[92px] top-[594px] origin-right scale-[0.7] -rotate-[24deg] lg:right-[118px]">
+      <div data-hero-chip className="pointer-events-none absolute right-[92px] top-[594px] origin-right scale-[0.7] -rotate-[24deg] lg:right-[118px]">
         <GradientChip label="software development" style={heroChipStyles.yellow} />
       </div>
 
@@ -282,9 +282,10 @@ function HeroTabletFallback() {
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[#030313]">
+    <section data-home-hero className="relative overflow-hidden bg-[#030313]">
       <div
         aria-hidden="true"
+        data-hero-glow
         className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[520px] bg-[radial-gradient(52%_58%_at_50%_28%,rgba(58,59,145,0.58)_0%,rgba(41,42,101,0.38)_38%,rgba(14,15,31,0.16)_72%,rgba(3,3,19,0)_100%)] md:h-[620px]"
       />
 

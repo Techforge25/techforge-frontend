@@ -10,7 +10,7 @@ const timelineLineClass =
 
 function TimelineStep({ step }: { step: (typeof processSteps)[number] }) {
   return (
-    <div className="absolute inset-y-0" style={{ left: step.left }}>
+    <div data-process-step className="absolute inset-y-0" style={{ left: step.left }}>
       <div
         aria-hidden="true"
         className={`pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 ${step.glowClassName}`}
@@ -72,8 +72,9 @@ function ProcessTimelineMobile() {
 
 export default function OurWorkProcessSection() {
   return (
-    <section className="relative overflow-hidden bg-[#00000c]">
+    <section data-home-process className="relative overflow-hidden bg-[#00000c]">
       <div
+        data-parallax-bg="process"
         className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-30"
         style={{ backgroundImage: `url(${ourWorkBg.src})` }}
         aria-hidden="true"

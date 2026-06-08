@@ -24,6 +24,7 @@ export default function PrimaryButton({
     <button
       type="button"
       onClick={opensQuoteModal ? openQuoteModal : undefined}
+      data-magnetic="true"
       className={[primaryButtonBase, primaryButtonInteraction, className].join(" ")}
     >
       {label}

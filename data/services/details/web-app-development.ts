@@ -1,5 +1,4 @@
 import iconClipboard from "@/assets/images/home/services/icon-clipboard.svg";
-import serviceMainVisual from "@/assets/images/services-details/service-main-visual.webp";
 import type { ServiceDetail } from "../types";
 
 export const serviceDetail: ServiceDetail = {
@@ -9,7 +8,8 @@ export const serviceDetail: ServiceDetail = {
   description:
     "Develop scalable web applications with robust architecture, clean UX, and maintainable codebases.",
   badgeLabel: "Our Latest Services",
-  mainVisual: serviceMainVisual.src,
+  mainVisual:
+    "https://images.pexels.com/photos/33433724/pexels-photo-33433724.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-33433724.jpg&fm=jpg",
   overviewHeading: "What is Web App Development?",
   overviewContent:
     "Web App Development helps businesses deliver better digital experiences with structured execution, technical reliability, and user-focused outcomes.",

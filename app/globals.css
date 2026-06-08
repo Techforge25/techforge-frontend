@@ -40,6 +40,96 @@ body {
   font-family: "Satoshi", Arial, Helvetica, sans-serif;
 }
 
+body.has-custom-cursor-ready,
+body.has-custom-cursor-ready a,
+body.has-custom-cursor-ready button,
+body.has-custom-cursor-ready [role="button"],
+body.has-custom-cursor-ready p,
+body.has-custom-cursor-ready span,
+body.has-custom-cursor-ready h1,
+body.has-custom-cursor-ready h2,
+body.has-custom-cursor-ready h3,
+body.has-custom-cursor-ready h4,
+body.has-custom-cursor-ready h5,
+body.has-custom-cursor-ready h6,
+body.has-custom-cursor-ready li {
+  cursor: none !important;
+}
+
+body.has-custom-cursor-ready input,
+body.has-custom-cursor-ready textarea,
+body.has-custom-cursor-ready select,
+body.has-custom-cursor-ready [contenteditable="true"] {
+  cursor: text !important;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(91, 117, 255, 0.9);
+  border-radius: 999px;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    opacity 180ms ease,
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+  box-shadow: 0 0 0 1px rgba(53, 64, 163, 0.32), 0 0 26px rgba(53, 72, 255, 0.36);
+  background: rgba(18, 20, 46, 0.15);
+  mix-blend-mode: screen;
+}
+
+.custom-cursor-ring--text {
+  transform: translate(-50%, -50%) scale(2.2);
+  border-color: rgba(114, 137, 255, 0.98);
+  box-shadow:
+    0 0 0 1px rgba(102, 122, 255, 0.5),
+    0 0 36px rgba(73, 93, 255, 0.55);
+  background: rgba(60, 84, 255, 0.2);
+}
+
+.custom-cursor-ring--interactive {
+  transform: translate(-50%, -50%) scale(1.45);
+  border-color: rgba(94, 142, 255, 1);
+  box-shadow:
+    0 0 0 1px rgba(84, 133, 255, 0.55),
+    0 0 32px rgba(55, 118, 255, 0.65);
+  background: rgba(46, 72, 206, 0.26);
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: #cfd6ff;
+  box-shadow: 0 0 14px rgba(109, 133, 255, 0.8);
+  transition:
+    opacity 180ms ease,
+    width 220ms ease,
+    height 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.custom-cursor-dot--active {
+  width: 8px;
+  height: 8px;
+  background: #e5e9ff;
+  box-shadow: 0 0 20px rgba(114, 137, 255, 0.95);
+}
+
 h1,
 h2,
 h3,

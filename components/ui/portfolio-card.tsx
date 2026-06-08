@@ -20,6 +20,7 @@ export default function PortfolioCard({
   return (
     <Link
       href={href}
+      data-portfolio-card
       className={`group relative h-[270px] overflow-hidden border border-[#121324] bg-[#050512] sm:h-[300px] md:h-[330px] lg:h-[346px] ${className}`}
     >
       <img

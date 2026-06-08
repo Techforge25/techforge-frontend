@@ -1,5 +1,4 @@
 import iconLogomark from "@/assets/images/home/services/icon-logomark.svg";
-import serviceMainVisual from "@/assets/images/services-details/service-main-visual.webp";
 import type { ServiceDetail } from "../types";
 
 export const serviceDetail: ServiceDetail = {
@@ -10,7 +9,8 @@ export const serviceDetail: ServiceDetail = {
   description:
     "We create fast, SEO-optimized websites that are fully responsive and custom-built to reflect your brand and grow your business.",
   badgeLabel: "Our Latest Services",
-  mainVisual: serviceMainVisual.src,
+  mainVisual:
+    "https://images.pexels.com/photos/986774/pexels-photo-986774.jpeg?cs=srgb&dl=pexels-filippo-bergamaschi-202684-986774.jpg&fm=jpg",
   overviewHeading: "What is Website Development?",
   overviewContent:
     "Website Development helps businesses deliver better digital experiences with structured execution, technical reliability, and user-focused outcomes.",
