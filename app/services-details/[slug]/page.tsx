@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import OurWorkProcessSection from "@/app/home/our-work-process-section";
 import FaqSection from "@/app/home/faq-section";
 import SectionBadge from "@/components/ui/section-badge";
+import SiteHeader from "@/components/layout/site-header";
 import {
   getServiceBySlug,
   serviceDetails,
@@ -30,6 +31,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
 
   return (
     <>
+      <SiteHeader />
       <section className="relative w-full overflow-hidden bg-[#00000c] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-[72px]">
         <div
           aria-hidden="true"

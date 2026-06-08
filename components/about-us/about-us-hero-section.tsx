@@ -1,3 +1,4 @@
+import Link from "next/link";
 import aboutUsBg from "@/assets/images/aboutus-bg.webp";
 import aboutUsMainImage from "@/assets/images/aboutus-main-images.webp";
 import GlowLineAboutUsPointer from "@/components/ui/glowline-aboutus-pointer";
@@ -61,16 +62,17 @@ export default function AboutUsHeroSection({ ctaHref }: AboutUsHeroSectionProps)
           </div>
 
           {ctaHref ? (
-            <a href={ctaHref} data-about-cta>
+            <Link href={ctaHref} data-about-cta>
               <PrimaryButton
                 label={aboutUsCopy.ctaLabel}
                 className="h-[44px] px-5 text-[15px] sm:h-[47px] sm:px-6 sm:text-base"
               />
-            </a>
+            </Link>
           ) : (
             <div data-about-cta>
               <PrimaryButton
-                label={aboutUsCopy.ctaLabel}
+                label="get a quotes"
+                opensQuoteModal={true}
                 className="h-[44px] px-5 text-[15px] sm:h-[47px] sm:px-6 sm:text-base"
               />
             </div>

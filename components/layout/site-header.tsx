@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import headerGlowLineA from "@/assets/images/header-glow-line-a.svg";
 import logo from "@/assets/images/logo-clean.webp";
 import HeaderQuoteButton from "@/components/ui/header-quote-button";
@@ -34,22 +35,22 @@ export default function SiteHeader() {
   return (
     <header className="relative h-[72px] w-full overflow-visible bg-[#131324] sm:h-[80px] xl:h-[89px]">
       <div className="relative mx-auto flex h-full w-full max-w-[1200px] items-center px-4 sm:px-6 xl:px-0">
-        <a href="/" aria-label="Techforge Innovations" className="shrink-0">
+        <Link href="/" aria-label="Techforge Innovations" className="shrink-0">
           <img
             src={logo.src}
             alt="Techforge Innovations"
             className="block h-[42px] w-[190px] bg-transparent object-contain object-left sm:h-[52px] sm:w-[250px] md:h-[58px] md:w-[290px] lg:h-[46px] lg:w-[230px] xl:h-[42px] xl:w-[251px]"
           />
-        </a>
+        </Link>
 
         <nav
           className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-8 xl:flex"
           aria-label="Main navigation"
         >
           {navigationItems.map((item) => (
-            <a key={item.label} href={item.href} className={getNavLinkClass(isActiveLink(item.href))}>
+            <Link key={item.label} href={item.href} className={getNavLinkClass(isActiveLink(item.href))}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -79,14 +80,14 @@ export default function SiteHeader() {
       <div className={mobileMenuPanelClass}>
         <nav className="flex flex-col gap-3" aria-label="Mobile navigation">
           {navigationItems.map((item) => (
-            <a
+            <Link
               key={`mobile-${item.label}`}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
               className={`${navLinkBaseClass} ${isActiveLink(item.href) ? navLinkActiveClass : "hover:text-white"} w-full rounded-md px-2 py-1`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <HeaderQuoteButton className="mt-4 h-[44px] w-full" label="get a Quotes" />

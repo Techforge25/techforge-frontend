@@ -89,9 +89,7 @@ export default function WhyChooseUsSection() {
               <div data-why-heading>
                 <SectionHeading
                   line1={whyChooseUsCopy.headingLine1}
-                  line2Before={whyChooseUsCopy.headingLine2Before}
                   line2Highlight={whyChooseUsCopy.headingLine2Highlight}
-                  line2After={whyChooseUsCopy.headingLine2After}
                   className="mt-6 w-full text-[32px] leading-[1.2] sm:text-[42px] md:text-[48px] lg:leading-[56px]"
                   line2ClassName="mt-2"
                   highlightClassName="px-2"

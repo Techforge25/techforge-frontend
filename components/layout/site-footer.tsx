@@ -1,3 +1,4 @@
+import Link from "next/link";
 import footerCtaOverlay from "@/assets/images/home/footer/footer-cta-overlay.webp";
 import footerLinksBackground from "@/assets/images/home/footer/footer-links-bg.webp";
 import footerLogo from "@/assets/images/home/footer/footer-logo.webp";
@@ -20,9 +21,9 @@ function FooterLinksColumn({
       <ul className="flex flex-col gap-8 text-base leading-[18px] text-[#cac6dd]">
         {items.map((item) => (
           <li key={item.label}>
-            <a href={item.href} className="transition-colors hover:text-white">
+            <Link href={item.href} className="transition-colors hover:text-white">
               {item.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

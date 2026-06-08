@@ -28,11 +28,13 @@ export function CountryPhoneInput({
   value,
   onChange,
   required = true,
+  error,
 }: {
   label: string;
   value: string | undefined;
   onChange: (value: string) => void;
   required?: boolean;
+  error?: string;
 }) {
   const [selectedCountry, setSelectedCountry] = useState<Country>("US");
   const [isOpen, setIsOpen] = useState(false);
@@ -80,7 +82,9 @@ export function CountryPhoneInput({
         {label} {required ? <span className="text-[#5160ff]">*</span> : null}
       </p>
 
-      <div className="relative h-[50px] rounded-[12px] border border-[rgba(255,255,255,0.2)] bg-[#1d1f38] px-[12px]">
+      <div className={`relative h-[50px] rounded-[12px] border bg-[#1d1f38] px-[12px] transition-colors ${
+        error ? "border-red-500" : "border-[rgba(255,255,255,0.2)] focus-within:border-[#5160ff]"
+      }`}>
         <div className="flex h-full items-center gap-[10px]">
           <div ref={dropdownRef} className="relative shrink-0">
             <button
@@ -176,6 +180,7 @@ export function CountryPhoneInput({
           />
         </div>
       </div>
+      {error && <span className="text-xs text-red-400 mt-1">{error}</span>}
     </label>
   );
 }

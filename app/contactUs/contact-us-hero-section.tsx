@@ -54,15 +54,21 @@ function ContactMiniCard({
 function ContactInput({
   label,
   placeholder,
+  value,
+  onChange,
   required = true,
   trailing,
   multiline = false,
+  error,
 }: {
   label: string;
   placeholder: string;
+  value: string;
+  onChange: (value: string) => void;
   required?: boolean;
   trailing?: ReactNode;
   multiline?: boolean;
+  error?: string;
 }) {
   return (
     <label className="flex w-full flex-col gap-[6px]">
@@ -70,7 +76,9 @@ function ContactInput({
         {label} {required ? <span className="text-[#5160ff]">*</span> : null}
       </p>
       <div
-        className={`flex rounded-[12px] border border-[rgba(255,255,255,0.2)] bg-[#1d1f38] px-[12px] py-[10px] ${
+        className={`flex rounded-[12px] border bg-[#1d1f38] px-[12px] py-[10px] transition-colors ${
+          error ? "border-red-500" : "border-[rgba(255,255,255,0.2)] focus-within:border-[#5160ff]"
+        } ${
           multiline
             ? "min-h-[184px] items-start gap-[12px]"
             : "h-[50px] items-center gap-[12px] py-0"
@@ -79,6 +87,8 @@ function ContactInput({
         {multiline ? (
           <textarea
             placeholder={placeholder}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
             className="h-full min-h-[160px] w-full resize-none bg-transparent font-['Inter','Satoshi',sans-serif] text-[14px] font-normal leading-[20px] text-[#c4c4ff] placeholder:text-[#c4c4ff] focus:outline-none"
           />
         ) : (
@@ -86,12 +96,15 @@ function ContactInput({
             <input
               type="text"
               placeholder={placeholder}
+              value={value}
+              onChange={(e) => onChange(e.target.value)}
               className="w-full bg-transparent font-['Inter','Satoshi',sans-serif] text-[14px] font-normal leading-[20px] text-[#c4c4ff] placeholder:text-[#c4c4ff] focus:outline-none"
             />
           </div>
         )}
         {trailing}
       </div>
+      {error && <span className="text-xs text-red-400 mt-1">{error}</span>}
     </label>
   );
 }
@@ -102,12 +115,14 @@ function ContactServicesSelect({
   options,
   value,
   onChange,
+  error,
 }: {
   label: string;
   placeholder: string;
   options: readonly string[];
   value: string;
   onChange: (value: string) => void;
+  error?: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -131,7 +146,9 @@ function ContactServicesSelect({
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
-          className="flex h-[50px] w-full items-center justify-between gap-3 rounded-[12px] border border-[rgba(255,255,255,0.2)] bg-[#1d1f38] px-[12px] text-left"
+          className={`flex h-[50px] w-full items-center justify-between gap-3 rounded-[12px] border bg-[#1d1f38] px-[12px] text-left transition-colors ${
+            error ? "border-red-500" : "border-[rgba(255,255,255,0.2)] focus-within:border-[#5160ff]"
+          }`}
           aria-haspopup="listbox"
           aria-expanded={isOpen}
         >
@@ -177,13 +194,61 @@ function ContactServicesSelect({
           </ul>
         ) : null}
       </div>
+      {error && <span className="text-xs text-red-400 mt-1">{error}</span>}
     </label>
   );
 }
 
 export default function ContactUsHeroSection() {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
   const [phoneValue, setPhoneValue] = useState<string | undefined>("");
   const [selectedService, setSelectedService] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    if (!fullName.trim()) {
+      newErrors.fullName = "Full Name is required";
+    }
+    if (!email.trim()) {
+      newErrors.email = "Email Address is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+    if (!phoneValue || phoneValue.trim().length < 6) {
+      newErrors.phone = "A valid phone number is required";
+    }
+    if (!selectedService) {
+      newErrors.service = "Please select a service";
+    }
+    if (!message.trim()) {
+      newErrors.message = "Message details are required";
+    } else if (message.trim().length < 5) {
+      newErrors.message = "Message must be at least 5 characters long";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+    setIsSubmitting(true);
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="relative overflow-hidden bg-[#00000c]">
@@ -224,39 +289,96 @@ export default function ContactUsHeroSection() {
               </div>
             </div>
 
-            <div className="w-full rounded-2xl border border-[#272835] bg-[#121324] p-6 pb-8 sm:p-8 sm:pb-10 lg:w-[540px] lg:shrink-0">
-              <div className="space-y-[30px]">
-                <ContactInput label={contactFormCopy.fullNameLabel} placeholder="John" />
+            <div className="w-full rounded-2xl border border-[#272835] bg-[#121324] p-6 pb-8 sm:p-8 sm:pb-10 lg:w-[540px] lg:shrink-0 transition-all duration-300">
+              {isSubmitted ? (
+                <div className="flex flex-col items-center justify-center py-16 text-center">
+                  <div className="relative mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#1b1c3d] border border-[#248aff] shadow-[0_0_24px_rgba(36,138,255,0.3)]">
+                    <svg
+                      className="h-10 w-10 text-[#5160ff] animate-[pulse_2s_infinite]"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h2 className="bg-gradient-to-b from-white to-[rgba(255,255,255,0.35)] bg-clip-text text-[26px] font-bold uppercase leading-[1.1] text-transparent sm:text-[32px]">
+                    Message Sent!
+                  </h2>
+                  <p className="mt-4 max-w-[400px] text-sm leading-6 text-[#a4abb8] sm:text-base">
+                    Thank you for contacting TechForge Innovations. Your message has been sent successfully. Our team will get back to you shortly.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setFullName("");
+                      setEmail("");
+                      setPhoneValue("");
+                      setSelectedService("");
+                      setMessage("");
+                      setErrors({});
+                      setIsSubmitted(false);
+                    }}
+                    className="mt-8 inline-flex h-[45px] w-full max-w-[200px] items-center justify-center rounded-[140px] border border-[#248aff] bg-[#2424a6] px-6 text-sm capitalize text-white transition-[box-shadow,filter] duration-200 hover:shadow-[0_6px_26px_0_rgba(55,118,255,0.72)] hover:[filter:brightness(1.06)]"
+                  >
+                    Send Another Message
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  <div className="space-y-[30px]">
+                    <ContactInput
+                      label={contactFormCopy.fullNameLabel}
+                      placeholder="John"
+                      value={fullName}
+                      onChange={setFullName}
+                      error={errors.fullName}
+                    />
 
-                <CountryPhoneInput
-                  label={contactFormCopy.phoneLabel}
-                  value={phoneValue}
-                  onChange={setPhoneValue}
-                />
+                    <CountryPhoneInput
+                      label={contactFormCopy.phoneLabel}
+                      value={phoneValue}
+                      onChange={setPhoneValue}
+                      error={errors.phone}
+                    />
 
-                <ContactInput label={contactFormCopy.emailLabel} placeholder="example@mail.com" />
+                    <ContactInput
+                      label={contactFormCopy.emailLabel}
+                      placeholder="example@mail.com"
+                      value={email}
+                      onChange={setEmail}
+                      error={errors.email}
+                    />
 
-                <ContactServicesSelect
-                  label={contactFormCopy.ServicesLabel}
-                  placeholder="Select Services"
-                  options={contactServiceOptions}
-                  value={selectedService}
-                  onChange={setSelectedService}
-                />
+                    <ContactServicesSelect
+                      label={contactFormCopy.ServicesLabel}
+                      placeholder="Select Services"
+                      options={contactServiceOptions}
+                      value={selectedService}
+                      onChange={setSelectedService}
+                      error={errors.service}
+                    />
 
-                <ContactInput
-                  label={contactFormCopy.messageLabel}
-                  placeholder="Enter here"
-                  multiline
-                />
-              </div>
+                    <ContactInput
+                      label={contactFormCopy.messageLabel}
+                      placeholder="Enter here"
+                      multiline
+                      value={message}
+                      onChange={setMessage}
+                      error={errors.message}
+                    />
+                  </div>
 
-              <button
-                type="button"
-                className="mt-[50px] inline-flex h-[47px] w-full items-center justify-center rounded-[140px] border border-[#2424a6] bg-[#2424a6] px-6 text-base capitalize text-white"
-              >
-                {contactFormCopy.submitLabel}
-              </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="mt-[50px] inline-flex h-[47px] w-full items-center justify-center rounded-[140px] border border-[#248aff] bg-[#2424a6] px-6 text-base capitalize text-white transition-[box-shadow,filter] duration-200 hover:shadow-[0_6px_26px_0_rgba(55,118,255,0.72)] hover:[filter:brightness(1.06)] focus-visible:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Sending..." : contactFormCopy.submitLabel}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </SectionPaddingY72>
