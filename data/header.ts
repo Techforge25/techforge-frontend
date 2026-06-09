@@ -10,5 +10,6 @@ export const navigationItems: readonly NavigationItem[] = [
   { label: "Our Portfolio", href: "/portfolio" },
   { label: "Services", href: "/services" },
   { label: "Blogs", href: "/blog" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contactUs" },
 ];
