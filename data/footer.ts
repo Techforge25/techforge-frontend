@@ -27,11 +27,10 @@ export const footerQuickLinks = [
 ] as const satisfies readonly FooterQuickLink[];
 
 export const footerServices = [
-  { label: "Mobile App Development", href: "/services" },
-  { label: "Website Development", href: "/services" },
-  { label: "Digital Marketing | SEO", href: "/services" },
-  { label: "Social Media Marketing", href: "/services" },
-  { label: "Google Ads | PPC", href: "/services" },
-  { label: "Graphic Design", href: "/services" },
-  { label: "UIUX Design", href: "/services" },
+  { label: "AI Agents", href: "/services-details/ai-agents" },
+  { label: "AI Integrations", href: "/services-details/ai-integrations" },
+  { label: "Web App Development", href: "/services-details/web-app-development" },
+  { label: "Website Development", href: "/services-details/website-development" },
+  { label: "MVP Development", href: "/services-details/mvp-development" },
+  { label: "SAAS Based Product Development", href: "/services-details/saas-product-development" },
 ] as const satisfies readonly FooterQuickLink[];
