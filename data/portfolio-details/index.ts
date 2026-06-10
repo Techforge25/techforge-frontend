@@ -2,7 +2,7 @@
 import { portfolioDetail as goatfarming } from "./details/goatfarming";
 import { portfolioDetail as swimnest } from "./details/Swimnest";
 import { portfolioDetail as ispwn } from "./details/ispwn";
-import { portfolioDetail as bmsauna } from "./details/b&m-sauna";
+import { portfolioDetail as bmsauna } from "./details/bm-sauna";
 import { portfolioDetail as birdieGame } from "./details/golf-game";
 import { portfolioDetail as nonprofit } from "./details/nonprofit-WP";
 import { portfolioDetail as webirmingham } from "./details/webirmingham";

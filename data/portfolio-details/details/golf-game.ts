@@ -15,37 +15,43 @@ export const portfolioDetail: PortfolioDetail = {
 
     briefTitle: "Project Brief",
     briefDescription:
-        "Creating a seamless digital ecosystem for local neighborhoods to thrive. Neighbourly was designed to bridge the gap between physical proximity and digital collaboration, fostering stronger, safer, and more connected communities through intuitive design.",
+        "Birdie Game is a comprehensive sports and match management ecosystem designed to simplify how clubs, teams, and players organize, manage, and track competitive games. TechForge Innovations developed a scalable role-based platform that enables Super Admins, Club Admins, Captains, and Players to collaborate seamlessly through a centralized digital environment. The platform combines real-time score tracking, team management, match organization, and club administration into a unified experience across mobile and web devices.",
 
     challengeTitle: "The Challenge",
     challenges: [
-        "Fragmented communication across multiple social platforms.",
-        "Lack of verification leading to safety concerns in local groups.",
-        "Cluttered UI hindering elderly residents from participating.",
+        "Sports clubs relied on spreadsheets, messaging apps, and manual processes to manage games and player participation.",
+        "Tracking match progress, team performance, and player contributions across multiple clubs was inefficient.",
+        "Managing permissions and responsibilities for administrators, captains, and players required a structured role-based system.",
+        "Players lacked a centralized platform to monitor scores, upcoming matches, and team standings in real time.",
     ],
 
     solutionTitle: "The Solution",
     solutionDescription:
-        "TechForge Innovations engineered a hyper-local social infrastructure that prioritizes trust and clarity. We built a unified platform that replaces friction with flow.",
+        "TechForge Innovations engineered a multi-role sports management platform that centralizes club operations, match management, and score tracking. The system provides powerful administrative controls for organizers while delivering a seamless and engaging experience for captains and players through real-time updates and mobile accessibility.",
+
     solutionFeatures: [
-        "Interactive Map Interface",
-        "Real-time Community Alerts",
-        "Verified User Profiles",
-        "Local Governance Tools",
+        "Role-Based Access Management",
+        "Club & Team Administration",
+        "Match Creation & Scheduling",
+        "Real-Time Score Tracking",
+        "Player & Captain Dashboards",
+        "Live Match Monitoring",
+        "Leaderboard & Performance Insights",
+        "Cross-Platform Mobile & Web Experience",
     ],
 
     resultsHeading: "Results & Impact",
     results: [
-        { value: "40%", label: "Engagement increase" },
-        { value: "85k", label: "Active Neighbors" },
-        { value: "98%", label: "Trust Rating" },
+        { value: "80%", label: "Faster match administration" },
+        { value: "25k+", label: "Games and scores managed" },
+        { value: "95%", label: "Improvement in operational efficiency" },
     ],
+
     techStackHeading: "Technology Stack",
     techStacks: [
-        { id: "frontend", label: "React", icon: codeStackIcon.src },
+        { id: "mobile", label: "Flutter", icon: codeStackIcon.src },
         { id: "backend", label: "Node.js", icon: backendStackIcon.src },
         { id: "figma", label: "Figma", icon: figmaStackIcon.src },
         { id: "db", label: "MongoDB", icon: dbStackIcon.src },
-        { id: "cloud", label: "AWS", icon: cloudStackIcon.src },
     ],
 };

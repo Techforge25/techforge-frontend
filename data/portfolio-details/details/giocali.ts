@@ -15,34 +15,41 @@ export const portfolioDetail: PortfolioDetail = {
 
     briefTitle: "Project Brief",
     briefDescription:
-        "Creating a seamless digital ecosystem for local neighborhoods to thrive. Swimnest Web Platform was designed to bridge the gap between physical proximity and digital collaboration, fostering stronger, safer, and more connected communities through intuitive design.",
+        "Giocali is an all-in-one sports and tournament management ecosystem designed to transform how players, teams, and organizers manage competitive sports events. TechForge Innovations developed a scalable mobile and web platform that simplifies tournament creation, scheduling, team management, live event tracking, and premium membership experiences through a centralized digital solution.",
 
     challengeTitle: "The Challenge",
     challenges: [
-        "Fragmented communication across multiple social platforms.",
-        "Lack of verification leading to safety concerns in local groups.",
-        "Cluttered UI hindering elderly residents from participating.",
+        "Tournament organizers relied on multiple disconnected tools for registrations, scheduling, and communication.",
+        "Managing teams, players, fixtures, and match results manually led to operational inefficiencies.",
+        "Lack of a centralized platform made it difficult for participants to track tournaments and upcoming matches.",
+        "Coordinating event schedules and tournament updates across multiple channels created confusion for users.",
     ],
 
     solutionTitle: "The Solution",
     solutionDescription:
-        "TechForge Innovations engineered a hyper-local social infrastructure that prioritizes trust and clarity. We built a unified platform that replaces friction with flow.",
+        "TechForge Innovations engineered a comprehensive sports management ecosystem that streamlines tournament operations from registration to final results. The platform combines powerful organizer tools with an intuitive player experience, enabling seamless tournament administration, real-time scheduling, and centralized sports community engagement.",
+
     solutionFeatures: [
-        "Interactive Map Interface",
-        "Real-time Community Alerts",
-        "Verified User Profiles",
-        "Local Governance Tools",
+        "Tournament Creation & Management",
+        "Multiple Tournament Formats",
+        "Interactive Match Scheduling",
+        "Live Sports Calendar",
+        "Player & Team Profiles",
+        "Subscription & Premium Features",
+        "Real-Time Tournament Updates",
+        "Mobile & Web Synchronization",
     ],
 
     resultsHeading: "Results & Impact",
     results: [
-        { value: "40%", label: "Engagement increase" },
-        { value: "85k", label: "Active Neighbors" },
-        { value: "98%", label: "Trust Rating" },
+        { value: "75%", label: "Faster tournament management" },
+        { value: "50k+", label: "Athletes & participants engaged" },
+        { value: "90%", label: "Reduction in manual coordination" },
     ],
+
     techStackHeading: "Technology Stack",
     techStacks: [
-        { id: "frontend", label: "React", icon: codeStackIcon.src },
+        { id: "mobile", label: "Flutter", icon: codeStackIcon.src },
         { id: "backend", label: "Node.js", icon: backendStackIcon.src },
         { id: "figma", label: "Figma", icon: figmaStackIcon.src },
         { id: "db", label: "MongoDB", icon: dbStackIcon.src },

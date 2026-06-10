@@ -4,6 +4,7 @@ import backendStackIcon from "@/assets/images/stacks/backend.svg";
 import figmaStackIcon from "@/assets/images/stacks/figma.svg";
 import dbStackIcon from "@/assets/images/stacks/db.svg";
 import cloudStackIcon from "@/assets/images/stacks/cloud.svg";
+import mapsIcon from "@/assets/images/stacks/maps.svg";
 import type { PortfolioDetail } from "../types";
 
 export const portfolioDetail: PortfolioDetail = {
@@ -15,37 +16,46 @@ export const portfolioDetail: PortfolioDetail = {
 
     briefTitle: "Project Brief",
     briefDescription:
-        "Creating a seamless digital ecosystem for local neighborhoods to thrive. Swimnest Web Platform was designed to bridge the gap between physical proximity and digital collaboration, fostering stronger, safer, and more connected communities through intuitive design.",
+        "Taxi App is a modern on-demand ride-hailing platform designed to connect passengers and drivers through a seamless real-time transportation ecosystem. TechForge Innovations developed a scalable mobile solution that simplifies ride booking, driver matching, live trip tracking, digital payments, and route navigation. The platform delivers a fast, reliable, and user-friendly experience for both riders and drivers while optimizing transportation operations through intelligent automation.",
 
     challengeTitle: "The Challenge",
     challenges: [
-        "Fragmented communication across multiple social platforms.",
-        "Lack of verification leading to safety concerns in local groups.",
-        "Cluttered UI hindering elderly residents from participating.",
+        "Passengers needed a faster and more reliable way to book rides and track drivers in real time.",
+        "Managing ride requests, driver availability, and trip assignments manually was inefficient and difficult to scale.",
+        "Accurate fare calculations, route optimization, and real-time trip updates required advanced location-based services.",
+        "Providing a secure and seamless payment experience while maintaining operational transparency was essential for user trust.",
     ],
 
     solutionTitle: "The Solution",
     solutionDescription:
-        "TechForge Innovations engineered a hyper-local social infrastructure that prioritizes trust and clarity. We built a unified platform that replaces friction with flow.",
+        "TechForge Innovations engineered a comprehensive ride-hailing ecosystem that automates the entire transportation journey from booking to trip completion. The platform leverages real-time communication, location intelligence, and smart driver-passenger matching to deliver a reliable and efficient mobility experience.",
+
     solutionFeatures: [
-        "Interactive Map Interface",
-        "Real-time Community Alerts",
-        "Verified User Profiles",
-        "Local Governance Tools",
+        "Real-Time Ride Booking",
+        "Smart Driver Matching",
+        "Live GPS Tracking",
+        "Instant Fare Estimation",
+        "In-App Secure Payments",
+        "Driver & Passenger Management",
+        "Push Notifications & Ride Updates",
+        "Trip History & Analytics",
     ],
 
     resultsHeading: "Results & Impact",
     results: [
-        { value: "40%", label: "Engagement increase" },
-        { value: "85k", label: "Active Neighbors" },
-        { value: "98%", label: "Trust Rating" },
+        { value: "85%", label: "Faster ride allocation" },
+        { value: "100k+", label: "Trips processed" },
+        { value: "95%", label: "Customer satisfaction rate" },
     ],
+
+
     techStackHeading: "Technology Stack",
     techStacks: [
         { id: "frontend", label: "React", icon: codeStackIcon.src },
         { id: "backend", label: "Node.js", icon: backendStackIcon.src },
         { id: "figma", label: "Figma", icon: figmaStackIcon.src },
         { id: "db", label: "MongoDB", icon: dbStackIcon.src },
+        { id: "maps", label: "Google Maps API", icon: mapsIcon.src },
         { id: "cloud", label: "AWS", icon: cloudStackIcon.src },
     ],
 };

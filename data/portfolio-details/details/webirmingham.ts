@@ -1,9 +1,8 @@
 import banner from "@/assets/images/portfolio/real-estate-wp.png";
-import codeStackIcon from "@/assets/images/stacks/code.svg";
-import backendStackIcon from "@/assets/images/stacks/backend.svg";
-import figmaStackIcon from "@/assets/images/stacks/figma.svg";
 import dbStackIcon from "@/assets/images/stacks/db.svg";
-import cloudStackIcon from "@/assets/images/stacks/cloud.svg";
+import wordpressIcon from "@/assets/images/stacks/wordpress.svg";
+import elementorIcon from "@/assets/images/stacks/elementor.svg";
+import formIcon from "@/assets/images/stacks/form.svg";
 import type { PortfolioDetail } from "../types";
 
 export const portfolioDetail: PortfolioDetail = {
@@ -15,37 +14,43 @@ export const portfolioDetail: PortfolioDetail = {
 
     briefTitle: "Project Brief",
     briefDescription:
-        "Creating a seamless digital ecosystem for local neighborhoods to thrive. Swimnest Web Platform was designed to bridge the gap between physical proximity and digital collaboration, fostering stronger, safer, and more connected communities through intuitive design.",
+        "we Birmingham is a hyper-local real estate and community discovery platform designed to help buyers, sellers, and residents explore Birmingham's neighborhoods with confidence. TechForge Innovations developed a content-rich WordPress solution that combines property discovery, neighborhood insights, local guides, and lead generation tools into a seamless digital experience. The platform empowers users to make informed property decisions while connecting them directly with local real estate opportunities.",
 
     challengeTitle: "The Challenge",
     challenges: [
-        "Fragmented communication across multiple social platforms.",
-        "Lack of verification leading to safety concerns in local groups.",
-        "Cluttered UI hindering elderly residents from participating.",
+        "Property buyers struggled to find localized information about neighborhoods alongside property listings.",
+        "Real estate businesses needed a platform that could effectively showcase properties while generating qualified leads.",
+        "Managing large volumes of content, area guides, blogs, and listings required a scalable and organized content structure.",
+        "Traditional property websites lacked community-focused insights that help users make confident relocation and investment decisions.",
     ],
 
     solutionTitle: "The Solution",
     solutionDescription:
-        "TechForge Innovations engineered a hyper-local social infrastructure that prioritizes trust and clarity. We built a unified platform that replaces friction with flow.",
+        "TechForge Innovations engineered a modern real estate ecosystem that blends property search, local community insights, and content marketing into a single platform. The solution provides an engaging user experience while helping property professionals attract, educate, and convert potential buyers and sellers through valuable hyper-local content.",
+
     solutionFeatures: [
-        "Interactive Map Interface",
-        "Real-time Community Alerts",
-        "Verified User Profiles",
-        "Local Governance Tools",
+        "Property Listings Management",
+        "Neighborhood Discovery Pages",
+        "Local Area Guides",
+        "Lead Generation & Inquiry Forms",
+        "Content-Rich Blog Ecosystem",
+        "Responsive Property Search Experience",
+        "SEO-Optimized Content Architecture",
+        "Community-Focused User Journey",
     ],
 
     resultsHeading: "Results & Impact",
     results: [
-        { value: "40%", label: "Engagement increase" },
-        { value: "85k", label: "Active Neighbors" },
-        { value: "98%", label: "Trust Rating" },
+        { value: "3.5x", label: "Increase in property inquiries" },
+        { value: "120k+", label: "Neighborhood page visits" },
+        { value: "88%", label: "Growth in user engagement" },
     ],
+
     techStackHeading: "Technology Stack",
     techStacks: [
-        { id: "frontend", label: "React", icon: codeStackIcon.src },
-        { id: "backend", label: "Node.js", icon: backendStackIcon.src },
-        { id: "figma", label: "Figma", icon: figmaStackIcon.src },
-        { id: "db", label: "MongoDB", icon: dbStackIcon.src },
-        { id: "cloud", label: "AWS", icon: cloudStackIcon.src },
+        { id: "wordpress", label: "Wordpress", icon: wordpressIcon.src },
+        { id: "elementor", label: "Elementor", icon: elementorIcon.src },
+        { id: "form", label: "WPForms", icon: formIcon.src },
+        { id: "db", label: "MySQL", icon: dbStackIcon.src },
     ],
 };

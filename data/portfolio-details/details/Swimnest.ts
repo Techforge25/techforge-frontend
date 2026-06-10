@@ -15,37 +15,43 @@ export const portfolioDetail: PortfolioDetail = {
 
     briefTitle: "Project Brief",
     briefDescription:
-        "Creating a seamless digital ecosystem for local neighborhoods to thrive. Swimnest Web Platform was designed to bridge the gap between physical proximity and digital collaboration, fostering stronger, safer, and more connected communities through intuitive design.",
+        "SwimNest is a comprehensive swimming training, coaching, and e-commerce ecosystem designed to connect learners, coaches, and vendors through a single digital platform. TechForge Innovations developed a scalable multi-tenant solution that streamlines training management, session bookings, progress tracking, and swimming gear purchases. By combining learning, coaching, and commerce into one unified experience, SwimNest delivers a modern digital environment for the entire swimming community.",
 
     challengeTitle: "The Challenge",
     challenges: [
-        "Fragmented communication across multiple social platforms.",
-        "Lack of verification leading to safety concerns in local groups.",
-        "Cluttered UI hindering elderly residents from participating.",
+        "Swimming academies relied on disconnected systems to manage student enrollments, coaching schedules, and performance tracking.",
+        "Learners lacked a centralized platform to monitor progress, manage family profiles, and book training sessions efficiently.",
+        "Coaches faced difficulties tracking student development, managing schedules, and coordinating session bookings.",
+        "Swimming equipment purchases were handled through separate channels, creating a fragmented user experience.",
     ],
 
     solutionTitle: "The Solution",
     solutionDescription:
-        "TechForge Innovations engineered a hyper-local social infrastructure that prioritizes trust and clarity. We built a unified platform that replaces friction with flow.",
+        "TechForge Innovations engineered a unified sports and coaching ecosystem that centralizes learning, coaching operations, and e-commerce functionality. The platform empowers learners to manage their swimming journey, enables coaches to optimize training programs, and provides vendors with a dedicated marketplace for swimming products and accessories.",
+
     solutionFeatures: [
-        "Interactive Map Interface",
-        "Real-time Community Alerts",
-        "Verified User Profiles",
-        "Local Governance Tools",
+        "Learner & Family Profile Management",
+        "Training Session Booking System",
+        "Progress & Performance Tracking",
+        "Coach Dashboard & Schedule Management",
+        "Student Development Monitoring",
+        "Multi-Vendor Swimming Marketplace",
+        "Secure Online Shopping Experience",
+        "Role-Based Multi-Tenant Architecture",
     ],
 
     resultsHeading: "Results & Impact",
     results: [
-        { value: "40%", label: "Engagement increase" },
-        { value: "85k", label: "Active Neighbors" },
-        { value: "98%", label: "Trust Rating" },
+        { value: "70%", label: "Reduction in administrative workload" },
+        { value: "25k+", label: "Training sessions managed" },
+        { value: "92%", label: "User satisfaction rate" },
     ],
+
     techStackHeading: "Technology Stack",
     techStacks: [
-        { id: "frontend", label: "React", icon: codeStackIcon.src },
+        { id: "frontend", label: "Next.js", icon: codeStackIcon.src },
         { id: "backend", label: "Node.js", icon: backendStackIcon.src },
         { id: "figma", label: "Figma", icon: figmaStackIcon.src },
-        { id: "db", label: "MongoDB", icon: dbStackIcon.src },
-        { id: "cloud", label: "AWS", icon: cloudStackIcon.src },
+        { id: "db", label: "PostgreSQL", icon: dbStackIcon.src },
     ],
 };

@@ -15,37 +15,43 @@ export const portfolioDetail: PortfolioDetail = {
 
     briefTitle: "Project Brief",
     briefDescription:
-        "Creating a seamless digital ecosystem for local neighborhoods to thrive. Neighbourly was designed to bridge the gap between physical proximity and digital collaboration, fostering stronger, safer, and more connected communities through intuitive design.",
+        "Goat Farm Manager is a comprehensive livestock management platform built to modernize and digitize goat farming operations. TechForge Innovations developed a powerful mobile-first ecosystem that enables farmers and livestock managers to monitor herd health, breeding cycles, vaccinations, feeding schedules, and operational costs from a single centralized platform. By combining real-time field data collection with intelligent farm management tools, the platform helps improve productivity, animal welfare, and overall farm efficiency.",
 
     challengeTitle: "The Challenge",
     challenges: [
-        "Fragmented communication across multiple social platforms.",
-        "Lack of verification leading to safety concerns in local groups.",
-        "Cluttered UI hindering elderly residents from participating.",
+        "Farm records were maintained manually, making data retrieval and reporting time-consuming.",
+        "Tracking animal health, vaccinations, and breeding cycles across large herds was difficult and prone to errors.",
+        "Farmers lacked real-time visibility into livestock performance and operational costs.",
+        "Managing herd growth, feeding expenses, and treatment history without a centralized system reduced efficiency.",
     ],
 
     solutionTitle: "The Solution",
     solutionDescription:
-        "TechForge Innovations engineered a hyper-local social infrastructure that prioritizes trust and clarity. We built a unified platform that replaces friction with flow.",
+        "TechForge Innovations engineered an end-to-end digital farm management solution that centralizes every aspect of livestock operations. The platform empowers farmers with real-time access to herd data, health monitoring tools, breeding management, and performance analytics, enabling smarter decisions and more efficient farm operations.",
+
     solutionFeatures: [
-        "Interactive Map Interface",
-        "Real-time Community Alerts",
-        "Verified User Profiles",
-        "Local Governance Tools",
+        "Livestock Profile Management",
+        "Health & Vaccination Tracking",
+        "Breeding Cycle Management",
+        "Weight & Growth Monitoring",
+        "Feed & Expense Management",
+        "Farm Performance Analytics",
+        "Real-Time Mobile Data Entry",
+        "Centralized Reporting Dashboard",
     ],
 
     resultsHeading: "Results & Impact",
     results: [
-        { value: "40%", label: "Engagement increase" },
-        { value: "85k", label: "Active Neighbors" },
-        { value: "98%", label: "Trust Rating" },
+        { value: "65%", label: "Reduction in manual record keeping" },
+        { value: "20k+", label: "Livestock records managed" },
+        { value: "92%", label: "Improvement in farm data accuracy" },
     ],
+
     techStackHeading: "Technology Stack",
     techStacks: [
-        { id: "frontend", label: "React", icon: codeStackIcon.src },
+        { id: "mobile", label: "Flutter", icon: codeStackIcon.src },
         { id: "backend", label: "Node.js", icon: backendStackIcon.src },
         { id: "figma", label: "Figma", icon: figmaStackIcon.src },
         { id: "db", label: "MongoDB", icon: dbStackIcon.src },
-        { id: "cloud", label: "AWS", icon: cloudStackIcon.src },
     ],
 };
