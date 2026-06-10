@@ -1,11 +1,88 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
 import { jobPositions } from "@/data/careers";
+import dropdownIcon from "@/assets/images/dropdown.svg";
+
+interface Option {
+  value: string;
+  label: string;
+}
+
+interface CustomSelectProps {
+  value: string;
+  onChange: (value: string) => void;
+  options: Option[];
+  placeholder: string;
+}
+
+function CustomSelect({ value, onChange, options, placeholder }: CustomSelectProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const selectedOption = options.find((opt) => opt.value === value);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="relative min-w-[190px]">
+      <button
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="flex h-11 w-full items-center justify-between gap-3 rounded-[12px] border border-[#272835] bg-[#1d1f38] px-4 text-left text-sm text-[#dfe1e6] transition-all duration-200 hover:border-[#5160ff] focus:outline-none focus:border-[#5160ff]"
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+      >
+        <span className="truncate">{selectedOption ? selectedOption.label : placeholder}</span>
+        {/* Customized dropdown arrow with transition and padding */}
+        <img
+          src={dropdownIcon.src}
+          alt=""
+          aria-hidden="true"
+          className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      {isOpen && (
+        <ul
+          className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-[200px] overflow-y-auto rounded-xl border border-[rgba(124,136,188,0.3)] bg-[#121324] p-1 shadow-[0_10px_30px_rgba(0,0,0,0.5)] focus:outline-none"
+          role="listbox"
+        >
+          {options.map((opt) => {
+            const isSelected = opt.value === value;
+            return (
+              <li key={opt.value} role="option" aria-selected={isSelected}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onChange(opt.value);
+                    setIsOpen(false);
+                  }}
+                  className={`w-full rounded-lg px-3 py-2 text-left text-sm transition-colors duration-150 ${isSelected ? "bg-[#2424a6] text-white" : "text-[#cac6dd] hover:bg-[#1d1f38] hover:text-white"
+                    }`}
+                >
+                  {opt.label}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+}
 
 export default function OpenPositions() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,17 +98,39 @@ export default function OpenPositions() {
     return ["all", ...Array.from(new Set(jobPositions.map((job) => job.location.split("(")[0].trim())))];
   }, []);
 
+  const departmentOptions = useMemo(() => {
+    return [
+      { value: "all", label: "All Departments" },
+      ...departments
+        .filter((dept) => dept !== "all")
+        .map((dept) => ({
+          value: dept,
+          label: dept.charAt(0).toUpperCase() + dept.slice(1),
+        })),
+    ];
+  }, [departments]);
+
+  // const locationOptions = useMemo(() => {
+  //   return [
+  //     { value: "all", label: "All Locations" },
+  //     ...locations
+  //       .filter((loc) => loc !== "all")
+  //       .map((loc) => ({
+  //         value: loc,
+  //         label: loc,
+  //       })),
+  //   ];
+  // }, [locations]);
+
   const filteredJobs = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
     return jobPositions.filter((job) => {
       const matchesSearch =
         !query ||
-        job.title.toLowerCase().includes(query) ||
-        job.department.toLowerCase().includes(query) ||
-        job.description.toLowerCase().includes(query);
+        job.title.toLowerCase().includes(query);
 
       const matchesDept = selectedDept === "all" || job.department.toLowerCase() === selectedDept;
-      
+
       const normalizedJobLoc = job.location.split("(")[0].trim().toLowerCase();
       const matchesLoc = selectedLoc === "all" || normalizedJobLoc === selectedLoc.toLowerCase();
 
@@ -82,38 +181,21 @@ export default function OpenPositions() {
                 />
               </div>
 
-              {/* Department selection */}
+              {/* Custom Dropdown Filters */}
               <div className="flex flex-col gap-2 sm:flex-row">
-                <select
+                <CustomSelect
                   value={selectedDept}
-                  onChange={(e) => setSelectedDept(e.target.value)}
-                  className="h-11 rounded-[12px] border border-[#272835] bg-[#1d1f38] px-3 text-sm text-[#dfe1e6] outline-none focus:border-[#5160ff] min-w-[170px]"
-                >
-                  <option value="all">All Departments</option>
-                  {departments
-                    .filter((dept) => dept !== "all")
-                    .map((dept) => (
-                      <option key={dept} value={dept}>
-                        {dept.charAt(0).toUpperCase() + dept.slice(1)}
-                      </option>
-                    ))}
-                </select>
+                  onChange={setSelectedDept}
+                  options={departmentOptions}
+                  placeholder="All Departments"
+                />
 
-                {/* Location selection */}
-                <select
+                {/* <CustomSelect
                   value={selectedLoc}
-                  onChange={(e) => setSelectedLoc(e.target.value)}
-                  className="h-11 rounded-[12px] border border-[#272835] bg-[#1d1f38] px-3 text-sm text-[#dfe1e6] outline-none focus:border-[#5160ff] min-w-[170px]"
-                >
-                  <option value="all">All Locations</option>
-                  {locations
-                    .filter((loc) => loc !== "all")
-                    .map((loc) => (
-                      <option key={loc} value={loc}>
-                        {loc}
-                      </option>
-                    ))}
-                </select>
+                  onChange={setSelectedLoc}
+                  options={locationOptions}
+                  placeholder="All Locations"
+                /> */}
               </div>
             </div>
 
@@ -135,7 +217,7 @@ export default function OpenPositions() {
                     <h3 className="text-xl font-semibold text-white group-hover:text-[#5160ff] transition-colors duration-250">
                       {job.title}
                     </h3>
-                    
+
                     <p className="text-sm leading-relaxed text-[#cac6dd] line-clamp-3">
                       {job.description}
                     </p>

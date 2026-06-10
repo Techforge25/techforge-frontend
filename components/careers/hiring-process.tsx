@@ -60,7 +60,7 @@ export default function HiringProcess() {
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="text-lg font-semibold tracking-widest text-white">
                       {step.title}
                     </h3>
                     <p className="text-sm leading-relaxed text-[#cac6dd]">

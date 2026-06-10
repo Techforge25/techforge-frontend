@@ -4,7 +4,7 @@ export const jobDetail: JobPosition = {
   slug: "senior-frontend-developer",
   title: "Senior Frontend Developer",
   department: "Engineering",
-  location: "Islamabad, PK (Hybrid)",
+  location: "Karachi, PK (Onsite)",
   type: "Full-time",
   experience: "5+ years",
   salaryRange: "PKR 250k - 400k / month",
