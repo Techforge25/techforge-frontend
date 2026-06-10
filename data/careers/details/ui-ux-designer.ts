@@ -4,7 +4,7 @@ export const jobDetail: JobPosition = {
   slug: "ui-ux-designer",
   title: "UI/UX Designer",
   department: "Design",
-  location: "Remote",
+  location: "Karachi, PK (Onsite)",
   type: "Full-time",
   experience: "3+ years",
   salaryRange: "PKR 180k - 280k / month",

@@ -22,7 +22,7 @@ export default function CareersPage() {
       <Benefits />
       <OpenPositions />
       <HiringProcess />
-      <CareersCta />
+      {/* <CareersCta /> */}
       <FaqSection />
     </main>
   );

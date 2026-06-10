@@ -42,7 +42,7 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
             <h1 className="bg-gradient-to-b from-white to-[rgba(255,255,255,0.2)] bg-clip-text font-['Neiko','Satoshi',sans-serif] text-[34px] uppercase leading-[1.08] text-transparent sm:text-[42px] lg:text-[48px] lg:leading-[52px]">
               {job.title}
             </h1>
-            
+
             {/* Meta badges */}
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-[#cac6dd]">
               <span className="flex items-center gap-1.5">
@@ -83,12 +83,12 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
 
       {/* Main Details Grid */}
       <SectionPaddingX120R72>
-        <div className="relative z-10 mx-auto w-full max-w-[1200px]">
+        <div className="relative z-10 mx-auto w-full max-w-[1200px] pt-20">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
-            
+
             {/* Left detail body */}
             <div className="space-y-10 lg:col-span-2">
-              
+
               {/* About Role */}
               <section className="space-y-3">
                 <h2 className="bg-gradient-to-r from-white to-[rgba(255,255,255,0.2)] bg-clip-text text-2xl font-semibold leading-[1.2] text-transparent sm:text-3xl">
@@ -172,7 +172,7 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
               <div className="rounded-2xl border border-[#121324] bg-[rgba(19,19,36,0.5)] p-6 sticky top-28">
                 <h3 className="text-lg font-semibold text-white">Other Open Positions</h3>
                 <div className="my-4 h-px w-full bg-[#121324]" />
-                
+
                 {relatedJobs.length > 0 ? (
                   <div className="space-y-4">
                     {relatedJobs.map((related) => (

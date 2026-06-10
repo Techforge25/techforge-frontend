@@ -4,28 +4,28 @@ import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/sectio
 
 const benefitsList = [
   {
-    title: "Flexible & Hybrid Setup",
-    desc: "Choose from a comfortable hybrid setup at our Islamabad office or complete remote flexibility for design roles.",
+    title: "Competitive Salary",
+    desc: "Rewarding compensation packages designed to recognize your skills, performance, and contributions.",
   },
   {
-    title: "Premium Tech Stack",
-    desc: "Get equipped with top-tier hardware (MacBook Pros, ultra-wide monitors) and paid licenses for all professional software.",
+    title: "Career Growth",
+    desc: "Advance your career through challenging projects, mentorship, and continuous development opportunities.",
   },
   {
-    title: "Learning Stipends",
-    desc: "An annual budget set aside for you to purchase books, online courses, global certifications, or attend events.",
+    title: "Flexible Work Environment",
+    desc: "Work efficiently with flexible schedules that support productivity and work-life balance.",
   },
   {
-    title: "Comprehensive Healthcare",
-    desc: "Top-tier health coverage policies covering hospitalization and outpatient requirements for you and your dependents.",
+    title: "Learning & Development",
+    desc: "Access resources, training, and certifications to continuously expand your knowledge and expertise.",
   },
   {
-    title: "Paid Annual Retreats",
-    desc: "Every year we gather the entire team for retreats, gaming tournaments, and digital brainstorming hackathons.",
+    title: "Global Projects",
+    desc: "Collaborate on innovative projects for clients across different industries and international markets.",
   },
   {
-    title: "Bonuses & Equity",
-    desc: "Earn performance bonuses twice a year, and qualify for stock option pools depending on contribution levels.",
+    title: "Collaborative Culture",
+    desc: "Join a supportive team that values creativity, teamwork, knowledge sharing, and innovation.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function Benefits() {
                     {index + 1}
                   </span>
                   <div className="space-y-1">
-                    <h4 className="text-base font-semibold text-white">{perk.title}</h4>
+                    <h4 className="text-base font-semibold tracking-widest text-white">{perk.title}</h4>
                     <p className="text-sm leading-relaxed text-[#cac6dd]">{perk.desc}</p>
                   </div>
                 </div>

@@ -6,24 +6,23 @@ const cultureItems = [
   {
     title: "Innovation First",
     description: "We work with cutting-edge tools, build custom AI systems, and encourage experiments. We don't just follow standards, we set them.",
-    accent: "blue" as const,
+    // accent: "blue" as const,
   },
   {
     title: "Continuous Learning",
     description: "Every team member gets an annual learning stipend, active mentorship, and time dedicated solely to upskilling and research.",
-    accent: "pink" as const,
+    // accent: "blue" as const,
   },
   {
     title: "Synergy & Autonomy",
     description: "We run a flat organization. Work directly with leaders, take ownership of products, and collaborate across engineering and design.",
-    accent: "blue" as const,
+    // accent: "blue" as const,
   },
   {
     title: "Well-being & Flexibility",
     description: "Hybrid workspaces, flexible schedules, mental health check-ins, and office lunches ensure we work hard while staying happy.",
-    accent: "pink" as const,
   },
- ] as const;
+] as const;
 
 export default function CompanyCulture() {
   return (
@@ -60,7 +59,7 @@ export default function CompanyCulture() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-[rgba(255,255,255,0.1)] bg-[#131427]">
                       <span className="text-sm font-semibold text-[#5160ff]">0{index + 1}</span>
                     </div>
-                    <h3 className="text-lg font-semibold text-white group-hover:text-[#5160ff] transition-colors duration-200">
+                    <h3 className="text-lg font-semibold tracking-widest text-white group-hover:text-[#5160ff] transition-colors duration-200">
                       {item.title}
                     </h3>
                     <p className="text-sm leading-relaxed text-[#cac6dd]">
@@ -69,9 +68,8 @@ export default function CompanyCulture() {
                   </div>
                   {/* Neon bottom glow line */}
                   <div
-                    className={`absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${
-                      item.accent === "pink" ? "bg-gradient-to-r from-pink-500 to-purple-500" : "bg-gradient-to-r from-blue-500 to-[#5160ff]"
-                    }`}
+                    className={`absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 bg-gradient-to-r from-blue-500 to-[#5160ff]"
+                      }`}
                   />
                 </div>
               ))}

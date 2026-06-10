@@ -4,7 +4,7 @@ export const jobDetail: JobPosition = {
   slug: "ai-backend-engineer",
   title: "AI Backend Engineer",
   department: "Engineering",
-  location: "Islamabad, PK (Hybrid)",
+  location: "Karachi, PK (Onsite)",
   type: "Full-time",
   experience: "4+ years",
   salaryRange: "PKR 300k - 500k / month",
