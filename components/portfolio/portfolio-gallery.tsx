@@ -28,6 +28,7 @@ type PortfolioSectionCopy = {
   headingLine2Before: string;
   headingLine2Highlight: string;
   ctaLabel?: string;
+  ctaHref?: string;
   loadMoreLabel?: string;
 };
 
@@ -36,6 +37,7 @@ type PortfolioGalleryProps = {
   filters: readonly PortfolioFilterItem[];
   cards: readonly PortfolioCardItem[];
   mobilePreviewCount?: number;
+  limit?: number;
   loadMoreConfig?: {
     initialCount: number;
     step: number;
@@ -59,6 +61,7 @@ export default function PortfolioGallery({
   filters,
   cards,
   mobilePreviewCount,
+  limit,
   loadMoreConfig,
 }: PortfolioGalleryProps) {
   const [activeFilter, setActiveFilter] = useState<string>(filters[0]?.key ?? "all");
@@ -72,7 +75,16 @@ export default function PortfolioGallery({
     [activeFilter, cards],
   );
 
-  const visibleCards = loadMoreConfig ? filteredCards.slice(0, visibleCardsCount) : filteredCards;
+  const visibleCards = useMemo(() => {
+    if (loadMoreConfig) {
+      return filteredCards.slice(0, visibleCardsCount);
+    }
+    if (limit) {
+      return filteredCards.slice(0, limit);
+    }
+    return filteredCards;
+  }, [filteredCards, visibleCardsCount, loadMoreConfig, limit]);
+
   const hasMoreCards = Boolean(loadMoreConfig && visibleCardsCount < filteredCards.length);
 
   function handleFilterChange(filterKey: string) {
@@ -156,6 +168,7 @@ export default function PortfolioGallery({
             {!loadMoreConfig && copy.ctaLabel ? (
               <PrimaryButton
                 label={copy.ctaLabel}
+                href={copy.ctaHref}
                 className="h-[44px] px-5 text-[15px] sm:h-[47px] sm:px-6 sm:text-base"
               />
             ) : null}

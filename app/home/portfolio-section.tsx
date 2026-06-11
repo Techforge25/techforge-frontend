@@ -1,6 +1,6 @@
 import PortfolioGallery from "@/components/portfolio/portfolio-gallery";
 import {
-  homeRecentPortfolioCards,
+  portfolioPageCards,
   portfolioFilters,
   portfolioHomeCopy,
 } from "@/data/portfolio";
@@ -10,7 +10,8 @@ export default function PortfolioSection() {
     <PortfolioGallery
       copy={portfolioHomeCopy}
       filters={portfolioFilters}
-      cards={homeRecentPortfolioCards}
+      cards={portfolioPageCards}
+      limit={6}
       mobilePreviewCount={3}
     />
   );

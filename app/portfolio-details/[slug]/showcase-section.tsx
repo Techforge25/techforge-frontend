@@ -26,14 +26,18 @@ export default function PortfolioDetailShowcaseSection({ portfolio }: PortfolioD
           {portfolio.resultsHeading}
         </h2>
 
-        <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-10 lg:gap-[151px]">
+        <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6 lg:gap-12">
           {portfolio.results.map((item) => (
             <article
               key={`${item.value}-${item.label}`}
-              className="flex flex-col items-start gap-2 whitespace-nowrap lg:w-[299px]"
+              className="flex flex-col items-start gap-2 w-full"
             >
-              <p className="font-['Neiko','Satoshi',sans-serif] text-[52px] leading-[52px] text-white">{item.value}</p>
-              <p className="text-[28px] leading-[29px] text-[#cac6dd]">{item.label}</p>
+              <p className="font-['Neiko','Satoshi',sans-serif] text-[38px] sm:text-[44px] lg:text-[52px] leading-[1.1] text-white">
+                {item.value}
+              </p>
+              <p className="text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] leading-[1.3] text-[#cac6dd]">
+                {item.label}
+              </p>
             </article>
           ))}
         </div>

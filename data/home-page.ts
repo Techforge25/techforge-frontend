@@ -166,8 +166,8 @@ export const whyChooseUsCopy = {
 export const processSteps = [
   {
     id: "1",
-    title: "Discovery & Strategy",
-    description: "Understanding your goals to create a tailored pla",
+    title: "Discover & Plan",
+    description: "Understanding goals and defining the right strategy.",
     left: "10.28%",
     textClassName: "top-[220px] -translate-x-[42px]",
     numberClassName: "top-[56px] -translate-x-1/2",
@@ -178,8 +178,8 @@ export const processSteps = [
   },
   {
     id: "2",
-    title: "Discovery & Strategy",
-    description: "Understanding your goals to create a tailored pla",
+    title: "Design & Prototype",
+    description: "Creating intuitive experiences and visual concepts.",
     left: "35.42%",
     textClassName: "top-[20px] -translate-x-[40px]",
     numberClassName: "top-[197px] -translate-x-1/2",
@@ -190,8 +190,8 @@ export const processSteps = [
   },
   {
     id: "3",
-    title: "Discovery & Strategy",
-    description: "Understanding your goals to create a tailored pla",
+    title: "Develop & Test",
+    description: "Building reliable solutions with rigorous testing.",
     left: "63.01%",
     textClassName: "top-[20px] -translate-x-[40px]",
     numberClassName: "top-[197px] -translate-x-1/2",
@@ -202,8 +202,8 @@ export const processSteps = [
   },
   {
     id: "4",
-    title: "Discovery & Strategy",
-    description: "Understanding your goals to create a tailored pla",
+    title: "Launch & Support",
+    description: "Deploying successfully and providing ongoing support.",
     left: "86.11%",
     textClassName: "top-[220px] -translate-x-[48px]",
     numberClassName: "top-[56px] -translate-x-1/2",

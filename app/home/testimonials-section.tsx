@@ -24,9 +24,9 @@ function TestimonialCard({
   return (
     <article data-testimonial-card className={`${className} shrink-0 rounded-[16px] border border-[#121324] bg-[rgba(19,19,36,0.5)] px-6 pb-[34px] pt-6`}>
       <div className="flex items-center gap-3">
-        <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#575757]">
+        {/* <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#575757]">
           <img src={avatar} alt="" className="h-full w-full object-cover" />
-        </div>
+        </div> */}
         <p className="text-base font-medium leading-6 text-[#fbfbfd]">{handle}</p>
       </div>
       <p className="mt-3 text-base leading-[18px] text-[#cac6dd]">{quote}</p>

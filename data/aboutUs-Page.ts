@@ -22,13 +22,13 @@ export const aboutMissionVisionHistorySection = {
     {
       title: "Our Mission",
       description:
-        "New Media Services, we aim to conquer the impossible. We pledge a commitment to teamwork between our staff and valued clients to ensure the growth and success of everyone.",
+        "Our mission is to empower businesses through innovative technology solutions that drive growth, efficiency, and long-term success. We are committed to delivering high-quality digital products, exceptional user experiences, and reliable support that help our clients thrive in an ever-evolving digital world.",
       image: missionImage.src,
     },
     {
       title: "Vision",
       description:
-        "At New Media Services, we aim to conquer the impossible. We pledge a commitment to teamwork between our staff and valued clients to ensure the growth and success of everyone.",
+        "Our vision is to become a globally recognized technology partner known for transforming ideas into impactful digital solutions. We strive to lead innovation by creating scalable, future-ready products that help businesses adapt, compete, and succeed in the modern marketplace.",
       image: visionImage.src,
       imageFirst: true,
       cardClassName: "lg:translate-y-[42px]",
@@ -36,7 +36,7 @@ export const aboutMissionVisionHistorySection = {
     {
       title: "History",
       description:
-        "At New Media Services, we aim to conquer the impossible. We pledge a commitment to teamwork between our staff and valued clients to ensure the growth and success of everyone.",
+        "TechForge Innovations was founded with a vision to help businesses grow through innovative digital solutions. Over the years, we have evolved into a trusted technology partner, delivering web, mobile, and custom software solutions across diverse industries. Our journey is driven by innovation, quality, and long-term client success. ",
       image: historyImage.src,
     },
   ] as const satisfies readonly AboutMissionVisionHistoryItem[],
@@ -51,11 +51,11 @@ export const aboutWhyChooseSection = {
   backgroundImage: sectionBg.src,
   badgeLabel: "why choose us",
   headingLine1: "Trusted Digital Experts",
-  headingLine2Before: "15+ Years in",
+  headingLine2Before: "10+ Years in",
   headingLine2Highlight: "Web, App &",
   headingLine2After: "Marketing",
   description:
-    "Partner with TechForge Innovations for proven digital solutions. We bring 15+ years of expertise in web development, mobile apps, SEO, and digital marketing.",
+    "Partner with TechForge Innovations for proven digital solutions. We bring 10+ years of expertise in web development, mobile apps, SEO, and digital marketing.",
   successRate: "94%",
   successTitle: "Success Rate",
   successDescription: "We help you achieve your goals",
@@ -81,8 +81,8 @@ export const aboutFunFactsSection = {
   headingLine1After: "is shown by numbers",
   // headingLine2: "numbers",
   items: [
-    { value: "15", label: "Year of establishment" },
-    { value: "10K", label: "Active client base" },
+    { value: "10", label: "Year of establishment" },
+    { value: "1K", label: "Active client base" },
     { value: "4.8", label: "Success rate" },
   ] as const satisfies readonly AboutFunFactItem[],
 } as const;
@@ -101,26 +101,26 @@ export const aboutOutstandingFeaturesSection = {
   centerImage: outstandingFeaturesCenterImage.src,
   leftItems: [
     {
-      title: "15+ Years Of Experience",
+      title: "Innovation-Driven Solutions",
       description:
-        "At New Media Services, we aim to conquer the impossible. We pledge a commitment to teamwork between our staff and valued clients to ensure the growth and success of everyone.",
+        "We combine modern technologies, strategic thinking, and creative problem-solving to deliver innovative solutions that help businesses grow and stay competitive.",
     },
     {
-      title: "History",
+      title: "Client-Centric Approach",
       description:
-        "At New Media Services, we aim to conquer the impossible. We pledge a commitment to teamwork between our staff and valued clients to ensure the growth and success of everyone.",
+        "We take the time to understand your unique goals and challenges, ensuring every solution is tailored to your business needs.",
     },
   ] as const satisfies readonly AboutOutstandingFeatureItem[],
   rightItems: [
     {
-      title: "History",
+      title: "Skilled & Experienced Team",
       description:
-        "At New Media Services, we aim to conquer the impossible. We pledge a commitment to teamwork between our staff and valued clients to ensure the growth and success of everyone.",
+        "Our team of designers, developers, and digital specialists works collaboratively to build high-quality solutions that deliver real results.",
     },
     {
-      title: "History",
+      title: "Quality & Long-Term Support",
       description:
-        "At New Media Services, we aim to conquer the impossible. We pledge a commitment to teamwork between our staff and valued clients to ensure the growth and success of everyone.",
+        "From initial planning to ongoing maintenance, we focus on delivering reliable, scalable solutions backed by dedicated support.",
     },
   ] as const satisfies readonly AboutOutstandingFeatureItem[],
 } as const;

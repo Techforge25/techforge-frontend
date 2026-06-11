@@ -47,6 +47,7 @@ export const portfolioHomeCopy = {
   headingLine2Before: "have been",
   headingLine2Highlight: "completed",
   ctaLabel: "view more",
+  ctaHref: "/portfolio",
 } as const;
 
 export const portfolioPageCopy = {
