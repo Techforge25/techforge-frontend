@@ -15,6 +15,7 @@ type ServicesSectionCopy = {
   headingLine2After: string;
   description: string;
   ctaLabel?: string;
+  ctaHref?: string;
   loadMoreLabel?: string;
 };
 
@@ -149,6 +150,7 @@ export default function ServicesGrid({ copy, cards, loadMoreConfig, desktopScrol
             {!loadMoreConfig && copy.ctaLabel ? (
               <PrimaryButton
                 label={copy.ctaLabel}
+                href={copy.ctaHref}
                 className="h-[44px] px-5 text-[15px] sm:h-[47px] sm:px-6 sm:text-base"
               />
             ) : null}

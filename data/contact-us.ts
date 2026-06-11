@@ -13,19 +13,19 @@ import messageImage from "@/assets/images/message.webp";
 import locationImage from "@/assets/images/location.webp";
 
 export const contactUsHeroCopy = {
-  heading: "How can we help?",
+  heading: "We're Here to Help You Grow",
   description:
-    "Get in touch with our team for demos, onboarding support, or any questions about NextDB.",
+    "From web development to custom software solutions, let's discuss how TechForge Innovations can help achieve your goals.",
   helpItems: [
     {
-      title: "Get a Custom Demo",
+      title: "Project Consultation",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Discuss your ideas, requirements, and business goals with our experts to find the right digital solution.",
     },
     {
-      title: "Talk to Sales",
+      title: "Dedicated Support",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Get assistance with technical questions, ongoing projects, service inquiries, or platform-related support.",
     },
   ],
 } as const;
@@ -34,12 +34,12 @@ export const contactOptionCards = [
   {
     icon: emailImage.src,
     title: "Email Support",
-    value: "info@techforrgeinovation",
+    value: "info@techforrgeinovation.com",
   },
   {
     icon: phoneImage.src,
     title: "Sales Phone",
-    value: "+1 (433) 555-0123",
+    value: "+92 370 2816085",
   },
   {
     icon: locationImage.src,
@@ -49,7 +49,7 @@ export const contactOptionCards = [
   {
     icon: messageImage.src,
     title: "General Inquiries",
-    value: "hallo@nextdb.app",
+    value: "hello@techforgeinnovation.com",
   },
 ] as const;
 

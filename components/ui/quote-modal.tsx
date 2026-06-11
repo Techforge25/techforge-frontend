@@ -245,7 +245,7 @@ export default function QuoteModal({
         aria-modal="true"
         aria-label="Get a quotes form"
         tabIndex={-1}
-        className="relative z-10 w-full max-w-[760px] rounded-[24px] border border-[rgba(78,88,167,0.45)] bg-[#121324] p-5 shadow-[0_40px_90px_rgba(0,0,0,0.55)] sm:p-8 transition-all duration-300"
+        className="contact-dropdown-scroll relative z-10 w-full max-w-[760px] max-h-[calc(100vh-40px)] overflow-y-auto rounded-[24px] border border-[rgba(78,88,167,0.45)] bg-[#121324] p-5 shadow-[0_40px_90px_rgba(0,0,0,0.55)] sm:p-8 transition-all duration-300"
       >
         <button
           type="button"

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import PhoneInput from "react-phone-number-input/input";
 import {
   getCountries,
   getCountryCallingCode,
@@ -57,6 +56,32 @@ export function CountryPhoneInput({
     );
   }, [searchValue]);
 
+  // Synchronize country when value changes from parent (e.g. on mount or load)
+  useEffect(() => {
+    if (value && value.startsWith("+")) {
+      const sortedOptions = [...countryOptions].sort((a, b) => b.callingCode.length - a.callingCode.length);
+      const matched = sortedOptions.find((opt) => value.startsWith(opt.callingCode));
+      if (matched) {
+        setSelectedCountry(matched.code);
+      }
+    }
+  }, [value]);
+
+  const displayValue = useMemo(() => {
+    if (!value) return "";
+    if (value.startsWith(selectedOption.callingCode)) {
+      return value.slice(selectedOption.callingCode.length);
+    }
+    if (value.startsWith("+")) {
+      const sortedOptions = [...countryOptions].sort((a, b) => b.callingCode.length - a.callingCode.length);
+      const matched = sortedOptions.find((opt) => value.startsWith(opt.callingCode));
+      if (matched) {
+        return value.slice(matched.callingCode.length);
+      }
+    }
+    return value;
+  }, [value, selectedOption.callingCode]);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (!dropdownRef.current?.contains(event.target as Node)) {
@@ -76,8 +101,19 @@ export function CountryPhoneInput({
     };
   }, []);
 
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const rawVal = e.target.value;
+    // Allow digits, spaces, dashes, parentheses
+    const cleanVal = rawVal.replace(/[^\d\s\-()]/g, "");
+    if (cleanVal === "") {
+      onChange("");
+    } else {
+      onChange(selectedOption.callingCode + cleanVal);
+    }
+  };
+
   return (
-    <label className="flex w-full flex-col gap-[6px]">
+    <div className="flex w-full flex-col gap-[6px]">
       <p className="font-['Inter','Satoshi',sans-serif] text-[16px] font-medium leading-[24px] text-[#f5f5f5]">
         {label} {required ? <span className="text-[#5160ff]">*</span> : null}
       </p>
@@ -136,6 +172,9 @@ export function CountryPhoneInput({
                               setSelectedCountry(country.code);
                               setIsOpen(false);
                               setSearchValue("");
+                              if (value) {
+                                onChange(country.callingCode + displayValue);
+                              }
                             }}
                             className={`flex w-full items-center justify-between gap-2 px-3 py-2 text-left transition-colors ${
                               isActive
@@ -170,17 +209,16 @@ export function CountryPhoneInput({
             ) : null}
           </div>
 
-          <PhoneInput
-            country={selectedCountry}
-            international={false}
-            value={value}
-            onChange={(nextValue) => onChange(nextValue ?? "")}
+          <input
+            type="tel"
+            value={displayValue}
+            onChange={handlePhoneChange}
             placeholder="(000) 000-0000"
             className="h-[20px] w-full min-w-0 bg-transparent font-['Inter','Satoshi',sans-serif] text-[14px] font-normal leading-[20px] text-[#c4c4ff] placeholder:text-[#c4c4ff] focus:outline-none"
           />
         </div>
       </div>
       {error && <span className="text-xs text-red-400 mt-1">{error}</span>}
-    </label>
+    </div>
   );
 }

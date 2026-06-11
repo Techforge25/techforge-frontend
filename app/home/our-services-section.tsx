@@ -10,6 +10,7 @@ const homeServicesCopy = {
   description:
     "Discover TechForge Innovations your trusted partner for cutting edge IT solutions, software development, and digital transformation services tailored to modern businesses.",
   ctaLabel: "view all services",
+  ctaHref: "/services",
 } as const;
 
 const homeRecentServicesCards: readonly ServiceCardItem[] = serviceDetails

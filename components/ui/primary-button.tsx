@@ -1,11 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useQuoteModal } from "@/hooks/use-quote-modal";
 
 type PrimaryButtonProps = {
   className?: string;
   label?: string;
   opensQuoteModal?: boolean;
+  href?: string;
 };
 
 const primaryButtonBase =
@@ -17,15 +19,25 @@ export default function PrimaryButton({
   className = "",
   label = "get a Quotes",
   opensQuoteModal = false,
+  href,
 }: PrimaryButtonProps) {
   const { openQuoteModal } = useQuoteModal();
+  const classes = [primaryButtonBase, primaryButtonInteraction, className].join(" ");
+
+  if (href) {
+    return (
+      <Link href={href} className={classes} data-magnetic="true">
+        {label}
+      </Link>
+    );
+  }
 
   return (
     <button
       type="button"
       onClick={opensQuoteModal ? openQuoteModal : undefined}
       data-magnetic="true"
-      className={[primaryButtonBase, primaryButtonInteraction, className].join(" ")}
+      className={classes}
     >
       {label}
     </button>
