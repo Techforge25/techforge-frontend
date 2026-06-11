@@ -68,7 +68,7 @@ function FaqAccordionItem({
 }
 
 export default function FaqSection() {
-  const [openId, setOpenId] = useState("services");
+  const [openId, setOpenId] = useState("");
 
   return (
     <section data-home-faq className="relative overflow-hidden bg-[#00000c]">
