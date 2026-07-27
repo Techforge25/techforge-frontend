@@ -18,6 +18,10 @@ type PortfolioCardItem = {
   image: string;
   title: string;
   subtitle: string;
+  industry: string;
+  challenge: string;
+  approach: string;
+  built: string;
   arrowIcon: string;
   category: string;
 };
@@ -153,6 +157,10 @@ export default function PortfolioGallery({
                   image={card.image}
                   title={card.title}
                   subtitle={card.subtitle}
+                  industry={card.industry}
+                  challenge={card.challenge}
+                  approach={card.approach}
+                  built={card.built}
                   arrowIcon={card.arrowIcon}
                   className={mobilePreviewCount && index >= mobilePreviewCount ? "hidden sm:block" : ""}
                 />

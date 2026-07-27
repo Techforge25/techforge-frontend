@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Link from "next/link";
 import gridBg from "@/assets/images/home/hero/grid-bg.svg";
 import GradientChip from "@/components/ui/gradient-chip";
 import HeaderQuoteButton from "@/components/ui/header-quote-button";
@@ -16,8 +17,8 @@ import {
   type HeroStairLayer,
 } from "@/data/home-page";
 
-const primaryCtaLabel = "view all services";
-const quoteCtaLabel = "get a Quotes";
+const primaryCtaLabel = "How We Work";
+const quoteCtaLabel = "Let's Talk About Your Product";
 
 function HeroDescription({ className = "" }: { className?: string }) {
   return <p className={`text-[#cac6dd] ${className}`}>{heroCopy.description}</p>;
@@ -132,10 +133,20 @@ function HeroDesktop() {
             className="relative w-[980px] text-[72px] leading-[66px]"
             line1ClassName="whitespace-nowrap"
             line2ClassName="mt-2 whitespace-nowrap"
+            highlightClassName="mt-2 block w-fit mx-auto"
           />
           <HeroDescription className="w-[514px] text-base leading-[18px]" />
         </div>
-        <PrimaryButton label={quoteCtaLabel} opensQuoteModal />
+        <div className="mt-2 flex items-center gap-4">
+          <HeaderQuoteButton label={quoteCtaLabel} opensQuoteModal />
+          <Link
+            href="#how-we-work"
+            data-magnetic="true"
+            className="inline-flex h-[47px] items-center justify-center whitespace-nowrap rounded-[140px] border border-[#2424a6] bg-[#00000c] px-6 text-base font-normal leading-none text-white transition-[box-shadow,filter,background-color,border-color] duration-200 hover:border-[#248aff] hover:bg-[#2424a6] hover:shadow-[0_6px_26px_0_rgba(55,118,255,0.72)] hover:[filter:brightness(1.06)] focus-visible:border-[#248aff] focus-visible:bg-[#2424a6] focus-visible:shadow-[0_6px_26px_0_rgba(55,118,255,0.72)] focus-visible:[filter:brightness(1.06)] focus-visible:outline-none"
+          >
+            {primaryCtaLabel}
+          </Link>
+        </div>
       </div>
 
       {heroDesktopChips.map((chip) => (
@@ -177,13 +188,14 @@ function HeroMobileFallback() {
         className="relative z-10 mx-auto mt-5 max-w-[980px] text-[46px] leading-[1.02] sm:text-[54px]"
         line1ClassName="text-[42px] leading-[1.04] sm:text-[50px]"
         line2ClassName="mt-1 text-[43px] leading-[1.02] sm:text-[50px]"
+        highlightClassName="mt-2 block w-fit mx-auto"
       />
 
       <HeroDescription className="relative z-10 mx-auto mt-4 max-w-[700px] text-[15px] leading-[1.4] sm:text-base" />
 
       <div className="relative z-10 mt-7 flex items-center justify-center gap-3">
-        <PrimaryButton className="h-[46px] min-w-[150px] px-5" label={primaryCtaLabel} />
-        <HeaderQuoteButton className="h-[46px] min-w-[150px] px-5" label={quoteCtaLabel} />
+        <PrimaryButton className="h-[46px] min-w-[150px] px-5 normal-case" label={primaryCtaLabel} href="#how-we-work" />
+        <HeaderQuoteButton className="h-[46px] min-w-[150px] px-5 normal-case" label={quoteCtaLabel} />
       </div>
 
       <div className="pointer-events-none absolute bottom-[128px] left-0 right-0 h-[210px]">
@@ -239,13 +251,14 @@ function HeroTabletFallback() {
         line2Highlight={heroCopy.headingLine2Highlight}
         className="relative z-10 mx-auto mt-6 max-w-[900px] text-[56px] leading-[0.98] lg:text-[62px]"
         line2ClassName="mt-2"
+        highlightClassName="mt-2 block w-fit mx-auto"
       />
 
       <HeroDescription className="relative z-10 mx-auto mt-5 max-w-[700px] text-base leading-[1.4]" />
 
       <div className="relative z-10 mt-8 flex items-center justify-center gap-4">
-        <PrimaryButton className="h-[46px] min-w-[170px] px-6" label={primaryCtaLabel} />
-        <HeaderQuoteButton className="h-[46px] min-w-[170px] px-6" label={quoteCtaLabel} />
+        <PrimaryButton className="h-[46px] min-w-[170px] px-6 normal-case" label={primaryCtaLabel} href="#how-we-work" />
+        <HeaderQuoteButton className="h-[46px] min-w-[170px] px-6 normal-case" label={quoteCtaLabel} />
       </div>
 
       <StaircaseSet className="bottom-[190px] left-0 h-[260px] w-[170px]" layers={heroTabletStairs} />

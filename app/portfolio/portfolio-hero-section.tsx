@@ -38,6 +38,9 @@ export default function PortfolioHeroSection() {
               <h1 className="bg-gradient-to-b from-white to-[rgba(255,255,255,0.2)] bg-clip-text font-['Neiko','Satoshi',sans-serif] text-[36px] uppercase leading-[1.08] text-transparent sm:text-[42px] lg:text-[48px] lg:leading-[52px]">
                 {portfolioHeroSection.heading}
               </h1>
+              <p className="max-w-[700px] text-center text-base leading-[1.5] text-[#cac6dd] sm:text-lg">
+                {portfolioHeroSection.description}
+              </p>
             </div>
             <PortfolioHeroVisual />
           </div>

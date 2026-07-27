@@ -3,13 +3,13 @@ import type { ServiceCardItem } from "@/data/services";
 import { serviceDetails } from "@/data/services";
 
 const homeServicesCopy = {
-  badgeLabel: "Our latest services",
-  headingLine1: "Web development,",
-  headingLine2Highlight: "Mobile App, SEO,",
-  headingLine2After: "and Marketing Solutions",
+  badgeLabel: "What we do",
+  headingLine1: "When It's Time to Build,",
+  headingLine2Highlight: "We Build With Purpose.",
+  headingLine2After: "",
   description:
-    "Discover TechForge Innovations your trusted partner for cutting edge IT solutions, software development, and digital transformation services tailored to modern businesses.",
-  ctaLabel: "view all services",
+    "We keep Home focused on philosophy first. When it's time to build, we bring product strategy, MVP development, design, software engineering, SaaS systems, mobile apps, and AI automation into one focused execution process.",
+  ctaLabel: "explore our services",
   ctaHref: "/services",
 } as const;
 

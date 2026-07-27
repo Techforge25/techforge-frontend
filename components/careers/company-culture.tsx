@@ -4,23 +4,20 @@ import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/sectio
 
 const cultureItems = [
   {
-    title: "Innovation First",
-    description: "We work with cutting-edge tools, build custom AI systems, and encourage experiments. We don't just follow standards, we set them.",
-    // accent: "blue" as const,
+    title: "Think About The Why",
+    description: "We don't just write code. We think about what we're building, why it matters, and what decision it should help the founder make.",
   },
   {
-    title: "Continuous Learning",
-    description: "Every team member gets an annual learning stipend, active mentorship, and time dedicated solely to upskilling and research.",
-    // accent: "blue" as const,
+    title: "Challenge Assumptions",
+    description: "Good work at TechForge often starts by questioning the obvious path and searching for the more useful one.",
   },
   {
-    title: "Synergy & Autonomy",
-    description: "We run a flat organization. Work directly with leaders, take ownership of products, and collaborate across engineering and design.",
-    // accent: "blue" as const,
+    title: "Build Carefully",
+    description: "We care about thoughtful execution, not just speed. The point is to build products with purpose, not simply ship more output.",
   },
   {
-    title: "Well-being & Flexibility",
-    description: "Hybrid workspaces, flexible schedules, mental health check-ins, and office lunches ensure we work hard while staying happy.",
+    title: "Care About Outcomes",
+    description: "The strongest people here focus on whether the work creates clarity, learning, and momentum for the product, not just completion.",
   },
 ] as const;
 
@@ -36,16 +33,16 @@ export default function CompanyCulture() {
         <SectionPaddingY72 className="py-14 sm:py-[72px]">
           <div className="relative z-10 mx-auto flex max-w-[1200px] flex-col items-center gap-10 sm:gap-14">
             <div className="flex flex-col items-center gap-4 text-center">
-              <SectionBadge label="our culture" className="h-[28px] px-[11px] py-0 text-sm leading-none" />
+              <SectionBadge label="why TechForge" className="h-[28px] px-[11px] py-0 text-sm leading-none" />
               <SectionHeading
-                line1="Life at TechForge Innovations"
-                line2Highlight="where ideas"
-                line2After="turn into reality"
+                line1="We Don't Just Write Code."
+                line2Highlight="We Think"
+                line2After="About What We're Building And Why."
                 className="max-w-[700px] text-[28px] leading-[1.1] sm:text-[36px] md:text-[44px] lg:text-[48px] md:leading-[52px]"
                 line2ClassName="mt-1"
               />
               <p className="max-w-[620px] text-[15px] leading-[1.45] text-[#cac6dd] sm:text-base">
-                We foster a premium engineering and design atmosphere where highly skilled builders work in tandem to craft digital masterpieces.
+                TechForge is built for people who want to think critically, work honestly, and help founders build better companies instead of blindly adding more software.
               </p>
             </div>
 

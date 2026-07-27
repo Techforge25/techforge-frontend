@@ -149,11 +149,11 @@ export default function OpenPositions() {
         <SectionPaddingY72 className="py-14 sm:py-[72px]">
           <div className="relative z-10 mx-auto flex max-w-[1200px] flex-col gap-10 sm:gap-14">
             <div className="flex flex-col items-center gap-4 text-center">
-              <SectionBadge label="open roles" className="h-[28px] px-[11px] py-0 text-sm leading-none" />
+              <SectionBadge label="open positions" className="h-[28px] px-[11px] py-0 text-sm leading-none" />
               <SectionHeading
-                line1="Find your next career"
-                line2Highlight="breakthrough"
-                line2After="with TechForge"
+                line1="Open"
+                line2Highlight="Positions"
+                line2After=""
                 className="max-w-[700px] text-[28px] leading-[1.1] sm:text-[36px] md:text-[44px] lg:text-[48px] md:leading-[52px]"
                 line2ClassName="mt-1"
               />
@@ -176,7 +176,7 @@ export default function OpenPositions() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search by job title or keyword..."
+                  placeholder="Search by role..."
                   className="h-full w-full bg-transparent text-sm text-[#dfe1e6] placeholder:text-[#8f96a6] focus:outline-none"
                 />
               </div>
@@ -245,7 +245,7 @@ export default function OpenPositions() {
                       href={`/careers/${job.slug}`}
                       className="inline-flex h-[36px] items-center justify-center rounded-[100px] border border-[rgba(255,255,255,0.15)] bg-transparent px-4 text-xs font-semibold text-white transition-colors duration-200 hover:bg-white hover:text-[#00000c]"
                     >
-                      View Details
+                      Apply
                     </Link>
                   </div>
                 </div>

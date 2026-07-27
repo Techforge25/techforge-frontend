@@ -1,43 +1,41 @@
 import type { JobPosition } from "../types";
 
 export const jobDetail: JobPosition = {
-  slug: "senior-frontend-developer",
-  title: "Senior Frontend Developer",
+  slug: "nodejs-developer",
+  title: "Node.js Developer",
   department: "Engineering",
   location: "Karachi, PK (Onsite)",
   type: "Full-time",
-  experience: "5+ years",
-  salaryRange: "PKR 250k - 400k / month",
+  experience: "3+ years",
+  salaryRange: "PKR 120k - 180k / month",
   description:
-    "We are looking for a Senior Frontend Developer to lead the development of highly interactive web experiences and enterprise-scale dashboards using React, Next.js, and modern CSS/GSAP setups.",
+    "Build backend systems, APIs, and product infrastructure for focused digital products that need strong architecture and thoughtful execution.",
   aboutRole:
-    "As a Senior Frontend Developer at TechForge Innovations, you will bridge the gap between design and technology. You will write high-performance, clean React code, construct premium animations, and establish scalable design patterns across our web ecosystem. You will work closely with our UI/UX designers and AI backend engineers to create experiences that wow clients and customers.",
+    "As a Node.js Developer at TechForge, you will help shape the systems behind products that founders rely on to learn, launch, and improve. You will work closely with design, product, and frontend teams to build APIs, backend services, integrations, and scalable logic with a strong focus on product outcomes rather than code volume.",
   responsibilities: [
-    "Develop interactive, high-fidelity user interfaces using React, Next.js, and TypeScript.",
-    "Build custom interactive layouts and smooth animation systems with GSAP and CSS variables.",
-    "Architect reusable, clean UI components following the design system tokens.",
-    "Optimize applications for maximum speed, accessibility, and cross-browser responsiveness.",
-    "Review peer code, mentor junior developers, and enforce frontend standards.",
-    "Collaborate with backend teams to integrate RESTful APIs and GraphQL streams."
+    "Design and build backend services using Node.js and TypeScript.",
+    "Develop REST APIs, auth flows, background jobs, and integrations for product platforms.",
+    "Work with product and frontend teams to turn requirements into reliable backend architecture.",
+    "Improve performance, security, and maintainability across services and databases.",
+    "Contribute to code reviews, planning discussions, and technical decisions that affect product direction."
   ],
   requirements: [
-    "5+ years of professional experience in frontend web development.",
-    "Expert knowledge of React, Next.js (App Router), TypeScript, and CSS modules or Tailwind.",
-    "Strong experience with GSAP (GreenSock), ScrollTrigger, and Canvas or SVG animations.",
-    "Deep understanding of modern state management patterns and server-side rendering (SSR/SSG).",
-    "Proven track record of optimizing page speeds, Core Web Vitals, and responsive UI behaviors.",
-    "Excellent communication and collaboration skills."
+    "3+ years of backend development experience with Node.js.",
+    "Strong understanding of TypeScript, APIs, authentication, and database design.",
+    "Experience with PostgreSQL, MongoDB, or similar production databases.",
+    "Ability to think beyond tickets and understand how backend decisions affect product learning.",
+    "Clear communication and comfort working in a collaborative product environment."
   ],
   niceToHave: [
-    "Experience with WebGL, Three.js, or Shader development.",
-    "Prior experience working in startup environments or digital agencies.",
-    "Familiarity with Figma layouts and design-to-code translations."
+    "Experience with queue systems, analytics pipelines, or third-party integrations.",
+    "Startup or agency background with fast product iteration cycles.",
+    "Familiarity with AI-enabled products or automation workflows."
   ],
   benefits: [
-    "Market competitive salary and performance bonuses.",
-    "Flexible hybrid working options (Islamabad office).",
-    "Annual learning budget and certification stipends.",
-    "Comprehensive health insurance for you and your family.",
-    "Generous paid time off, mental health days, and parental leaves."
+    "Competitive salary and meaningful growth opportunities.",
+    "Work on products where technical decisions influence real business outcomes.",
+    "Learning budget and access to mentorship across engineering and product.",
+    "Flexible work environment with a strong collaborative culture.",
+    "Health coverage and long-term development support."
   ]
 };

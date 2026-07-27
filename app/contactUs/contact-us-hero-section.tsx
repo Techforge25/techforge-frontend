@@ -1,14 +1,15 @@
 "use client";
 
 import { type ReactNode, useEffect, useRef, useState } from "react";
-import { CountryPhoneInput } from "@/components/ui/country-phone-input";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
 import starImg from "@/assets/images/star.webp";
 import dropdownIcon from "@/assets/images/dropdown.svg";
 import {
+  contactBudgetOptions,
   contactFormCopy,
+  contactHelpOptions,
+  contactJourneyOptions,
   contactOptionCards,
-  contactServiceOptions,
   contactUsAssets,
   contactUsHeroCopy,
 } from "@/data/contact-us";
@@ -201,9 +202,12 @@ function ContactServicesSelect({
 
 export default function ContactUsHeroSection() {
   const [fullName, setFullName] = useState("");
+  const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
-  const [phoneValue, setPhoneValue] = useState<string | undefined>("");
-  const [selectedService, setSelectedService] = useState("");
+  const [productIdea, setProductIdea] = useState("");
+  const [selectedJourney, setSelectedJourney] = useState("");
+  const [selectedHelp, setSelectedHelp] = useState("");
+  const [selectedBudget, setSelectedBudget] = useState("");
   const [message, setMessage] = useState("");
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -220,11 +224,20 @@ export default function ContactUsHeroSection() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = "Please enter a valid email address";
     }
-    if (!phoneValue || phoneValue.trim().length < 6) {
-      newErrors.phone = "A valid phone number is required";
+    if (!company.trim()) {
+      newErrors.company = "Company / Startup is required";
     }
-    if (!selectedService) {
-      newErrors.service = "Please select a service";
+    if (!productIdea.trim()) {
+      newErrors.product = "Please tell us what you're building";
+    }
+    if (!selectedJourney) {
+      newErrors.journey = "Please select where you are in the journey";
+    }
+    if (!selectedHelp) {
+      newErrors.help = "Please select what you'd like help with";
+    }
+    if (!selectedBudget) {
+      newErrors.budget = "Please select an estimated budget";
     }
     if (!message.trim()) {
       newErrors.message = "Message details are required";
@@ -313,9 +326,12 @@ export default function ContactUsHeroSection() {
                     type="button"
                     onClick={() => {
                       setFullName("");
+                      setCompany("");
                       setEmail("");
-                      setPhoneValue("");
-                      setSelectedService("");
+                      setProductIdea("");
+                      setSelectedJourney("");
+                      setSelectedHelp("");
+                      setSelectedBudget("");
                       setMessage("");
                       setErrors({});
                       setIsSubmitted(false);
@@ -330,39 +346,66 @@ export default function ContactUsHeroSection() {
                   <div className="space-y-[30px]">
                     <ContactInput
                       label={contactFormCopy.fullNameLabel}
-                      placeholder="John"
+                      placeholder="John Doe"
                       value={fullName}
                       onChange={setFullName}
                       error={errors.fullName}
                     />
 
-                    <CountryPhoneInput
-                      label={contactFormCopy.phoneLabel}
-                      value={phoneValue}
-                      onChange={setPhoneValue}
-                      error={errors.phone}
-                    />
-
                     <ContactInput
                       label={contactFormCopy.emailLabel}
-                      placeholder="example@mail.com"
+                      placeholder="founder@company.com"
                       value={email}
                       onChange={setEmail}
                       error={errors.email}
                     />
 
+                    <ContactInput
+                      label={contactFormCopy.companyLabel}
+                      placeholder="Your company or startup name"
+                      value={company}
+                      onChange={setCompany}
+                      error={errors.company}
+                    />
+
+                    <ContactInput
+                      label={contactFormCopy.productLabel}
+                      placeholder="Briefly describe the product or idea"
+                      value={productIdea}
+                      onChange={setProductIdea}
+                      error={errors.product}
+                    />
+
                     <ContactServicesSelect
-                      label={contactFormCopy.ServicesLabel}
-                      placeholder="Select Services"
-                      options={contactServiceOptions}
-                      value={selectedService}
-                      onChange={setSelectedService}
-                      error={errors.service}
+                      label={contactFormCopy.journeyLabel}
+                      placeholder="Select your current stage"
+                      options={contactJourneyOptions}
+                      value={selectedJourney}
+                      onChange={setSelectedJourney}
+                      error={errors.journey}
+                    />
+
+                    <ContactServicesSelect
+                      label={contactFormCopy.helpLabel}
+                      placeholder="Select what you need help with"
+                      options={contactHelpOptions}
+                      value={selectedHelp}
+                      onChange={setSelectedHelp}
+                      error={errors.help}
+                    />
+
+                    <ContactServicesSelect
+                      label={contactFormCopy.budgetLabel}
+                      placeholder="Select your estimated budget"
+                      options={contactBudgetOptions}
+                      value={selectedBudget}
+                      onChange={setSelectedBudget}
+                      error={errors.budget}
                     />
 
                     <ContactInput
                       label={contactFormCopy.messageLabel}
-                      placeholder="Enter here"
+                      placeholder="Share the problem, customer, or goal you're thinking about"
                       multiline
                       value={message}
                       onChange={setMessage}

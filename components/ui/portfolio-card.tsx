@@ -5,6 +5,10 @@ type PortfolioCardProps = {
   image: string;
   title: string;
   subtitle: string;
+  industry: string;
+  challenge: string;
+  approach: string;
+  built: string;
   arrowIcon: string;
   className?: string;
 };
@@ -14,6 +18,10 @@ export default function PortfolioCard({
   image,
   title,
   subtitle,
+  industry,
+  challenge,
+  approach,
+  built,
   arrowIcon,
   className = "",
 }: PortfolioCardProps) {
@@ -35,7 +43,13 @@ export default function PortfolioCard({
           <p className="font-['Neiko','Satoshi',sans-serif] text-[20px] uppercase leading-[1] tracking-[0.42px] text-white sm:text-[22px] md:text-[24px]">
             {title}
           </p>
-          <p className="mt-2 text-[13px] leading-[17px] text-[#cac6dd] sm:text-sm sm:leading-[18px]">{subtitle}</p>
+          <div className="mt-3 space-y-1.5 text-[11px] leading-[1.35] text-[#d3d6e7] sm:text-[12px]">
+            <p><span className="text-white">Industry:</span> {industry}</p>
+            <p><span className="text-white">Challenge:</span> {challenge}</p>
+            <p><span className="text-white">Our Approach:</span> {approach}</p>
+            <p><span className="text-white">What We Built:</span> {built}</p>
+          </div>
+          <p className="mt-2 text-[11px] uppercase tracking-[0.18em] text-[#8e95db] sm:text-[12px]">{subtitle}</p>
         </div>
         <img
           src={arrowIcon}

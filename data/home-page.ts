@@ -128,48 +128,46 @@ export const heroDesktopChips = [
 ] as const;
 
 export const heroCopy = {
-  badgeLabel: "tecnforge innovations",
-  headingLine1: "Future ready it solution",
-  headingLine2Before: "and digital",
-  headingLine2Highlight: "services",
+  badgeLabel: "Techforge innovations",
+  headingLine1: "Build Less.",
+  headingLine2Before: "Learn Faster.",
+  headingLine2Highlight: "Build What Matters.",
   description:
-    "Discover TechForge Innovations your trusted partner for cutting edge IT solutions, software development, and digital transformation services tailored to modern businesses.",
+    "We help founders turn ideas into focused, validated products before they spend their entire budget building the wrong thing.",
 } as const;
 
 // About Us section data
 export const aboutUsCopy = {
-  badgeLabel: "about us",
-  headingLine1: "Building the Future with",
-  headingLine2Highlight: "Growth",
+  badgeLabel: "why TechForge exists",
+  headingLine1: "We Help Founders Avoid",
+  headingLine2Highlight: "Expensive Product Decisions",
   headingLine2After: "",
   leadPrefix: "",
   leadText:
-    "At TechForge Innovations, we turn ideas into powerful digital products. From MVPs to AI solutions, we build smart, scalable systems that help businesses grow and succeed.",
-  ctaLabel: "learn more",
+    "We've seen founders spend most of their budget building Version 1, only to discover after launch that the market wanted something different. We made mistakes ourselves too. Over time, we learned that successful products are created by making better decisions before building.",
+  ctaLabel: "explore our approach",
 } as const;
 
 // Why Choose Us section data
 export const whyChooseUsCopy = {
-  badgeLabel: "why choose us",
-  headingLine1: "Why Businesses Trust TechForge to Build",
-  // headingLine2Before: "Build Scalable",
-  headingLine2Highlight: "Scalable Solutions",
-  // headingLine2After: "& Marketing",
+  badgeLabel: "the problem",
+  headingLine1: "Most Products Don't Fail Because They Were Built",
+  headingLine2Highlight: "Badly",
   description:
-    "We focus on delivering high-quality, scalable products with speed and precision. Our team blends modern technology with a business-first approach to create solutions that drive real results.",
-  successRate: "94%",
-  successTitle: "Success Rate",
-  successDescription: "We help you achieve your goals",
+    "They fail because too much was built too early. Founders invest heavily in Version 1, launch with limited runway, and discover that real users want something different. By then, the budget is gone, the roadmap is locked, and there is little room left to adapt.",
+  successRate: "Timing",
+  successTitle: "Is The Real Risk",
+  successDescription: "The software isn't always the problem. The timing of the decisions is.",
 } as const;
 
 // Our Work Process section timeline data
 export const processSteps = [
   {
     id: "1",
-    title: "Discover & Plan",
-    description: "Understanding goals and defining the right strategy.",
-    left: "10.28%",
-    textClassName: "top-[220px] -translate-x-[42px]",
+    title: "Understand",
+    description: "Learn who the founder is, what matters, and what constraints exist.",
+    left: "5.5%",
+    textClassName: "top-[228px] -translate-x-[14px]",
     numberClassName: "top-[56px] -translate-x-1/2",
     stemClassName: "top-[152px]",
     stemGradient:
@@ -178,10 +176,10 @@ export const processSteps = [
   },
   {
     id: "2",
-    title: "Design & Prototype",
-    description: "Creating intuitive experiences and visual concepts.",
-    left: "35.42%",
-    textClassName: "top-[20px] -translate-x-[40px]",
+    title: "Challenge",
+    description: "Question assumptions before they become expensive product decisions.",
+    left: "18%",
+    textClassName: "top-[6px] -translate-x-[8px]",
     numberClassName: "top-[197px] -translate-x-1/2",
     stemClassName: "top-[98px]",
     stemGradient:
@@ -190,10 +188,10 @@ export const processSteps = [
   },
   {
     id: "3",
-    title: "Develop & Test",
-    description: "Building reliable solutions with rigorous testing.",
-    left: "63.01%",
-    textClassName: "top-[20px] -translate-x-[40px]",
+    title: "Validate",
+    description: "Test the idea against customers, demand, and real-world signals.",
+    left: "30.5%",
+    textClassName: "top-[6px] -translate-x-[18px]",
     numberClassName: "top-[197px] -translate-x-1/2",
     stemClassName: "top-[98px]",
     stemGradient:
@@ -202,10 +200,58 @@ export const processSteps = [
   },
   {
     id: "4",
-    title: "Launch & Support",
-    description: "Deploying successfully and providing ongoing support.",
-    left: "86.11%",
-    textClassName: "top-[220px] -translate-x-[48px]",
+    title: "Define",
+    description: "Reduce scope into the smallest product that can teach something useful.",
+    left: "43%",
+    textClassName: "top-[228px] -translate-x-[18px]",
+    numberClassName: "top-[56px] -translate-x-1/2",
+    stemClassName: "top-[152px]",
+    stemGradient:
+      "bg-[linear-gradient(180deg,rgba(80,95,251,0.95)_0%,rgba(80,95,251,0.18)_65%,rgba(80,95,251,0)_100%)]",
+    glowClassName: "left-1/2 top-[152px] h-[62px] w-[110px]",
+  },
+  {
+    id: "5",
+    title: "Build",
+    description: "Start development only after the product has a clear purpose and direction.",
+    left: "59%",
+    textClassName: "top-[228px] -translate-x-[24px]",
+    numberClassName: "top-[56px] -translate-x-1/2",
+    stemClassName: "top-[152px]",
+    stemGradient:
+      "bg-[linear-gradient(180deg,rgba(80,95,251,0.95)_0%,rgba(80,95,251,0.18)_65%,rgba(80,95,251,0)_100%)]",
+    glowClassName: "left-1/2 top-[152px] h-[62px] w-[110px]",
+  },
+  {
+    id: "6",
+    title: "Launch",
+    description: "Release deliberately so Version 1 creates signal, not just activity.",
+    left: "75%",
+    textClassName: "top-[6px] -translate-x-[24px]",
+    numberClassName: "top-[197px] -translate-x-1/2",
+    stemClassName: "top-[98px]",
+    stemGradient:
+      "bg-[linear-gradient(180deg,rgba(80,95,251,0)_0%,rgba(80,95,251,0.18)_35%,rgba(80,95,251,0.95)_100%)]",
+    glowClassName: "left-1/2 top-[152px] h-[86px] w-[150px]",
+  },
+  {
+    id: "7",
+    title: "Learn",
+    description: "Use behavior and feedback to decide what deserves more investment.",
+    left: "87%",
+    textClassName: "top-[6px] -translate-x-[30px]",
+    numberClassName: "top-[197px] -translate-x-1/2",
+    stemClassName: "top-[98px]",
+    stemGradient:
+      "bg-[linear-gradient(180deg,rgba(80,95,251,0)_0%,rgba(80,95,251,0.18)_35%,rgba(80,95,251,0.95)_100%)]",
+    glowClassName: "left-1/2 top-[152px] h-[86px] w-[150px]",
+  },
+  {
+    id: "8",
+    title: "Improve",
+    description: "Build what comes next with evidence instead of assumptions.",
+    left: "98%",
+    textClassName: "top-[228px] -translate-x-[72px]",
     numberClassName: "top-[56px] -translate-x-1/2",
     stemClassName: "top-[152px]",
     stemGradient:
@@ -213,5 +259,3 @@ export const processSteps = [
     glowClassName: "left-1/2 top-[152px] h-[62px] w-[110px]",
   },
 ] as const;
-
-

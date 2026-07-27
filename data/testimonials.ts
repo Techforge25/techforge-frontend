@@ -18,111 +18,111 @@ export type TestimonialItem = {
 };
 
 export const testimonialsCopy = {
-  badgeLabel: "Testimonials",
-  headingLine1: "See what people are",
-  headingLine2Highlight: "Saying",
-  headingLine2After: "about us",
+  badgeLabel: "who we work with",
+  headingLine1: "We Work Best With Founders Who Want",
+  headingLine2Highlight: "Honest Conversations",
+  headingLine2After: "",
 } as const;
 
 export const testimonialColumns: readonly TestimonialItem[][] = [
   [
     {
       avatar: testimonialAvatar1.src,
-      handle: "@cryptomaru",
+      handle: "Founders with an idea",
       quote:
-        "Hexora has completely simplified how I manage local databases. The visual builder is intuitive, and setup time is dramatically reduced",
+        "You know the problem is worth solving, but you need help deciding what should be tested before too much gets built.",
     },
     {
       avatar: testimonialAvatar1.src,
-      handle: "@blockdanny",
+      handle: "First MVP teams",
       quote:
-        "Designing database schemas feels much clearer with Hexora. I can focus on structure without getting lost in configuration",
+        "You are building Version 1 and want to protect runway while still getting something real in front of users.",
     },
     {
       avatar: testimonialAvatar2.src,
-      handle: "@signalhunter",
+      handle: "Existing products",
       quote:
-        "I appreciate how easy it is to export schemas and integrate them into my projects.",
+        "You already launched, and now you need clarity on what to improve next instead of building on instinct.",
     },
   ],
   [
     {
       avatar: testimonialAvatar3.src,
-      handle: "@ethkaren",
+      handle: "Honest collaboration",
       quote:
-        "The UI is clean, well-structured, and actually enjoyable to use. Everything feels intentional.",
+        "We work best with founders who want questions, pushback, and real product conversations, not blind agreement.",
     },
     {
       avatar: testimonialAvatar4.src,
-      handle: "@devtraderjoe",
+      handle: "Runway protection",
       quote:
-        "Designing database schemas feels much clearer with Hexora. I can focus on structure without getting lost in configuration",
+        "We care about whether the first release creates useful learning without consuming the first version of the company.",
     },
     {
       avatar: testimonialAvatar5.src,
-      handle: "@noirnode",
+      handle: "Validation first",
       quote:
-        "Hexora saves me hours every week. The workflow is simple, predictable, and reliable",
+        "If the right answer is to slow down, simplify, or test before building, that is what we will say.",
     },
   ],
   [
     {
       avatar: testimonialAvatar6.src,
-      handle: "@btcbrenda",
+      handle: "Idea-stage founders",
       quote:
-        "Managing multiple schemas used to be messyâ€”Hexora makes it organized and easy to maintain.",
+        "The right first step is not always code. Sometimes it is a sharper problem statement, clearer audience, or tighter scope.",
     },
     {
       avatar: testimonialAvatar7.src,
-      handle: "@altcoinrookie",
+      handle: "MVP builders",
       quote:
-        "The visual schema builder alone makes Hexora worth it. Itâ€™s fast, clear, and flexible",
+        "Version 1 should help you learn from real users, not lock your budget into assumptions you cannot unwind later.",
     },
     {
       avatar: testimonialAvatar8.src,
-      handle: "@uxonchain",
+      handle: "Product teams",
       quote:
-        "Hexora fits perfectly into my local development workflow. No unnecessary complexity",
+        "After launch, evidence should decide what gets built next. That is the conversation we want to be part of.",
     },
   ],
   [
     {
       avatar: testimonialAvatar9.src,
-      handle: "@codetheblock",
+      handle: "Straight answers",
       quote:
-        "Everything feels thoughtfully designed, from the UI to the smallest interactions.",
+        "We do not pretend every idea is equally strong. We help founders separate exciting ideas from expensive distractions.",
     },
     {
       avatar: testimonialAvatar10.src,
-      handle: "@fifi.rfqh",
+      handle: "Decision quality",
       quote:
-        "Hexora helps me move from idea to implementation much faster, especially for MVPs.",
+        "Good products are not just built faster. They are built after better decisions are made.",
     },
     {
       avatar: testimonialAvatar11.src,
-      handle: "@eth_eli",
+      handle: "Execution with purpose",
       quote:
-        "Hexora makes local development far less painful. Switching between databases is fast and incredibly smooth.",
+        "When it is time to build, we want every screen, workflow, and feature to have a reason to exist.",
     },
   ],
   [
     {
       avatar: testimonialAvatar12.src,
-      handle: "@codetheblock",
+      handle: "Founder mindset",
       quote:
-        "The learning curve is minimal. I was productive within minutes of using Hexora.",
+        "We work best with people who would rather hear the truth early than pay for the wrong product later.",
     },
     {
       avatar: testimonialAvatar1.src,
-      handle: "@defidiego",
+      handle: "Real conversations",
       quote:
-        "Hexora gives me confidence when designing databasesâ€”I can actually see what Iâ€™m building.",
+        "The strongest founder relationships are built on clarity, challenge, and shared commitment to building what matters.",
     },
     {
       avatar: testimonialAvatar2.src,
-      handle: "@lunalurker",
+      handle: "Purposeful products",
       quote:
-        "This is the kind of tool you donâ€™t realize you need until you try it.",
+        "The goal is not to ship the biggest Version 1. The goal is to ship the smartest one.",
     },
   ],
 ] as const;

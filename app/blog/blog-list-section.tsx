@@ -8,10 +8,10 @@ import { blogDetails, type BlogCardItem } from "@/data/blogs";
 
 const allCategoriesLabel = "All Categories";
 const blogPageCopy = {
-  badgeLabel: "blogs",
-  heading: "Our blog",
+  badgeLabel: "TechForge Insights",
+  heading: "Better Decisions Before Better Software.",
   description:
-    "Articles on Starts up, tech, technology, digital marketing and google ads PPC practices.",
+    "Ideas, lessons, and practical thinking for founders building digital products.",
   listHeading: "All categories",
 } as const;
 
@@ -64,7 +64,7 @@ function BlogFiltersPanel({
 
       <div className="my-4 h-px w-full bg-[#272835]" />
 
-      <p className="text-sm font-medium leading-5 text-[#eeeff2]">All integrations</p>
+      <p className="text-sm font-medium leading-5 text-[#eeeff2]">All categories</p>
       <div className="mt-2 space-y-[2px]">
         {blogFilterOptions.map((item) => (
           <label

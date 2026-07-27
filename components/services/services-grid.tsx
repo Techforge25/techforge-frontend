@@ -127,9 +127,9 @@ export default function ServicesGrid({ copy, cards, loadMoreConfig, desktopScrol
                 data-services-cards
                 className="grid w-full grid-cols-1 gap-4 will-change-transform sm:gap-6 md:grid-cols-2 xl:grid-cols-3"
               >
-                {visibleCards.map((service) => (
+                {visibleCards.map((service, index) => (
                   <ServiceCard
-                    key={service.href}
+                    key={index}
                     icon={service.icon}
                     iconClassName={service.iconClassName}
                     title={service.title}

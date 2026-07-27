@@ -1,10 +1,10 @@
 export const faqCopy = {
-  badgeLabel: "need more information",
-  headingLine1: "Frequently",
-  headingLine2Highlight: "asked",
-  headingLine2After: "questions",
+  badgeLabel: "what we refuse to do",
+  headingLine1: "We Don't Just",
+  headingLine2Highlight: "Say Yes",
+  headingLine2After: "",
   description:
-    "When we talk to clients about our IT services for their company, a few of the same questions come up.",
+    "Before you build more, let's figure out what you actually need.",
 } as const;
 
 export type FaqItem = {
@@ -16,62 +16,62 @@ export type FaqItem = {
 export const faqItems: readonly FaqItem[] = [
   {
     id: "services",
-    question: "What services does TechForge Innovations provide?",
+    question: "Will you build features just because they are on a list?",
     answer:
-      "TechForge Innovations offers complete digital solutions including custom website development, mobile app development, UI/UX design, SEO, branding, and digital marketing. We handle everything from idea validation to final product launch and scaling.",
+      "No. We want to understand what the feature is supposed to prove, change, or unlock before we recommend building it.",
   },
   {
     id: "process",
-    question: "What is your project development process?",
+    question: "Will you encourage us to spend everything on Version 1?",
     answer:
-      "Our process starts with understanding your business goals, followed by strategy planning, design, development, testing, and deployment. We use agile methodologies and keep you involved at every stage to ensure transparency and high-quality results.",
+      "No. Your first release should create learning and momentum, not consume the first version of your company.",
   },
   {
     id: "timeline",
-    question: "How long does it take to complete a project?",
+    question: "Will you tell us every idea is a good idea?",
     answer:
-      "Project timelines vary depending on complexity. A standard website may take 1â€“3 weeks, while custom platforms or mobile apps can take several weeks. We always provide a clear timeline before starting the project.",
+      "No. Part of our role is to challenge weak assumptions early so your budget goes toward stronger decisions.",
   },
   {
     id: "pricing",
-    question: "How much does a project cost?",
+    question: "Do you operate like order-taking developers?",
     answer:
-      "Pricing depends on your requirements, features, and project scope. We provide flexible and customized pricing to ensure you get the best value for your investment without compromising quality.",
+      "No. We collaborate as product-minded partners who care about the business outcome, not just the delivery checklist.",
   },
   {
     id: "startup",
-    question: "Can you help if I only have an idea?",
+    question: "Can you help if we only have an idea?",
     answer:
-      "Absolutely. We specialize in turning ideas into real products. From planning and design to development and launch, we guide you through every step to bring your vision to life.",
+      "Yes. Early-stage founders are exactly where disciplined product thinking has the highest leverage.",
   },
   {
     id: "support",
-    question: "Do you offer support after project completion?",
+    question: "Do you help after launch too?",
     answer:
-      "Yes, we provide ongoing support and maintenance services to ensure your product stays secure, updated, and performs smoothly as your business grows.",
+      "Yes. Launch is where real evidence starts showing up, and that is when smart iteration becomes valuable.",
   },
   {
     id: "technology",
-    question: "What technologies do you use?",
+    question: "Do you start with code?",
     answer:
-      "We use modern and scalable technologies like React, Next.js, Node.js, Flutter, and WordPress, ensuring fast, secure, and future-ready solutions for your business.",
+      "Not by default. We start with the founder, customer, problem, and validation path. Code is one of the last steps.",
   },
   {
     id: "difference",
-    question: "What makes TechForge Innovations different?",
+    question: "What makes TechForge different?",
     answer:
-      "We focus on delivering not just designs or code, but real business results. Our approach combines strategy, creativity, and technology to build solutions that drive growth, improve user experience, and maximize ROI.",
+      "We focus on reducing expensive product mistakes before development momentum makes them harder to fix.",
   },
   {
     id: "communication",
-    question: "How do you communicate during the project?",
+    question: "Can you help validate the idea before development?",
     answer:
-      "We maintain clear and regular communication through meetings, progress updates, and collaboration tools. Youâ€™ll always know the status of your project at every stage.",
+      "Yes. Product discovery and validation are a core part of our process.",
   },
   {
     id: "start",
-    question: "How can I get started with TechForge Innovations?",
+    question: "How do we get started?",
     answer:
-      "Getting started is simple. Just reach out to us with your idea or requirements, and our team will analyze your needs and provide a tailored plan to move forward.",
+      "Start with a conversation about the product, the customer, and what you are trying to learn before more gets built.",
   },
 ] as const;

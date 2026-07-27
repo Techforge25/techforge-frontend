@@ -13,19 +13,19 @@ import messageImage from "@/assets/images/message.webp";
 import locationImage from "@/assets/images/location.webp";
 
 export const contactUsHeroCopy = {
-  heading: "We're Here to Help You Grow",
+  heading: "Have a Product Idea? Let's Talk Before You Build It.",
   description:
-    "From web development to custom software solutions, let's discuss how TechForge Innovations can help achieve your goals.",
+    "Tell us what you're thinking about. You don't need a complete specification or a finalized roadmap. We'll start by understanding the problem, the customer, and what you're trying to achieve.",
   helpItems: [
     {
-      title: "Project Consultation",
+      title: "Start With The Problem",
       description:
-        "Discuss your ideas, requirements, and business goals with our experts to find the right digital solution.",
+        "We begin by understanding the product idea, the customer, and the decision you need to make before more gets built.",
     },
     {
-      title: "Dedicated Support",
+      title: "Talk Before You Build",
       description:
-        "Get assistance with technical questions, ongoing projects, service inquiries, or platform-related support.",
+        "Whether you're just validating an idea or already shaping an MVP, we'll help clarify the next smartest move.",
     },
   ],
 } as const;
@@ -34,7 +34,7 @@ export const contactOptionCards = [
   {
     icon: emailImage.src,
     title: "Email Support",
-    value: "info@techforrgeinovation.com",
+    value: "info@techforgeinnovations.com",
   },
   {
     icon: phoneImage.src,
@@ -54,26 +54,41 @@ export const contactOptionCards = [
 ] as const;
 
 export const contactFormCopy = {
-  fullNameLabel: "Full Name",
-  phoneLabel: "Phone Number",
-  emailLabel: "Email Address",
-  ServicesLabel: "Services",
+  fullNameLabel: "Name",
+  emailLabel: "Work Email",
+  companyLabel: "Company / Startup",
+  productLabel: "What are you building?",
+  journeyLabel: "Where are you in the journey?",
+  helpLabel: "What would you like help with?",
+  budgetLabel: "Estimated Budget",
   messageLabel: "Message",
-  privacyLabel: "Privacy policy",
-  privacyText:
-    "I’m okay with receiving follow-up emails and updates from NextDB. I can unsubscribe anytime.",
-  submitLabel: "Get A Quotes",
+  submitLabel: "Start the Conversation",
 } as const;
 
-export const contactServiceOptions = [
-  "Web Development",
-  "Mobile App Development",
-  "UI/UX Design",
-  "SEO Optimization",
-  "Digital Marketing",
-  "Branding",
-  "E-commerce Solutions",
-  "Custom Software Development",
+export const contactJourneyOptions = [
+  "Just an idea",
+  "Validating an idea",
+  "Planning an MVP",
+  "Already have an MVP",
+  "Existing product",
+] as const;
+
+export const contactHelpOptions = [
+  "Product strategy",
+  "Validation & MVP planning",
+  "UX / UI design",
+  "Web development",
+  "Mobile app development",
+  "AI & automation",
+  "Launch & improvement",
+] as const;
+
+export const contactBudgetOptions = [
+  "Under $5k",
+  "$5k - $15k",
+  "$15k - $30k",
+  "$30k - $60k",
+  "$60k+",
 ] as const;
 
 export const contactUsAssets = {

@@ -17,23 +17,23 @@ export default function HomePage() {
       <div data-gsap-hero data-section-name="hero">
         <HeroSection />
       </div>
+      <div data-gsap-section data-section-name="why">
+        <WhyChooseUsSection />
+      </div>
       <div data-gsap-section data-section-name="about">
         <AboutUsHeroSection ctaHref="/about-us" />
+      </div>
+      <div data-gsap-section data-section-name="process" id="how-we-work">
+        <OurWorkProcessSection />
       </div>
       <div data-gsap-section data-section-name="services">
         <OurServicesSection />
       </div>
-      <div data-gsap-section data-section-name="why">
-        <WhyChooseUsSection />
-      </div>
-      <div data-gsap-section data-section-name="process">
-        <OurWorkProcessSection />
+      <div data-gsap-section data-section-name="portfolio">
+        <PortfolioSection />
       </div>
       <div data-gsap-section data-section-name="testimonials">
         <TestimonialsSection />
-      </div>
-      <div data-gsap-section data-section-name="portfolio">
-        <PortfolioSection />
       </div>
       <div data-gsap-section data-section-name="faq">
         <FaqSection />

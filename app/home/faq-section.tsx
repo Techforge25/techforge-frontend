@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PrimaryButton from "@/components/ui/primary-button";
 import SectionBadge from "@/components/ui/section-badge";
 import SectionHeading from "@/components/ui/section-heading";
 import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/section-padding";
@@ -67,7 +68,23 @@ function FaqAccordionItem({
   );
 }
 
-export default function FaqSection() {
+type FaqSectionProps = {
+  copy?: {
+    badgeLabel: string;
+    headingLine1: string;
+    headingLine2Highlight: string;
+    headingLine2After: string;
+    description: string;
+  };
+  items?: readonly FaqItem[];
+  ctaLabel?: string;
+};
+
+export default function FaqSection({
+  copy = faqCopy,
+  items = faqItems,
+  ctaLabel = "Let's Talk About Your Product",
+}: FaqSectionProps = {}) {
   const [openId, setOpenId] = useState("");
 
   return (
@@ -79,36 +96,44 @@ export default function FaqSection() {
           <div className="relative z-10 mx-auto flex w-full max-w-[1200px] flex-col items-center gap-8">
             <div className="flex w-full max-w-[790px] flex-col items-center gap-[22px] text-center">
               <SectionBadge
-                label={faqCopy.badgeLabel}
+                label={copy.badgeLabel}
                 className="h-[28px] border border-[rgba(36,138,255,0.6)] px-[11px] py-0 text-sm leading-none"
               />
               <div className="flex flex-col items-center pb-[7px]">
                 <SectionHeading
-                  line1={faqCopy.headingLine1}
-                  line2Highlight={faqCopy.headingLine2Highlight}
-                  line2After={faqCopy.headingLine2After}
+                  line1={copy.headingLine1}
+                  line2Highlight={copy.headingLine2Highlight}
+                  line2After={copy.headingLine2After}
                   line1WithHighlightSameLine
                   className="w-full max-w-[540px] text-[34px] leading-[1.06] sm:text-[42px] lg:text-[48px] lg:leading-[52px]"
                 />
                 <p className="mt-4 max-w-[514px] text-base leading-[18px] text-[#cac6dd]">
-                  {faqCopy.description}
+                  {copy.description}
                 </p>
               </div>
             </div>
 
-            <div className="flex w-full max-w-[800px] flex-col gap-[18px]">
-              {faqItems.map((item) => {
-                const isOpen = item.id === openId;
-                return (
-                  <FaqAccordionItem
-                    key={item.id}
-                    item={item}
-                    isOpen={isOpen}
-                    onToggle={() => setOpenId(isOpen ? "" : item.id)}
-                  />
-                );
-              })}
-            </div>
+            {items.length ? (
+              <div className="flex w-full max-w-[800px] flex-col gap-[18px]">
+                {items.map((item) => {
+                  const isOpen = item.id === openId;
+                  return (
+                    <FaqAccordionItem
+                      key={item.id}
+                      item={item}
+                      isOpen={isOpen}
+                      onToggle={() => setOpenId(isOpen ? "" : item.id)}
+                    />
+                  );
+                })}
+              </div>
+            ) : null}
+
+            <PrimaryButton
+              label={ctaLabel}
+              opensQuoteModal
+              className="mt-2 h-[44px] px-5 text-[15px] normal-case sm:h-[47px] sm:px-6 sm:text-base"
+            />
           </div>
         </SectionPaddingY72>
       </SectionPaddingX120R72>

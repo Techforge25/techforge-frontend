@@ -4,6 +4,7 @@ export type PortfolioDetail = {
   category: string;
   heroImage: string;
   heroBadgeLabel: string;
+  industry?: string;
   briefTitle: string;
   briefDescription: string;
   challengeTitle: string;
@@ -12,6 +13,11 @@ export type PortfolioDetail = {
   solutionDescription: string;
   solutionFeatures: string[];
   resultsHeading: string;
+  assumption?: string;
+  decision?: string;
+  launch?: string;
+  learning?: string;
+  nextStep?: string;
   results: Array<{
     value: string;
     label: string;

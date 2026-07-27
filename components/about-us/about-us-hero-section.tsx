@@ -10,9 +10,18 @@ import { aboutUsCopy } from "@/data/home-page";
 
 type AboutUsHeroSectionProps = {
   ctaHref?: string;
+  copy?: {
+    badgeLabel: string;
+    headingLine1: string;
+    headingLine2Highlight: string;
+    headingLine2After: string;
+    leadPrefix: string;
+    leadText: string;
+    ctaLabel: string;
+  };
 };
 
-export default function AboutUsHeroSection({ ctaHref }: AboutUsHeroSectionProps) {
+export default function AboutUsHeroSection({ ctaHref, copy = aboutUsCopy }: AboutUsHeroSectionProps) {
   return (
     <section data-home-about className="relative min-h-[100svh] overflow-hidden bg-[#00000c] lg:min-h-screen">
       <div
@@ -30,13 +39,13 @@ export default function AboutUsHeroSection({ ctaHref }: AboutUsHeroSectionProps)
           className="relative z-10 mx-auto flex w-full max-w-[990px] flex-col items-center gap-8 text-center sm:gap-10 lg:gap-12"
         >
           <div data-about-badge>
-            <SectionBadge label={aboutUsCopy.badgeLabel} className="h-[28px] px-[11px] py-0 text-sm leading-none" />
+            <SectionBadge label={copy.badgeLabel} className="h-[28px] px-[11px] py-0 text-sm leading-none" />
           </div>
           <div data-about-heading>
             <SectionHeading
-              line1={aboutUsCopy.headingLine1}
-              line2Highlight={aboutUsCopy.headingLine2Highlight}
-              line2After={aboutUsCopy.headingLine2After}
+              line1={copy.headingLine1}
+              line2Highlight={copy.headingLine2Highlight}
+              line2After={copy.headingLine2After}
               className="max-w-[790px] text-[30px] font-normal leading-[1.04] sm:text-[38px] md:text-[48px] md:leading-[52px]"
               line2ClassName="mt-1"
             />
@@ -57,14 +66,14 @@ export default function AboutUsHeroSection({ ctaHref }: AboutUsHeroSectionProps)
               data-about-lead
               className="absolute bottom-5 left-1/2 w-[92%] max-w-[780px] -translate-x-1/2 text-center text-[15px] leading-[1.35] text-white sm:bottom-8 sm:w-[90%] sm:text-[20px] sm:leading-[1.28] md:text-[28px] md:leading-[33px]"
             >
-              {aboutUsCopy.leadPrefix} <span className="text-[#cac6dd]">{aboutUsCopy.leadText}</span>
+              {copy.leadPrefix} <span className="text-[#cac6dd]">{copy.leadText}</span>
             </p>
           </div>
 
           {ctaHref ? (
             <Link href={ctaHref} data-about-cta>
               <PrimaryButton
-                label={aboutUsCopy.ctaLabel}
+                label={copy.ctaLabel}
                 className="h-[44px] px-5 text-[15px] sm:h-[47px] sm:px-6 sm:text-base"
               />
             </Link>

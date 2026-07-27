@@ -75,6 +75,8 @@ function FunFactStat({ value, label }: { value: string; label: string }) {
 }
 
 export default function FunFactsSection() {
+  const hasItems = aboutFunFactsSection.items.length > 0;
+
   return (
     <section className="relative overflow-hidden bg-[#00000c]">
       <img
@@ -107,11 +109,13 @@ export default function FunFactsSection() {
               </h2>
             </div>
 
-            <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8 lg:gap-[151px]">
-              {aboutFunFactsSection.items.map((item) => (
-                <FunFactStat key={item.label} value={item.value} label={item.label} />
-              ))}
-            </div>
+            {hasItems ? (
+              <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8 lg:gap-[151px]">
+                {aboutFunFactsSection.items.map((item) => (
+                  <FunFactStat key={item.label} value={item.value} label={item.label} />
+                ))}
+              </div>
+            ) : null}
           </div>
         </SectionPaddingY72>
       </SectionPaddingX120R72>

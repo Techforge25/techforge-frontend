@@ -7,34 +7,35 @@ export const jobDetail: JobPosition = {
   location: "Karachi, PK (Onsite)",
   type: "Full-time",
   experience: "3+ years",
-  salaryRange: "PKR 180k - 280k / month",
+  salaryRange: "PKR 90k - 130k / month",
   description:
-    "We are looking for a creative UI/UX Designer to craft premium, interactive web layouts, application visual styles, and user flow architectures.",
+    "Design product experiences that are shaped by user understanding, clear flows, and better product decisions.",
   aboutRole:
-    "At TechForge Innovations, design is at the core of our engineering process. As a UI/UX Designer, you will own the end-to-end design lifecycle: researching user needs, wireframing interfaces, sketching custom design frameworks, and handing over detailed layouts to engineering teams. You will maintain our unified design language, pushing boundaries in dark themes, glassmorphic layouts, and sleek interactions.",
+    "At TechForge, design is not decoration. It is part of how we reduce confusion, challenge assumptions, and create products that people can actually use. As a UI/UX Designer, you will work across research, wireframes, flows, interfaces, and systems to help founders learn faster from what they launch.",
   responsibilities: [
-    "Design wireframes, user journeys, low/high-fidelity prototypes using Figma.",
-    "Define and scale our premium dark theme visual language and design system components.",
-    "Collaborate with marketing and product engineering teams to align assets and interactive flows.",
-    "Run user testing sessions, synthesize feedback, and iterate design solutions.",
-    "Prepare responsive assets, SVG files, and design documentations for seamless frontend implementation."
+    "Create user flows, wireframes, and UI concepts for new product directions.",
+    "Translate product questions into clear UX decisions and testable design outputs.",
+    "Collaborate with engineering and product teams to shape usable, focused digital experiences.",
+    "Run or support user research and synthesize findings into design improvements.",
+    "Contribute to design systems and repeatable interface patterns."
   ],
   requirements: [
-    "3+ years of professional UX/UI design experience, with a strong portfolio showcasing web interfaces.",
-    "Expert skills in Figma (Auto Layout, Variables, Component Libraries, Interactive Prototypes).",
-    "Solid understanding of grid layouts, visual hierarchy, typography, and dark mode styling.",
-    "Experience designing interactive dashboards, SaaS product interfaces, or agency landing pages.",
-    "Understanding of frontend fundamentals (HTML/CSS) to collaborate efficiently with developers."
+    "3+ years of product or UX/UI design experience.",
+    "Strong command of Figma and modern design workflows.",
+    "Ability to think in systems, user journeys, and product outcomes, not just screens.",
+    "Experience designing web apps, dashboards, SaaS products, or mobile interfaces.",
+    "Comfort collaborating closely with developers and product stakeholders."
   ],
   niceToHave: [
-    "Skills in Framer, Webflow, or similar interactive site-building platforms.",
-    "Basic knowledge of motion graphics, Lottie animation, or 3D visual design (Spline/Blender)."
+    "Experience with product validation, usability testing, or prototyping for early-stage products.",
+    "Understanding of frontend constraints and responsive implementation.",
+    "Interest in product strategy and founder decision-making."
   ],
   benefits: [
-    "Market competitive salary and workspace setup budget.",
-    "100% remote work environment with flexible working hours.",
-    "Annual learning budget and designer platform subscriptions.",
-    "Comprehensive health insurance coverage.",
-    "Active participation in premium global design workshops."
+    "Competitive salary and growth support.",
+    "A collaborative environment where design has strategic influence.",
+    "Learning budget and access to modern design tools.",
+    "Flexible work environment and supportive team culture.",
+    "Health coverage and long-term development opportunities."
   ]
 };

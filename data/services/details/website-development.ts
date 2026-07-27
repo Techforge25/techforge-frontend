@@ -7,7 +7,7 @@ export const serviceDetail: ServiceDetail = {
   iconClassName: "h-[24px] w-[24px]",
   title: "Website Development",
   description:
-    "We create fast, SEO-optimized websites that are fully responsive and custom-built to reflect your brand and grow your business.",
+    "Subscription platforms, multi-tenancy, billing systems, dashboards, authentication, analytics.",
   badgeLabel: "Our Latest Services",
   mainVisual:
     "https://images.pexels.com/photos/986774/pexels-photo-986774.jpeg?cs=srgb&dl=pexels-filippo-bergamaschi-202684-986774.jpg&fm=jpg",

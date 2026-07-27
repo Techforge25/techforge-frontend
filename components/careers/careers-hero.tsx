@@ -29,15 +29,15 @@ export default function CareersHero() {
           <SectionBadge label="Careers" className="h-[28px] border border-[rgba(36,138,255,0.6)] px-[11px] py-0 text-sm leading-none" />
           
           <SectionHeading
-            line1="Join the team forging"
-            line2Highlight="The Next Gen"
-            line2After="of AI & Web Tech"
+            line1="Build Products."
+            line2Highlight="Challenge Assumptions."
+            line2After="Make an Impact."
             className="max-w-[850px] text-[34px] font-normal leading-[1.05] sm:text-[44px] md:text-[56px] md:leading-[60px]"
             line2ClassName="mt-1"
           />
 
           <p className="max-w-[620px] text-[15px] leading-[1.45] text-[#cac6dd] sm:text-base sm:leading-[1.35]">
-            At TechForge Innovations, we build scalable software, intelligent AI agents, and stunning digital designs. Join us in shaping tomorrow&apos;s technology stack.
+            Join a team that thinks deeply about what we build, why we build it, and how it helps founders make better decisions.
           </p>
 
           <button

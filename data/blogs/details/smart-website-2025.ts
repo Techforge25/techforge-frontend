@@ -1,51 +1,47 @@
 import card1 from "@/assets/images/blog/cards/card-1.webp";
+import overlay1 from "@/assets/images/blog/cards/overlay-1.webp";
 import type { BlogDetail } from "../types";
 
 export const blogDetail: BlogDetail = {
-  slug: "smart-website-2025",
-  title: "Why Every Business Needs a Smart Website in 2025",
-  category: "Tech",
-  author: "James Laurent",
-  date: "October 28, 2025",
+  slug: "do-you-really-need-30-features-in-your-mvp",
+  title: "Do You Really Need 30 Features in Your MVP?",
+  category: "MVP",
+  author: "TechForge Insights",
+  date: "May 14, 2026",
   image: card1.src,
-  excerpt: "Smart websites improve trust, conversion, and long-term growth by combining performance, SEO, and user-first design.",
+  overlay: overlay1.src,
+  excerpt:
+    "The fastest way to waste runway is to confuse a first release with a finished product.",
   content: [
-    "Smart websites improve trust, conversion, and long-term growth by combining performance, SEO, and user-first design.",
-    "Smart websites improve trust, conversion, and long-term growth by combining performance, SEO, and user-first design.",
-    "At TechForge Innovations, we align content, product thinking, and technical execution to ensure every digital initiative remains measurable and scalable.",
+    "Founders often overload Version 1 because they are trying to solve future problems before current ones are real.",
+    "An MVP is not supposed to prove everything. It is supposed to help you learn the most important thing first.",
+    "At TechForge, we reduce MVP scope until every feature has a reason to exist.",
   ],
   sections: [
     {
-      heading: "Introduction",
+      heading: "Why This Happens",
       paragraphs: [
-        "Smart websites improve trust, conversion, and long-term growth by combining performance, SEO, and user-first design.",
+        "A long feature list feels safer because it creates the illusion of completeness. In reality, it usually creates more cost, slower learning, and less flexibility after launch.",
       ],
     },
     {
-      heading: "Introduction",
+      heading: "What To Ask Instead",
       paragraphs: [
-        "Smart websites improve trust, conversion, and long-term growth by combining performance, SEO, and user-first design.",
+        "The better question is not, what can we include? The better question is, what is the smallest product that can prove whether this should exist at all?",
       ],
-      forExampleLabel: "For example:",
       bullets: [
-        "It can recommend products based on browsing history.",
-        "It can analyze visitor data to optimize sales funnels.",
-        "It can automatically respond to customer queries with intelligent chatbots.",
+        "Which user problem matters most right now?",
+        "Which workflow creates the clearest learning signal?",
+        "Which feature can wait until after real usage data exists?",
       ],
-      closing: "In short, a smart website acts like your digital salesperson - available 24/7.",
+      closing:
+        "If a feature does not improve your first learning loop, it probably does not belong in your MVP.",
     },
     {
-      heading: "Top 5 Reasons Why Every Business Needs a Smart Website in 2025",
+      heading: "How TechForge Thinks About It",
       paragraphs: [
-        "At TechForge Innovations, we align content, product thinking, and technical execution to ensure every digital initiative remains measurable and scalable.",
+        "We treat early scope as a strategic decision, not a delivery checklist. A sharper MVP protects runway and gives founders more room to adapt.",
       ],
-      forExampleLabel: "For example:",
-      bullets: [
-        "It can recommend products based on browsing history.",
-        "It can analyze visitor data to optimize sales funnels.",
-        "It can automatically respond to customer queries with intelligent chatbots.",
-      ],
-      closing: "In short, a smart website acts like your digital salesperson - available 24/7.",
     },
   ],
 };

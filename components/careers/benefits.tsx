@@ -4,28 +4,28 @@ import { SectionPaddingX120R72, SectionPaddingY72 } from "@/components/ui/sectio
 
 const benefitsList = [
   {
-    title: "Competitive Salary",
-    desc: "Rewarding compensation packages designed to recognize your skills, performance, and contributions.",
+    title: "Think Before Building",
+    desc: "We value people who slow down long enough to understand the problem before rushing into delivery.",
   },
   {
-    title: "Career Growth",
-    desc: "Advance your career through challenging projects, mentorship, and continuous development opportunities.",
+    title: "Challenge the Status Quo",
+    desc: "We do not assume the current plan is the best plan. Better outcomes come from better questions.",
   },
   {
-    title: "Flexible Work Environment",
-    desc: "Work efficiently with flexible schedules that support productivity and work-life balance.",
+    title: "Be Honest",
+    desc: "Clear thinking requires clear communication. We say what we believe, especially when it is difficult.",
   },
   {
-    title: "Learning & Development",
-    desc: "Access resources, training, and certifications to continuously expand your knowledge and expertise.",
+    title: "Stay Curious",
+    desc: "We want people who keep exploring, learning, and refining how they think about products and users.",
   },
   {
-    title: "Global Projects",
-    desc: "Collaborate on innovative projects for clients across different industries and international markets.",
+    title: "Focus on Outcomes",
+    desc: "Activity is not the goal. Meaningful impact for the founder and the product is.",
   },
   {
-    title: "Collaborative Culture",
-    desc: "Join a supportive team that values creativity, teamwork, knowledge sharing, and innovation.",
+    title: "Keep Learning",
+    desc: "Every launch, mistake, and customer response should make the next decision smarter.",
   },
 ];
 
@@ -42,11 +42,11 @@ export default function Benefits() {
         <SectionPaddingY72 className="py-14 sm:py-[72px]">
           <div className="relative z-10 mx-auto flex max-w-[1200px] flex-col items-center gap-10 sm:gap-14">
             <div className="flex flex-col items-center gap-4 text-center">
-              <SectionBadge label="perks & benefits" className="h-[28px] px-[11px] py-0 text-sm leading-none" />
+              <SectionBadge label="how we work" className="h-[28px] px-[11px] py-0 text-sm leading-none" />
               <SectionHeading
-                line1="Everything you need"
-                line2Highlight="to perform at"
-                line2After="your absolute best"
+                line1="The Values Behind"
+                line2Highlight="How We Work"
+                line2After=""
                 className="max-w-[700px] text-[28px] leading-[1.1] sm:text-[36px] md:text-[44px] lg:text-[48px] md:leading-[52px]"
                 line2ClassName="mt-1"
               />

@@ -1,51 +1,47 @@
 import card2 from "@/assets/images/blog/cards/card-2.webp";
+import overlay2 from "@/assets/images/blog/cards/overlay-2.webp";
 import type { BlogDetail } from "../types";
 
 export const blogDetail: BlogDetail = {
-  slug: "ultimate-growth-engine-modern-businesses",
-  title: "The Ultimate Growth Engine for Modern Businesses",
-  category: "Digital marketing",
-  author: "Alex John",
-  date: "October 10, 2025",
+  slug: "why-founders-run-out-of-money-before-product-market-fit",
+  title: "Why Founders Run Out of Money Before Product-Market Fit",
+  category: "Startup",
+  author: "TechForge Insights",
+  date: "April 29, 2026",
   image: card2.src,
-  excerpt: "A combined strategy across SEO, paid campaigns, and conversion funnels creates predictable business growth.",
+  overlay: overlay2.src,
+  excerpt:
+    "Many startups do not fail because they built badly. They fail because they spent too much before they learned enough.",
   content: [
-    "A combined strategy across SEO, paid campaigns, and conversion funnels creates predictable business growth.",
-    "A combined strategy across SEO, paid campaigns, and conversion funnels creates predictable business growth.",
-    "At TechForge Innovations, we align content, product thinking, and technical execution to ensure every digital initiative remains measurable and scalable.",
+    "Runway disappears quickly when Version 1 is treated like a full product instead of a tool for learning.",
+    "The wrong roadmap can lock a founder into expensive assumptions long before the market responds.",
+    "Good product strategy is often more valuable than more development hours.",
   ],
   sections: [
     {
-      heading: "Introduction",
+      heading: "The Real Pattern",
       paragraphs: [
-        "A combined strategy across SEO, paid campaigns, and conversion funnels creates predictable business growth.",
+        "Founders usually run out of money before product-market fit because they commit too early to features, systems, and plans that have not earned that level of investment yet.",
       ],
     },
     {
-      heading: "Introduction",
+      heading: "Where The Budget Goes",
       paragraphs: [
-        "A combined strategy across SEO, paid campaigns, and conversion funnels creates predictable business growth.",
+        "Budget disappears into unnecessary complexity: too much scope, too many edge cases, too much polish, and too little evidence.",
       ],
-      forExampleLabel: "For example:",
       bullets: [
-        "It can recommend products based on browsing history.",
-        "It can analyze visitor data to optimize sales funnels.",
-        "It can automatically respond to customer queries with intelligent chatbots.",
+        "Large Version 1 builds",
+        "Roadmaps based on assumptions",
+        "Post-launch changes that should have been discovered earlier",
       ],
-      closing: "In short, a smart website acts like your digital salesperson - available 24/7.",
+      closing:
+        "The earlier you learn, the longer your capital can keep working for you.",
     },
     {
-      heading: "Top 5 Reasons The Ultimate Growth Engine for Modern Businesses",
+      heading: "A Better Founder Constraint",
       paragraphs: [
-        "At TechForge Innovations, we align content, product thinking, and technical execution to ensure every digital initiative remains measurable and scalable.",
+        "Ask whether this decision increases clarity or just increases burn. That question alone changes how teams scope, prioritize, and launch.",
       ],
-      forExampleLabel: "For example:",
-      bullets: [
-        "It can recommend products based on browsing history.",
-        "It can analyze visitor data to optimize sales funnels.",
-        "It can automatically respond to customer queries with intelligent chatbots.",
-      ],
-      closing: "In short, a smart website acts like your digital salesperson - available 24/7.",
     },
   ],
 };

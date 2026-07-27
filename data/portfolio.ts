@@ -2,8 +2,10 @@ import portfolioArrowCircle from "@/assets/images/home/portfolio/arrow-circle.sv
 import { portfolioDetails } from "@/data/portfolio-details";
 
 export const portfolioHeroSection = {
-  badgeLabel: "our portfolio",
-  heading: "Our Projects",
+  badgeLabel: "our work",
+  heading: "Our Work",
+  description:
+    "We don't measure our work by the number of features shipped. We measure it by the decisions those products helped founders make.",
 } as const;
 
 function normalizeCategoryKey(category: string) {
@@ -27,9 +29,18 @@ export type PortfolioCardItem = {
   image: string;
   title: string;
   subtitle: string;
+  industry: string;
+  challenge: string;
+  approach: string;
+  built: string;
   arrowIcon: string;
   category: string;
 };
+
+function firstSentence(text: string) {
+  const [sentence] = text.split(/(?<=[.!?])\s+/);
+  return sentence ?? text;
+}
 
 const allPortfolioCards: readonly PortfolioCardItem[] = portfolioDetails.map((item) => ({
   slug: item.slug,
@@ -37,24 +48,28 @@ const allPortfolioCards: readonly PortfolioCardItem[] = portfolioDetails.map((it
   image: item.heroImage,
   title: item.projectName,
   subtitle: item.category,
+  industry: item.industry ?? item.category,
+  challenge: item.challenges[0] ?? item.briefDescription,
+  approach: firstSentence(item.decision ?? item.solutionDescription),
+  built: item.solutionFeatures.slice(0, 3).join(", "),
   arrowIcon: portfolioArrowCircle.src,
   category: normalizeCategoryKey(item.category),
 }));
 
 export const portfolioHomeCopy = {
-  badgeLabel: "some of our work",
-  headingLine1: "Thousands of projects",
-  headingLine2Before: "have been",
-  headingLine2Highlight: "completed",
-  ctaLabel: "view more",
+  badgeLabel: "products we've helped bring to life",
+  headingLine1: "Products We've Helped Bring",
+  headingLine2Before: "to",
+  headingLine2Highlight: "Life",
+  ctaLabel: "view our portfolio",
   ctaHref: "/portfolio",
 } as const;
 
 export const portfolioPageCopy = {
-  badgeLabel: "some of our work",
-  headingLine1: "Thousands of projects",
-  headingLine2Before: "have been",
-  headingLine2Highlight: "completed",
+  badgeLabel: "products we've helped bring to life",
+  headingLine1: "Products We've Helped Bring",
+  headingLine2Before: "to",
+  headingLine2Highlight: "Life",
   loadMoreLabel: "load more",
 } as const;
 

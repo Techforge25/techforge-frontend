@@ -6,7 +6,7 @@ export const serviceDetail: ServiceDetail = {
   icon: iconClipboard.src,
   title: "Web App Development",
   description:
-    "Develop scalable web applications with robust architecture, clean UX, and maintainable codebases.",
+    "Modern web applications (Next.js, React, Node.js, Express, APIs, Admin Panels).",
   badgeLabel: "Our Latest Services",
   mainVisual:
     "https://images.pexels.com/photos/33433724/pexels-photo-33433724.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-33433724.jpg&fm=jpg",

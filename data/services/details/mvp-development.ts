@@ -6,7 +6,7 @@ export const serviceDetail: ServiceDetail = {
   icon: iconClipboard.src,
   title: "MVP Development",
   description:
-    "Build lean, launch-ready products fast so you can validate your idea, test the market, and improve with real user feedback.",
+    "Product planning, UI/UX Design, Backend, Frontend, Testing, Deployment. Launch quickly without unnecessary complexity.",
   badgeLabel: "Our Latest Services",
   mainVisual:
     "https://images.pexels.com/photos/7688083/pexels-photo-7688083.jpeg?cs=srgb&dl=pexels-kindelmedia-7688083.jpg&fm=jpg",

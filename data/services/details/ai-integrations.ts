@@ -6,7 +6,7 @@ export const serviceDetail: ServiceDetail = {
   icon: iconLogomark.src,
   title: "AI Integrations",
   description:
-    "Integrate AI capabilities into your products and workflows to improve automation, decision-making, and user experiences without rebuilding everything.",
+    "AI Chatbots, OpenAI integration, automation workflows, recommendation systems, LLM applications.",
   badgeLabel: "Our Latest Services",
   mainVisual:
     "https://images.pexels.com/photos/18069697/pexels-photo-18069697.jpeg?cs=srgb&dl=pexels-googledeepmind-18069697.jpg&fm=jpg",
