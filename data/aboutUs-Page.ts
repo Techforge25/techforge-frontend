@@ -92,7 +92,7 @@ export const aboutFunFactsSection = {
   headingLine1Before: "The first version of your product",
   headingLine1Highlight: "shouldn't consume",
   headingLine1After: "the first version of your company.",
-  items: [] as const satisfies readonly AboutFunFactItem[],
+  items: [] as readonly AboutFunFactItem[],
 } as const;
 
 export type AboutOutstandingFeatureItem = {
